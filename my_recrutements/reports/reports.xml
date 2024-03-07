@@ -1,0 +1,10 @@
+<odoo>
+    <report
+    id = 'report_titre_candid'
+    string = 'Rapport candidature'
+    model = 'candidat'
+    report_type = 'qweb-html'
+    name = 'my_recrutements.candid'
+    file = 'Rapport-Candidature'/>
+
+</odoo>
