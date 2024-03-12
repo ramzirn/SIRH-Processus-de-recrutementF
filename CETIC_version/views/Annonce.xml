@@ -6,10 +6,13 @@
             <field name="model">annonce</field>
             <field name="arch" type="xml">
                 <tree string="Liste des annonces">
-                    <field name="approche"/>
-                    <field name="contenu"/>
-                    <field name="descriptif_societe"/>
-                    <!-- Ajoutez d'autres champs si nécessaire -->
+                     <field name="approche"/>
+                            <field name="contenu"/>
+                            <field name="descriptif_societe"/>
+                            <field name="description_poste"/>
+                            <field name="profil_recherche"/>
+                            <field name="modalite_reponse"/>
+                            <field name="obligations"/>
                 </tree>
             </field>
         </record>
