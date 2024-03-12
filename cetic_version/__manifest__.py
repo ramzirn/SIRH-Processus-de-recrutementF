@@ -17,7 +17,6 @@ Shows you a list of applications features to install from.
     ],
     'data': [
         'views/formrecruitment.xml',
-        'views/description_poste_views.xml',
         'views/Annonce.xml',
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',
@@ -27,6 +26,7 @@ Shows you a list of applications features to install from.
         'views/modifcandidatures.xml',
         'reports/reports.xml',
         'reports/rapport_candid.xml',
+        'reports/demande_de_pourvoi_de_poste.xml',
     ],
     'demo': [],
     'installable': True,
