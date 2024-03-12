@@ -19,6 +19,35 @@
             </field>
        </record>
 
+<!--        test-->
+
+        <record id="view_form_description_poste" model="ir.ui.view">
+            <field name="name">rh.formdesc.form</field>
+            <field name="model">rh.formdesc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Décrire le poste:">
+                            <field name="intitule"/>
+                            <field name="descr"/>
+                            <field name="niveau"/>
+                            <field name="diplome"/>
+                            <field name="formation"/>
+                            <field name="formation_experience"/>
+                            <field name="savoir_faire"/>
+                            <field name="savoir_etre"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="horaires"/>
+                            <field name="remuneration"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
         <record id="view_form_recruitment_form" model="ir.ui.view">
             <field name="name">rh.formentry.form</field>
             <field name="model">rh.formentry</field>
