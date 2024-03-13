@@ -1,7 +1,7 @@
 from odoo import models, fields, api, _
 
 class CandidatureReport(models.AbstractModel):
-    _name = 'report.my_recrutements.candid'
+    _name = 'report.cetic_version.candid'
 
     def get_report_values(self, docids, data=None):
         var1 = self.env['candidat'].browse(docids[0])
