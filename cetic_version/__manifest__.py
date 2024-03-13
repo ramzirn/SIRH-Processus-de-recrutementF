@@ -27,6 +27,7 @@ Shows you a list of applications features to install from.
         'views/modifcandidatures.xml',
         'reports/reports.xml',
         'reports/rapport_candid.xml',
+
     ],
     'demo': [],
     'installable': True,
