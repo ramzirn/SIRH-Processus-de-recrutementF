@@ -17,7 +17,6 @@ Shows you a list of applications features to install from.
     ],
     'data': [
         'views/formrecruitment.xml',
-        'views/description_poste_views.xml',
         'views/Annonce.xml',
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',

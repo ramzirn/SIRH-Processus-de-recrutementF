@@ -1,0 +1,93 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        <template id="dem_pourvoi">-->
+<!--            <script type="text/javascript">-->
+<!--                <![CDATA[-->
+<!--                    var titleNumber = 1;-->
+<!--                ]]>-->
+<!--            </script>-->
+<!--                <t t-call="web.basic_layout">-->
+<!--                <div class="page">-->
+<!--                    <h1 style="text-align: center;">Demande de Pourvoi de Poste</h1>-->
+<!--                    <div style="text-align: left; margin-left: 20px">-->
+<!--                        <div style="background-color: #aed7eb; padding: 10px;">-->
+<!--                            <p><span style="font-weight: bold;">Volet 1 : </span>à remplir par la StU demandant le pourvoi d'un poste.</p>-->
+<!--                        </div>-->
+<!--                        <div style="font-weight: bold;">-->
+<!--                            <p>${titleNumber}- Structure concernée : </p>-->
+<!--                            <script type="text/javascript">-->
+<!--                                <![CDATA[-->
+<!--                                    titleNumber++; // Incrémentation du numéro de titre-->
+<!--                                ]]>-->
+<!--                            </script>-->
+<!--                            <p>${titleNumber}- Intitulé du poste à pourvoir : </p>-->
+<!--                            <script type="text/javascript">-->
+<!--                                <![CDATA[-->
+<!--                                    titleNumber++; // Incrémentation du numéro de titre-->
+<!--                                ]]>-->
+<!--                            </script>-->
+<!--                            <p>${titleNumber}- Mode de pourvoi propos : </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                </t>-->
+<!--        </template>-->
+<!--    </data>-->
+<!--</odoo>-->
+
+<odoo>
+    <data>
+        <template id="dem_pourvoi">
+            <t t-set="titleNumber" t-value="1"/>
+            <t t-set="soustitleNumber" t-value="1"/>
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <h1 style="text-align: center;">Demande de Pourvoi de Poste</h1>
+                    <br/>
+                    <div style="text-align: left; margin-left: 20px">
+                        <div style="background-color: #aed7eb; padding: 10px;">
+                            <p>
+                                <span style="font-weight: bold;">Volet 1 : </span>à remplir par la StU demandant le pourvoi d'un poste
+                            </p>
+                        </div>
+                    <br/>
+                        <div style="font-weight: bold;">
+                            <p><t t-esc="titleNumber"/>- Structure concernée : </p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+
+                            <p><t t-esc="titleNumber"/>- Intitulé du poste à pourvoir : </p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+
+                            <p><t t-esc="titleNumber"/>- Mode de pourvoi proposé : </p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+                            <br/>
+<!--                                tbaleau 2 lignes 2 colonnes-->
+
+                            <p><t t-esc="titleNumber"/>- Le poste est-il prévu pour l'organigramme ? </p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+                            <br/>
+<!--                                2 lignes et 4 case     -->
+
+                            <p><t t-esc="titleNumber"/>-<t t-esc="soustitleNumber"/> Si oui : Effectifs prévu à ce proste (décision d'effectif)</p>
+                            <t t-set="soustitleNumber" t-value="soustitleNumber+1"/>
+                            <br/>
+<!--                                2 ligne avec case a cocher
+                                -->
+                            <p><t t-esc="titleNumber"/>-<t t-esc="soustitleNumber"/> Si non, justificatif pour le pourvoi du poste  :</p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+                            <br/>
+<!--                                2 lignes pointiée-->
+
+                            <p><t t-esc="titleNumber"/>- Profil souhaité : </p>
+                            <t t-set="titleNumber" t-value="titleNumber+1"/>
+<!--                            ligne pointiée-->
+
+                            <p><t t-esc="titleNumber"/>- Personnl proposé : </p>
+<!--                                check list-->
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

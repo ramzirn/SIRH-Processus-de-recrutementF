@@ -3,7 +3,6 @@ from odoo import models, fields
 class Annonce(models.Model):
     _name = 'annonce'
 
-
     approche = fields.Selection([
         ('interne', 'Interne'),
         ('externe', 'Externe'),
