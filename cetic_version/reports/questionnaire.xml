@@ -1,4 +1,3 @@
-
 <odoo>
     <data>
         <template id="hr_applicant_report_template">
@@ -7,27 +6,38 @@
                     <t t-call="web.external_layout">
                         <div class="container">
                             <h1>QUESTIONNAIRE CONFIDENTIEL A REMPLIR PAR LES CANDIDATS</h1>
-                            <p>La réponse à ce questionnaire n’implique aucun engagement contractuel ni de la part de CETIC-Spa ni de la part du candidat.</p>
+                            <p>La réponse à ce questionnaire n’implique aucun engagement contractuel ni de la part de
+                                CETIC-Spa ni de la part du candidat.
+                            </p>
                             <p>1) NOM : .............................................
-Prénom : .............................................</p>
-                            <p>Nom de jeune fille : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p>Date et Lieu de Naissance : ........./........../19............ à ..........................................</p>
-                            <p>Nationalité : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                                Prénom : .............................................
+                            </p>
+                            <p>Nom de jeune fille :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>Date et Lieu de Naissance : ........./........../19............ à
+                                ..........................................
+                            </p>
+                            <p>Nationalité :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
                             <p>2) Adresse personnelle complète :</p>
-                            <p><hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p><hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            <p>
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
                             <p>3) Situation Familiale :
-                                <input type="checkbox" id="celibataire" name="situation_familiale" value="Célibataire"> </input>
+                                <input type="checkbox" id="celibataire" name="situation_familiale"
+                                       value="Célibataire"></input>
                                 <label for="celibataire">Célibataire</label>
-                                <input type="checkbox" id="marie" name="situation_familiale" value="Marié(e)">  </input>
+                                <input type="checkbox" id="marie" name="situation_familiale" value="Marié(e)"></input>
                                 <label for="marie">Marié(e)</label>
-                                <input type="checkbox" id="divorce" name="situation_familiale" value="Divorcé(e)">  </input>
+                                <input type="checkbox" id="divorce" name="situation_familiale"
+                                       value="Divorcé(e)"></input>
                                 <label for="divorce">Divorcé(e)</label>
-                                <input type="checkbox" id="veuf" name="situation_familiale" value="Veuf(ve)">  </input>
+                                <input type="checkbox" id="veuf" name="situation_familiale" value="Veuf(ve)"></input>
                                 <label for="veuf">Veuf(ve)</label>
                             </p>
                             <p>4) Parcours scolaire :</p>
@@ -53,8 +63,8 @@ Prénom : .............................................</p>
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #dddddd;">Secondaire</td>
                                     <td style="padding: 8px; border: 1px solid #dddddd;"></td>
-                                    <td style="padding: 8px; border: 1px solid #dddddd;"> </td>
-                                    <td style="padding: 8px; border: 1px solid #dddddd;"> </td>
+                                    <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                    <td style="padding: 8px; border: 1px solid #dddddd;"></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #dddddd;">Universitaire</td>
@@ -69,85 +79,115 @@ Prénom : .............................................</p>
                                     <td style="padding: 8px; border: 1px solid #dddddd;"></td>
                                 </tr>
                             </table>
-                            <p>5) Avez-vous effectué au cours de vos études des travaux (mémoire ou thèse) : OUI - NON</p>
-                            <p>Si OUI sur quel sujet ? <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p><hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p>6) Avez-vous effectué à l’occasion de vos études supérieures des stages dans des entreprises ou administrations d’une durée supérieure à 1 mois ?</p>
+                            <p>5) Avez-vous effectué au cours de vos études des travaux (mémoire ou thèse) : OUI - NON
+                            </p>
+                            <p>Si OUI sur quel sujet ?
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>6) Avez-vous effectué à l’occasion de vos études supérieures des stages dans des
+                                entreprises ou administrations d’une durée supérieure à 1 mois ?
+                            </p>
                             <p>OUI - NON</p>
                             <p>Si OUI, dans quelle entreprise ou administration et sur quel sujet ?</p>
                             <p>
-</p>
-                            <p><hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p><hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            </p>
+                            <p>
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
 
-                            <p>8) Emplois (Indiquer chaque emploi occupé, même lorsque le changement d’emploi ne correspond pas à un changement d’employeur).</p>
-                            <p>- Employeur : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>  
- </p>
-                            <p>Poste Occupé : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/> 
-</p>
-                            <p>Période : du <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>  
- au <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
-                            <p>- Employeur : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>  
- </p>
-                            <p>Poste Occupé : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>  
-</p>
-                            <p>Période : du <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>  
- au <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            <p>8) Emplois (Indiquer chaque emploi occupé, même lorsque le changement d’emploi ne
+                                correspond pas à un changement d’employeur).
+                            </p>
+                            <p>- Employeur :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>Poste Occupé :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>Période : du ..................... au .......................
+
+
+                            </p>
+                            <p>- Employeur :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+                            <p>Poste Occupé :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
+
 
                             <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            <p>Période : du ..................... au .......................
+
+
+                            </p>
 
                             <!-- Question 9 -->
-                            <p>9) Quelle était votre rémunération mensuelle moyenne nette ( y compris toutes primes et indemnités) dans votre dernier emploi : ................................</p>
-                            <p>Quelles sont vos prétentions pour votre nouvel emploi : <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            <p>9) Quelle était votre rémunération mensuelle moyenne nette ( y compris toutes primes et
+                                indemnités) dans votre dernier emploi : ................................
+                            </p>
+                            <p>Quelles sont vos prétentions pour votre nouvel emploi :
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <!-- Question 10 -->
-                            <p>10) Où Souhaitez-vous travailler ? (lieu de travail ) <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            <p>10) Où Souhaitez-vous travailler ? (lieu de travail )
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <!-- Question 11 -->
-                            <p>11) Etes vous disponible à faire des déplacements en dehors de la wilaya de votre recrutement pour les besoins du travail ?
+                            <p>11) Etes vous disponible à faire des déplacements en dehors de la wilaya de votre
+                                recrutement pour les besoins du travail ?
                                 OUI – NON
-                                Si NON Donnez vos raisons<hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                                Si NON Donnez vos raisons
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <!-- Question 12 -->
-                            <p>12) Situation vis à vis du S.N.O ? <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            <p>12) Situation vis à vis du S.N.O ?
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <!-- Question 13 -->
                             <p>13) Avez un engagement quelconque avec une entreprise ou une administration ?
                                 OUI - NON
-                                Si OUI lequel ? <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-
+                                Si OUI lequel ?
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
 
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+
+                                <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
+                            </p>
 
                             <!-- Question 14 -->
                             <p>14) A quelle date seriez vous libre pour commencer à travailler à CETIC ?
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-</p>
+                            </p>
 
-                            <p>Je certifie sur l’honneur que les renseignements fournis dans le présent questionnaire en vue de l’examen de ma candidature sont exacts.</p>
 
-                            <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-
-                            <div style="position: absolute; bottom: 50px; right: 50px;">
-                                Fait à Alger, le <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-<br/>
-                                (Signature du candidat)
-                            </div>
                         </div>
+
+                        <!--                    -->
+                        <p>Je certifie sur l’honneur que les renseignements fournis dans le présent questionnaire en vue
+                            de l’examen de ma candidature sont exacts.
+                        </p>
+                        <!-- Div avec le nouveau style -->
+                        <div class="text-right float-right w-50 mt-5">
+
+                            <br/>
+                            Fait à Alger, le .....................
+                            <br/>
+                            (Signature du candidat)
+                        </div>
+
                     </t>
                 </t>
             </t>

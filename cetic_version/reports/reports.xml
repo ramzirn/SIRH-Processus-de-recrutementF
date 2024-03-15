@@ -1,13 +1,13 @@
 <odoo>
     <report
-    id = 'report_titre_candid'
-    string = 'Rapport candidature'
-    model = 'candidat'
-    report_type = 'qweb-html'
-    name = 'my_recrutements.candid'
-    file = 'Rapport-Candidature'/>
+            id='report_titre_candid'
+            string='Rapport candidature'
+            model='candidat'
+            report_type='qweb-html'
+            name='my_recrutements.candid'
+            file='Rapport-Candidature'/>
 
-  <report
+    <report
             id="action_hr_applicant_report"
             model="hr.applicant"
             string="Applicant Report"
@@ -15,9 +15,7 @@
             name="cetic_version.hr_applicant_report_template"
             file="cetic_version.hr_applicant_report_template"
             attachment_use="False"
-        />
-
-
+    />
 
 
 </odoo>

@@ -27,8 +27,6 @@ Shows you a list of applications features to install from.
         'reports/rapport_candid.xml',
         'reports/questionnaire.xml',
 
-
-
         'reports/demande_de_pourvoi_de_poste.xml',
 
     ],

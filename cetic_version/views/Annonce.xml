@@ -6,13 +6,13 @@
             <field name="model">annonce</field>
             <field name="arch" type="xml">
                 <tree string="Liste des annonces">
-                     <field name="approche"/>
-                            <field name="contenu"/>
-                            <field name="descriptif_societe"/>
-                            <field name="description_poste"/>
-                            <field name="profil_recherche"/>
-                            <field name="modalite_reponse"/>
-                            <field name="obligations"/>
+                    <field name="approche"/>
+                    <field name="contenu"/>
+                    <field name="descriptif_societe"/>
+                    <field name="description_poste"/>
+                    <field name="profil_recherche"/>
+                    <field name="modalite_reponse"/>
+                    <field name="obligations"/>
                 </tree>
             </field>
         </record>
@@ -42,7 +42,7 @@
         <record id="action_annonce_list" model="ir.actions.act_window">
             <field name="name">Liste des Annonces</field>
             <field name="res_model">annonce</field>
-            <field name="type" >ir.actions.act_window</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
@@ -57,13 +57,10 @@
         </record>
 
 
-
-
         <!-- Menu Annonces -->
         <menuitem id="menu_annonces" name="Annonces" sequence="10" parent="hr_recruitment.menu_hr_recruitment_root"/>
         <menuitem id="menu_annonce_list" name="Liste des Annonces" parent="menu_annonces" action="action_annonce_list"/>
         <menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"/>
-
 
 
     </data>

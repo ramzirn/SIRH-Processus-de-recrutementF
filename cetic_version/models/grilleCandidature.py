@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 
+
 class GrilleCandidature(models.Model):
     _name = "grillecandidature"
 

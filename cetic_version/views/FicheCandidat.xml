@@ -26,11 +26,9 @@
     </record>
 
 
+    <!--    definition de laction-->
 
-
-<!--    definition de laction-->
-
-      <record id="action_employee_form" model="ir.actions.act_window">
+    <record id="action_employee_form" model="ir.actions.act_window">
         <field name="name">Action Employee Form</field>
         <field name="res_model">candidat</field>
         <field name="view_mode">form</field>
@@ -39,6 +37,7 @@
     </record>
 
     <!-- Définition du menu pour accéder au formulaire de l'employé -->
-<menuitem id="menu_employee" name="Fiche candidat" parent="hr_recruitment.menu_hr_recruitment_root" action="action_employee_form"/>
-<!--    <menuitem id="menuitem_employee_form" name="Employee Form" parent="menu_employee" action="action_employee_form"/>-->
+    <menuitem id="menu_employee" name="Fiche candidat" parent="hr_recruitment.menu_hr_recruitment_root"
+              action="action_employee_form"/>
+    <!--    <menuitem id="menuitem_employee_form" name="Employee Form" parent="menu_employee" action="action_employee_form"/>-->
 </odoo>
