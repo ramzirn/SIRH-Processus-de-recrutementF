@@ -1,0 +1,43 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; Vue liste &ndash;&gt;-->
+<!--        <record id="view_candidate_tree" model="ir.ui.view">-->
+<!--            <field name="name">candidat.tree</field>-->
+<!--            <field name="model">candidat</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Liste des candidats">-->
+<!--                    <field name="nom"/>-->
+
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+<!--        <record id="action_candidatures_list" model="ir.actions.act_window">-->
+<!--            <field name="name">Liste des candidatures</field>-->
+<!--            <field name="res_model">candidatures</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="domain">[]</field>-->
+<!--        </record>-->
+<!--        &lt;!&ndash; Action liste des annonces &ndash;&gt;-->
+
+<!--        &lt;!&ndash;        &lt;!&ndash; Action formulaire une annonce &ndash;&gt;&ndash;&gt;-->
+<!--        &lt;!&ndash;        <record id="action_annonce_form" model="ir.actions.act_window">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <field name="name">Créer une Annonce</field>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <field name="res_model">annonce</field>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <field name="view_mode">form</field>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <field name="view_id" ref="view_annonce_form"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <field name="target">new</field>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </record>&ndash;&gt;-->
+
+
+<!--        &lt;!&ndash; Menu Annonces &ndash;&gt;-->
+<!--        <menuitem id="menu_candidatures" name="" sequence="10" parent="hr_recruitment.menu_hr_recruitment_root"/>-->
+<!--        <menuitem id="menu_candidatures2" name="Liste des candidatures" parent="menu_candidatures"-->
+<!--                  action="action_candidatures_list"/>-->
+<!--        &lt;!&ndash;        <menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"/>&ndash;&gt;-->
+
+
+<!--    </data>-->
+<!--</odoo>-->
