@@ -5,6 +5,7 @@ from odoo import api, models, fields
 
 from odoo.exceptions import ValidationError
 
+
 class FormRecruitment(models.Model):
     _name = 'rh.formentry'
 
@@ -12,7 +13,7 @@ class FormRecruitment(models.Model):
         ('a', 'Recrutement interne '),
         ('b', 'remplacement temporaire '),
         ('c', 'retraite '),
-    ], string='Motif de recrutement',required=True)
+    ], string='Motif de recrutement', required=True)
 
     pourex = fields.Integer(string='Pour lexercice', required=True, default=datetime.now().year)
 
@@ -30,15 +31,15 @@ class FormRecruitment(models.Model):
                 return True
         return False
 
-    budget=fields.Float(required=True)
-    intitule=fields.Many2one('hr.job', string='Intitulé du poste', required=True)
+    budget = fields.Float(required=True)
+    intitule = fields.Many2one('hr.job', string='Intitulé du poste', required=True)
     echeanceContrat = fields.Date(string='Échéance du contrat')
 
-    xp=fields.Float(string='Annees dexperience',required=True)
-    lieu=fields.Char(string='Lieu de travail ', required=True)
-    Deplacement=fields.Char(string='deplacement a prévoir')
-    autre=fields.Char(string="Autres aspects a considerer")
-    dateEntree=fields.Date()
+    xp = fields.Float(string='Annees dexperience', required=True)
+    lieu = fields.Char(string='Lieu de travail ', required=True)
+    Deplacement = fields.Char(string='deplacement a prévoir')
+    autre = fields.Char(string="Autres aspects a considerer")
+    dateEntree = fields.Date()
 
     @api.multi
     def do_nothing(self):
@@ -55,10 +56,11 @@ class FormRecruitment(models.Model):
             'target': 'new',
         }
 
+
 class Descriptionposte(models.Model):
     _name = 'rh.formdesc'
 
-    intitule=fields.Many2one('rh.formentry', string='Intitulé du poste', required=True)
+    intitule = fields.Many2one('rh.formentry', string='Intitulé du poste', required=True)
     descr = fields.Text(String='Description du poste', required=True)
     niveau = fields.Selection([
         ('bac', 'Baccalauréat'),
@@ -76,5 +78,5 @@ class Descriptionposte(models.Model):
         ('CDD', 'CDD')
     ], default='CDI', required=True)
     # temps =
-    horaires = fields.Many2one('resource.calendar' , string='Horaires de travail', required=True)
-    remuneration = fields.Float(string='Remuniration...' ,required=True)
+    horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=True)
+    remuneration = fields.Float(string='Remuniration...', required=True)
