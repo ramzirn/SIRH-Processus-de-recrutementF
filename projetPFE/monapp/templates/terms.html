@@ -40,24 +40,24 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Job Agency<em> Website</em></a>
+                        <a href="{% url 'index' %}" class="logo">Job Agency<em> Website</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'jobs' %}">Jobs</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.html">About Us</a>
-                                    <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
-                                    <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                                    <a class="dropdown-item active" href="terms.html">Terms</a>
+                                    <a class="dropdown-item" href="{% url 'about' %}">About Us</a>
+                                    <a class="dropdown-item" href="{% url 'team' %}">Team</a>
+                                    <a class="dropdown-item" href="{% url 'blog' %}">Blog</a>
+                                    <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
+                                    <a class="dropdown-item active" href="{% url 'terms' %}">Terms</a>
                                 </div>
                             </li>
-                            <li><a href="contact.html">Contact</a></li> 
+                            <li><a href="{% url 'contact' %}">Contact</a></li> 
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -70,7 +70,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+    <section class="section section-bg" id="call-to-action" style="background-image: url('{% static "images/banner-image-1-1920x500.jpg" %}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -135,19 +135,26 @@
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <!-- <script src="assets/js/popper.js"></script> -->
+    <script src="{% static 'js/popper.js' %}"></script>
+
+    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/mixitup.js"></script> 
-    <script src="assets/js/accordions.js"></script>
-    
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+<!-- Plugins -->
+<script src="{% static 'js/scrollreveal.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/imgfix.min.js' %}"></script> 
+<script src="{% static 'js/mixitup.js' %}"></script> 
+<script src="{% static 'js/accordions.js' %}"></script>
+
+<!-- Global Init -->
+<script src="{% static 'js/custom.js' %}"></script>
 
   </body>
 </html>

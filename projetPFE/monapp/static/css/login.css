@@ -14,6 +14,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
+	background-image: repeating-linear-gradient(45deg, rgb(80, 80, 80) 0px, rgb(80, 80, 80) 80px,rgb(70, 70, 70) 80px, rgb(70, 70, 70) 160px);
+
 }
 
 h1 {
@@ -249,4 +251,8 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+
+body{
+	background-image: radial-gradient(circle at bottom center, rgb(216, 248, 247),rgb(253, 176, 22));
 }
