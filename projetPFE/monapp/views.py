@@ -9,9 +9,6 @@ def login(request):
     return render(request, 'login.html')
 
 
-
-
-
 def about(request):
     return render(request, 'about.html')
 
@@ -44,3 +41,7 @@ def terms(request):
 
 def jobs(request):
     return render(request, 'jobs.html')
+
+
+def candidatForm(request):
+    return render (request,'candidateForm.html')
