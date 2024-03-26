@@ -214,9 +214,6 @@
                             </table>
                         </div>
 
-
-
-
                         <br/>
                         <p><t t-esc="titleNumber"/>- Le poste est-il prévu pour l'organigramme ? </p>
                         <br/>
@@ -237,8 +234,6 @@
                                 </table>
                             </div>
                         </div>
-
-
 
 
                         <br/>

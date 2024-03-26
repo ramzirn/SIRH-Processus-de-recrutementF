@@ -1,10 +1,18 @@
 <odoo>
     <data>
+
+<!--        <record id="act_open_description_poste" model="ir.actions.act_window">-->
+<!--            <field name="name">Ouvrir la description de poste</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">rh.formdesc</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_id" ref="view_form_description_poste"/>-->
+<!--        </record>-->
+
+<!--        Liste des recrutements-->
         <record id="view_form_recruitment_tree" model="ir.ui.view">
             <field name="name">rh.formentry.tree</field>
             <field name="model">rh.formentry</field>
-            <field name="type">tree</field> <!-- Ajout du champ type -->
-
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des recrutements">
@@ -17,49 +25,18 @@
                     <field name="lieu"/>
                     <field name="Deplacement"/>
                     <field name="dateEntree"/>
+                    <button name="show_description" string="Voir description" type="object" class="oe_highlight"/>
                 </tree>
             </field>
        </record>
 
-<!--        test-->
 
-        <record id="view_form_description_poste" model="ir.ui.view">
-            <field name="name">rh.formdesc.form</field>
-            <field name="model">rh.formdesc</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group string="Décrire le poste:">
-                            <field name="intitule"/>
-                            <field name="descr"/>
-                            <field name="niveau"/>
-                            <field name="diplome"/>
-                            <field name="formation"/>
-                            <field name="formation_experience"/>
-                            <field name="savoir_faire"/>
-                            <field name="savoir_etre"/>
-                        </group>
-                        <group>
-                            <field name="type"/>
-                            <field name="horaires"/>
-                            <field name="remuneration"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-
+<!--        Formulaire de recrutement-->
         <record id="view_form_recruitment_form" model="ir.ui.view">
             <field name="name">rh.formentry.form</field>
             <field name="model">rh.formentry</field>
-            <field name="type">form</field> <!-- Ajout du champ type -->
-
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <header>
-                        <button name="action_open_description_poste" string="Ajouter description" type="object" class="oe_highlight"/>
-                </header>
                 <form >
                     <sheet>
                         <group>
@@ -73,38 +50,12 @@
                             <field name="Deplacement"/>
                             <field name="autre"/>
                             <field name="dateEntree"/>
+                            <button name="fill_description" string="Fill Description Form" type="object" class="btn btn-primary"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-
-        <record id="view_form_description_poste" model="ir.ui.view">
-            <field name="name">rh.formdesc.form</field>
-            <field name="model">rh.formdesc</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group string="Décrire le poste:">
-                            <field name="intitule"/>
-                            <field name="descr"/>
-                            <field name="niveau"/>
-                            <field name="diplome"/>
-                            <field name="formation"/>
-                            <field name="formation_experience"/>
-                            <field name="savoir_faire"/>
-                            <field name="savoir_etre"/>
-                        </group>
-                        <group>
-                            <field name="type"/>
-                            <field name="horaires"/>
-                            <field name="remuneration"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
 
         <record id="act_form_recruitment" model="ir.actions.act_window">
             <field name="name">Formulaire de recrutement</field>
@@ -115,29 +66,5 @@
         </record>
 
         <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment" parent="hr_recruitment.menu_hr_job_position"/>
-
-        <!-- Action pour ouvrir la description du poste -->
-        <record id="act_open_description_poste" model="ir.actions.act_window">
-            <field name="name">Ouvrir la description de poste</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rh.formdesc</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_form_description_poste"/>
-        </record>
-
-         <!-- Liaison de l'action au bouton -->
-        <record id="button_open_description_poste" model="ir.ui.view">
-            <field name="name">rh.formentry.form.button</field>
-            <field name="model">rh.formentry</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-                        <!-- Bouton pour ouvrir la description du poste -->
-                        <button name="action_open_description_poste" string="Ouvrir la description de poste" type="action" class="oe_highlight"/>
-                    </header>
-                    <!-- Reste du formulaire -->
-                </form>
-            </field>
-        </record>
     </data>
 </odoo>

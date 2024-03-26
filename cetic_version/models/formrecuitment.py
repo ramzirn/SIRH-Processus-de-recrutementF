@@ -1,8 +1,6 @@
+from odoo import api, models, fields
 from datetime import datetime
 import re
-
-from odoo import api, models, fields
-
 from odoo.exceptions import ValidationError
 
 class FormRecruitment(models.Model):
@@ -33,33 +31,64 @@ class FormRecruitment(models.Model):
     budget=fields.Float(required=True)
     intitule=fields.Many2one('hr.job', string='Intitulé du poste', required=True)
     echeanceContrat = fields.Date(string='Échéance du contrat')
-
-    xp=fields.Float(string='Annees dexperience',required=True)
+    xp=fields.Integer(string='Annees dexperience',required=True)
     lieu=fields.Char(string='Lieu de travail ', required=True)
     Deplacement=fields.Char(string='deplacement a prévoir')
     autre=fields.Char(string="Autres aspects a considerer")
     dateEntree=fields.Date()
 
-    @api.multi
-    def do_nothing(self):
-        pass
+    # description_id = fields.Many2one('rh.formdesc', string='Description du poste')
+    description_id = fields.One2many('rh.formentry')
+
+    @api.model
+    def create(self, vals):
+        recruitment = super(FormRecruitment, self).create(vals)
+
+        description_id = vals.get('description_id')
+
+        if description_id:
+            recruitment.description_id = description_id
+
+        return recruitment
 
     @api.multi
-    def action_open_description_poste(self):
+    def fill_description(self):
+        # Ajoutez ici votre logique pour ouvrir la vue de description
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Ouvrir la description de poste',
             'res_model': 'rh.formdesc',
             'view_mode': 'form',
-            'view_id': False,
-            'target': 'new',
+            'target': 'popup',
+            'res_id': self.description_id.id,  # ID de la description liée à cet enregistrement
+        }
+
+    @api.multi
+    def show_description(self):
+        return {
+            'name': 'Description du poste',
+            'type': 'ir.actions.act_window',
+            'res_model': 'rh.formdesc',
+            'view_mode': 'readonly',  # Afficher dans une vue de formulaire
+            'target': 'popup',  # Ouvrir dans une nouvelle fenêtre popup
+            'res_id': self.description_id.id,  # ID de la description liée à cet enregistrement
         }
 
 class Descriptionposte(models.Model):
     _name = 'rh.formdesc'
 
-    intitule=fields.Many2one('rh.formentry', string='Intitulé du poste', required=True)
-    descr = fields.Text(String='Description du poste', required=True)
+    intitule = fields.Many2one('hr.job', string='Intitulé du poste')
+    recruitment_id = fields.Many2one('rh.formentry', string='Recrutement')
+
+    @api.model
+    def default_get(self, fields):
+        res = super(Descriptionposte, self).default_get(fields)
+        recruitment_id = self.env.context.get('default_recruitment_id')
+        if recruitment_id:
+            previous_intitule = self.env['rh.formentry'].browse(recruitment_id).intitule.id
+            res['intitule'] = previous_intitule
+        return res
+
+    descr = fields.Text(string='Description du poste', required=True)
     niveau = fields.Selection([
         ('bac', 'Baccalauréat'),
         ('licence', 'Licence'),

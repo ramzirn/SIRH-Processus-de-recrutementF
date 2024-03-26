@@ -3,7 +3,7 @@
         <record id="view_form_recruitment_tree" model="ir.ui.view">
             <field name="name">rh.formentry.tree</field>
             <field name="model">rh.formentry</field>
-            <field name="type">tree</field> <!-- Ajout du champ type -->
+            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des recrutements">
                     <field name="motif"/>
@@ -22,7 +22,7 @@
         <record id="view_form_recruitment_form" model="ir.ui.view">
             <field name="name">rh.formentry.form</field>
             <field name="model">rh.formentry</field>
-            <field name="type">form</field> <!-- Ajout du champ type -->
+            <field name="type">form</field>
             <field name="arch" type="xml">
                 <header>
                         <button name="action_open_description_poste" string="Ajouter description" type="object" class="oe_highlight"/>
