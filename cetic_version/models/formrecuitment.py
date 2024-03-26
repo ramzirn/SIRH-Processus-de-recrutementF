@@ -10,7 +10,7 @@ class FormRecruitment(models.Model):
         ('a', 'Recrutement interne '),
         ('b', 'remplacement temporaire '),
         ('c', 'retraite '),
-    ], string='Motif de recrutement',required=True)
+    ], string='Motif de recrutement', required=True)
 
     pourex = fields.Integer(string='Pour lexercice', required=True, default=datetime.now().year)
 
@@ -36,9 +36,6 @@ class FormRecruitment(models.Model):
     Deplacement=fields.Char(string='deplacement a prévoir')
     autre=fields.Char(string="Autres aspects a considerer")
     dateEntree=fields.Date()
-
-    # description_id = fields.Many2one('rh.formdesc', string='Description du poste')
-    description_id = fields.One2many('rh.formentry')
 
     @api.model
     def create(self, vals):
@@ -73,11 +70,12 @@ class FormRecruitment(models.Model):
             'res_id': self.description_id.id,  # ID de la description liée à cet enregistrement
         }
 
+    # description_id = fields.One2one('rh.formdesc', string='Description du poste')
+
 class Descriptionposte(models.Model):
     _name = 'rh.formdesc'
 
     intitule = fields.Many2one('hr.job', string='Intitulé du poste')
-    recruitment_id = fields.Many2one('rh.formentry', string='Recrutement')
 
     @api.model
     def default_get(self, fields):
@@ -106,4 +104,6 @@ class Descriptionposte(models.Model):
     ], default='CDI', required=True)
     # temps =
     horaires = fields.Many2one('resource.calendar' , string='Horaires de travail', required=True)
-    remuneration = fields.Float(string='Remuniration...' ,required=True)
+    remuneration = fields.Float(string='Remuniration...' ,required=True),
+
+    # recruitment_id = fields.Many2one('rh.formentry', string='Recrutement'),

@@ -4,7 +4,7 @@
 <!--        <record id="act_open_description_poste" model="ir.actions.act_window">-->
 <!--            <field name="name">Ouvrir la description de poste</field>-->
 <!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <field name="res_model">rh.formdesc</field>-->
+<!--            <firecrutementseld name="res_model">rh.formdesc</firecrutementseld>-->
 <!--            <field name="view_mode">form</field>-->
 <!--            <field name="view_id" ref="view_form_description_poste"/>-->
 <!--        </record>-->

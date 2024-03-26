@@ -16,15 +16,15 @@ Shows you a list of applications features to install from.
     ],
     'data': [
         'views/formrecruitment.xml',
-        'views/Annonce.xml',
+        'views/annonce.xml',
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',
         'views/grilleCandidature.xml',
-        'views/Annonce.xml',
+        'views/annonce.xml',
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',
         'reports/reports.xml',
-        'reports/rapport_candid.xml',
+        'reports/fiche_pre_selection.xml',
         'reports/questionnaire.xml',
 
 

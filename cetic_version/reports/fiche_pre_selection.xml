@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <template id="fiche_pre_selection_temp">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="margin-left: 20px; margin-right: 20px;">
+                        <h1 style="text-align: center;">Fiche de présélection de candidats</h1>
+                        <br/><br/>
+                        <p style="text-align: center;"><b>FP Etabli par : </b>......................................
+<b>Lieu</b> : ..............................
+<b>Date : </b>.............</p>
+                        <p>I- Informations sur le candidat :</p>
+                        <table style="border-collapse: collapse; margin: 20px auto;">
+                            <colgroup>
+                                <col style="width: 40%;"/>
+                                <col style="width: 60%;"/>
+                            </colgroup>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Nom et prénom du candidat : </td>
+                                <td style="border: 1px solid black; padding: 10px; text-align: center;">....................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Age : </td>
+                                <td style="border: 1px solid black; padding: 10px; text-align: center;">....................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Lieu de Résidence : </td>
+                                <td style="border: 1px solid black; padding: 10px; text-align: center;">....................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Profil : </td>
+                                <td style="border: 1px solid black; padding: 10px; text-align: center">....................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Expérience :</td>
+                                <td style="border: 1px solid black; padding: 10px; text-align: center">....................................................</td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+        </template>
+    </data>
+</odoo>

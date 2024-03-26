@@ -2,7 +2,7 @@
 
 <odoo>
     <data>
-        <template id="hr_applicant_report_template">
+        <template id="quest_temp">
             <t t-call="web.basic_layout">
                 <t t-foreach="docs" t-as="applicant">
                     <t t-call="web.external_layout">
