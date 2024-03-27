@@ -1,7 +1,7 @@
 from django import forms
-from .models import ficheCandidat
+from .models import Employee
 
-class CandidatForm(forms.ModelForm):
+class EmployeeForm(forms.ModelForm):
     class Meta:
-        model = ficheCandidat
-        fields = '__all__'  
+        model = Employee
+        fields = '__all__'

@@ -212,6 +212,32 @@
             </div>
         </div>
     </footer>
+<!-- structure pop up -->  
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Renseignements</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <!-- Balise de formulaire Django -->
+              <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit" class="btn btn-primary">Enregistrer</button>
+              </form>
+              <!-- Fin du formulaire -->
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          </div>
+      </div>
+  </div>
+</div> 
+
 
     
     <!-- jQuery -->
@@ -237,6 +263,17 @@
 
 <!-- Global Init -->
 <script src="{% static 'js/custom.js' %}"></script>
+
+<script>
+  $(document).ready(function(){
+      $("#open-popup").click(function(){
+          $("#exampleModal").modal('show');
+      });
+  });
+</script>
+<script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 
   </body>
 </html>
