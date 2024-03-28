@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'monapp',
+    
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,15 @@ STATIC_ROOT = BASE_DIR / 'static'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'SIRH_recrutement',
+        'USER': 'odoo',
+        'PASSWORD': 'odoo',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}

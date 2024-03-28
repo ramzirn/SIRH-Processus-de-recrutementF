@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import  *
+from projetPFE import settings
 # Create your views here.
 
 
@@ -29,7 +30,7 @@ def testimonials(request):
 
 def index(request):
     return render(request, 'index.html')
-
+""" 
 def job_details(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST)
@@ -39,7 +40,21 @@ def job_details(request):
             return redirect('job_details')
     else:
         form = EmployeeForm()
+    return render(request, 'job-details.html', {'form': form}) """
+
+
+def job_details(request):
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save(commit=False)  # Ne pas enregistrer temporairement dans la base de données
+            # Vous pouvez effectuer d'autres opérations avec les données du formulaire ici si nécessaire
+            form.save()  # Maintenant, enregistrez dans la base de données
+            return redirect('job_details')  # Redirection vers la même page après avoir ajouté les données
+    else:
+        form = EmployeeForm()
     return render(request, 'job-details.html', {'form': form})
+
 
 
 def team(request):
@@ -65,3 +80,46 @@ def add_employee(request):
     else:
         form = EmployeeForm()
     return render(request, 'add_employee.html', {'form': form})
+
+
+""" import xmlrpc.client
+from django.shortcuts import render, redirect
+from .forms import EmployeeForm
+
+def job_details(request):
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            # Sauvegarder dans Django
+            form.save()
+            
+            # Connexion à l'API XML-RPC Odoo
+            ODOO_URL = 'http://localhost:8069'
+            ODOO_DB = 'SIRH_recrutement'
+            ODOO_USER = 'odoo'
+            ODOO_PASS = 'odoo'
+            
+            common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(ODOO_URL))
+            uid = common.authenticate(ODOO_DB, ODOO_USER, ODOO_PASS, {})
+            models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(ODOO_URL))
+            
+            # Création d'un nouvel enregistrement dans Odoo
+            employee_data = form.cleaned_data
+            new_employee_id = models.execute_kw(ODOO_DB, uid, ODOO_PASS,
+                'candidat', 'create', [{
+                    'nom': employee_data['nom'],
+                    'prenom': employee_data['prenom'],
+
+                    # Ajoutez d'autres champs selon votre modèle Odoo
+                }]
+            )
+            
+            # Rediriger vers la même page ou une autre page après avoir ajouté l'employé
+            return redirect('job_details')
+    else:
+        form = EmployeeForm()
+    return render(request, 'job-details.html', {'form': form}) """
+
+
+
+
