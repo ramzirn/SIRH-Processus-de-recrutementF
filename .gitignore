@@ -1,5 +1,6 @@
-projetPFE/monapp/__pycache__
+projetPFE/monapp/__pycache__/
 cetic_version/models/__pycache__/
+cetic_version/reports/__pycache__/
 my_recrutements/models/__pycache__/
 projetPFE/projetPFE/__pycache__/
 projetPFE/monapp/migrations/__pycache__/
