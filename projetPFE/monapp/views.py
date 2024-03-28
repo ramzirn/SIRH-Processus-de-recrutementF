@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .forms import  *
 from projetPFE import settings
 # Create your views here.
@@ -50,7 +50,7 @@ def job_details(request):
             form.save(commit=False)  # Ne pas enregistrer temporairement dans la base de données
             # Vous pouvez effectuer d'autres opérations avec les données du formulaire ici si nécessaire
             form.save()  # Maintenant, enregistrez dans la base de données
-            return redirect('job_details')  # Redirection vers la même page après avoir ajouté les données
+            return redirect('index')  # Redirection vers la même page après avoir ajouté les données
     else:
         form = EmployeeForm()
     return render(request, 'job-details.html', {'form': form})
