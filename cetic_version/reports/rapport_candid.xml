@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="candid">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <t t-esc='di.nom'/>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

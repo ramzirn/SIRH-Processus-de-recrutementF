@@ -168,6 +168,7 @@ from datetime import datetime
 from odoo.exceptions import ValidationError
 
 
+<<<<<<< HEAD
 def est_annee(val):
     # Vérifier si val est un entier
     if isinstance(val, int):
@@ -177,14 +178,22 @@ def est_annee(val):
     return False
 
 
+=======
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
 class FormRecruitment(models.Model):
     _name = 'rh.formentry'
 
     descriptions_ids = fields.One2many('rh.formdesc', 'recruitment_id', string='Descriptions')
     motif = fields.Selection([
+<<<<<<< HEAD
         ('a', 'Recrutement interne'),
         ('b', 'Remplacement temporaire'),
         ('c', 'Retraite'),
+=======
+        ('a', 'Recrutement interne '),
+        ('b', 'remplacement temporaire '),
+        ('c', 'retraite '),
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
     ], string='Motif de recrutement', required=True)
 
     pourex = fields.Integer(string='Pour l\'exercice', required=True, default=datetime.now().year)
@@ -195,6 +204,17 @@ class FormRecruitment(models.Model):
             if not est_annee(record.pourex):
                 raise ValidationError("Pourex must be an integer between 1900 and 2100")
 
+<<<<<<< HEAD
+=======
+    def est_annee(self, val):
+        # Vérifier si val est un entier
+        if isinstance(val, int):
+            # Vérifier si val est dans une plage d'années valide
+            if int(datetime.today().year) <= val:  # Par exemple, de 1900 à 2100
+                return True
+        return False
+
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
     budget = fields.Float(required=True)
     intitule = fields.Many2one('hr.job', string='Intitulé du poste', required=True)
     echeanceContrat = fields.Date(string='Échéance du contrat')
@@ -244,8 +264,16 @@ class FormRecruitment(models.Model):
             # Ajoutez d'autres champs de la description ici
         })
 
+<<<<<<< HEAD
         # Mettre à jour l'ID de la description dans le formulaire
         form.descriptions_ids = [(4, description.id)]
+=======
+    xp = fields.Float(string='Annees dexperience', required=True)
+    lieu = fields.Char(string='Lieu de travail ', required=True)
+    Deplacement = fields.Char(string='deplacement a prévoir')
+    autre = fields.Char(string="Autres aspects a considerer")
+    dateEntree = fields.Date()
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
 
         return form
 
@@ -263,6 +291,7 @@ class FormRecruitment(models.Model):
             'context': {'default_recruitment_id': self.id}
         }
 
+<<<<<<< HEAD
     def open_description(self):
         if self.descriptions_ids:
             return {
@@ -276,12 +305,19 @@ class FormRecruitment(models.Model):
         else:
             return {'warning': 'La description n\'est pas disponible pour cet enregistrement.'}
 
+=======
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
 
 class Descriptionposte(models.Model):
     _name = 'rh.formdesc'
 
+<<<<<<< HEAD
     intitule = fields.Many2one('hr.job', string='Intitulé du poste')
     descr = fields.Text(string='Description du poste', required=True)
+=======
+    intitule = fields.Many2one('rh.formentry', string='Intitulé du poste', required=True)
+    descr = fields.Text(String='Description du poste', required=True)
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
     niveau = fields.Selection([
         ('bac', 'Baccalauréat'),
         ('licence', 'Licence'),
@@ -297,6 +333,7 @@ class Descriptionposte(models.Model):
         ('CDI', 'CDI'),
         ('CDD', 'CDD')
     ], default='CDI', required=True)
+<<<<<<< HEAD
     horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=True)
     remuneration = fields.Float(string='Rémunération', required=True)
 
@@ -310,3 +347,8 @@ class Descriptionposte(models.Model):
             form = self.env['rh.formentry'].browse(vals['recruitment_id'])
             form.descriptions_ids = [(4, description.id)]
         return description
+=======
+    # temps =
+    horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=True)
+    remuneration = fields.Float(string='Remuniration...', required=True)
+>>>>>>> 685191511935363faf5b529be9df8ce96febfbcc

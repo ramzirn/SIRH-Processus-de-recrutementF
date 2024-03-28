@@ -1,75 +1,69 @@
 <odoo>
-<record id="my_custom_hr_applicant_form" model="ir.ui.view">
-    <field name="name">hr.applicant.form.inherited</field>
-    <field name="model">hr.applicant</field>
-    <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
-    <field name="arch" type="xml">
-        <data>
+    <record id="my_custom_hr_applicant_form" model="ir.ui.view">
+        <field name="name">hr.applicant.form.inherited</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+        <field name="arch" type="xml">
+            <data>
 
 
-
-
-                    <xpath expr="//field[@name='name']" position="before">
-                    <field name="candidat_obj" string="Candidat"  options="{'no_create': True}"/>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="candidat_obj" string="Candidat" options="{'no_create': True}"/>
 
                 </xpath>
 
 
-
-             <xpath expr="//field[@name='partner_name']" position="after">
+                <xpath expr="//field[@name='partner_name']" position="after">
                     <field name="datedepot" string="Date de depot de dossier" options="{'no_create': True}"/>
                 </xpath>
-                 <xpath expr="//field[@name='categ_ids']" position="after">
-                    <field name="conditionphysique"  options="{'no_create': True}"/>
+                <xpath expr="//field[@name='categ_ids']" position="after">
+                    <field name="conditionphysique" options="{'no_create': True}"/>
                 </xpath>
 
-                 <xpath expr="//field[@name='department_id']" position="after">
+                <xpath expr="//field[@name='department_id']" position="after">
                     <field name="structure" string="Structure" options="{'no_create': True}"/>
                 </xpath>
 
-              <xpath expr="//field[@name='structure']" position="after">
+                <xpath expr="//field[@name='structure']" position="after">
                     <field name="unite" string="Unité" options="{'no_create': True}"/>
                 </xpath>
 
 
-
-
-
-             <field name="name" position="attributes">
+                <field name="name" position="attributes">
                     <attribute name="invisible">0</attribute>
-                  <attribute name="required">False</attribute>
-                 <!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute>
+                    <!-- Rendre le champ invisible -->
                 </field>
 
-                     <field name="partner_name" position="attributes">
+                <field name="partner_name" position="attributes">
                     <attribute name="invisible">1</attribute>
-                         <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
-                   <field name="partner_id" position="attributes">
+                <field name="partner_id" position="attributes">
                     <attribute name="invisible">1</attribute>
-                       <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
                 <field name="partner_mobile" position="attributes">
                     <attribute name="invisible">1</attribute>
                     <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
-              <field name="partner_phone" position="attributes">
+                <field name="partner_phone" position="attributes">
                     <attribute name="invisible">1</attribute>
-                  <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
 
-                 <!-- Rendre le c hamp invisible -->
+                    <!-- Rendre le c hamp invisible -->
                 </field>
                 <field name="type_id" position="attributes">
                     <attribute name="invisible">1</attribute>
                     <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
-                   <field name="email_from" position="attributes">
+                <field name="email_from" position="attributes">
                     <attribute name="invisible">1</attribute>
-                       <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
-                   <field name="categ_ids" position="attributes">
+                <field name="categ_ids" position="attributes">
                     <attribute name="invisible">1</attribute>
-                       <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
                 </field>
                 <field name="user_id" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -94,10 +88,9 @@
                 </field>
 
 
-
-        </data>
-    </field>
-</record>
+            </data>
+        </field>
+    </record>
     <record id="action_my_custom_action" model="ir.actions.act_window">
         <field name="name">Custom Action</field>
         <field name="res_model">hr.applicant</field>
@@ -107,7 +100,8 @@
     </record>
 
 
-    <menuitem id="menutest" name="candidat" parent="hr_recruitment.menu_hr_recruitment_root" action="action_my_custom_action"/>
+    <menuitem id="menutest" name="candidat" parent="hr_recruitment.menu_hr_recruitment_root"
+              action="action_my_custom_action"/>
 
 
 </odoo>

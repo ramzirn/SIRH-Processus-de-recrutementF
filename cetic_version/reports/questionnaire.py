@@ -1,5 +1,6 @@
 from odoo import models
 
+
 class HrApplicantReport(models.AbstractModel):
     _name = 'report.cetic_version.quest_temp'
 

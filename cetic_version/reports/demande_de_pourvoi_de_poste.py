@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 
+
 class PourvoiPosteReport(models.AbstractModel):
     _name = 'report.cetic_version.dem_pourvoi_temp'
 

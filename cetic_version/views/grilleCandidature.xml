@@ -1,27 +1,27 @@
 <odoo>
     <data>
-<!--        <record id="grillecandidature" model="ir.ui.view">-->
-<!--            <field name="name">grillecandidature</field>-->
-<!--            <field name="model">grillecandidature</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <page string="Grille de Candidature">-->
-<!--                    <field></field>-->
-<!--                    <field></field>-->
-<!--                    <field></field>-->
-<!--                    <field></field>-->
-<!--                </page>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!--        <record id="grillecandidature" model="ir.ui.view">-->
+        <!--            <field name="name">grillecandidature</field>-->
+        <!--            <field name="model">grillecandidature</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <page string="Grille de Candidature">-->
+        <!--                    <field></field>-->
+        <!--                    <field></field>-->
+        <!--                    <field></field>-->
+        <!--                    <field></field>-->
+        <!--                </page>-->
+        <!--            </field>-->
+        <!--        </record>-->
 
-<!--        <record id="action_grillecandidature" model="ir.actions.act_window">-->
-<!--            <field name="name">Analyse des candidatures</field>-->
-<!--            <field name="res_model">grillecandidature</field>-->
-<!--            <field name="view_mode">view</field>-->
-<!--            <field name="view_id" ref="grillecandidature_view"/>-->
-<!--            <field name="target">current</field> &lt;!&ndash; Ou 'new', selon vos besoins &ndash;&gt;-->
-<!--        </record>-->
+        <!--        <record id="action_grillecandidature" model="ir.actions.act_window">-->
+        <!--            <field name="name">Analyse des candidatures</field>-->
+        <!--            <field name="res_model">grillecandidature</field>-->
+        <!--            <field name="view_mode">view</field>-->
+        <!--            <field name="view_id" ref="grillecandidature_view"/>-->
+        <!--            <field name="target">current</field> &lt;!&ndash; Ou 'new', selon vos besoins &ndash;&gt;-->
+        <!--        </record>-->
 
-<!--        <menuitem name="Grille Candidature" id="id_grilleCandidature" action="action_grillecandidature" parent="hr_recruitment.menu_hr_job_candidatures"/>-->
+        <!--        <menuitem name="Grille Candidature" id="id_grilleCandidature" action="action_grillecandidature" parent="hr_recruitment.menu_hr_job_candidatures"/>-->
 
     </data>
 </odoo>

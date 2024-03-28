@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 
+
 class CandidatureReport(models.AbstractModel):
     _name = 'report.cetic_version.fiche_pre_selection_e_temp'
 
@@ -11,4 +12,3 @@ class CandidatureReport(models.AbstractModel):
         }
 
         return report_data
-
