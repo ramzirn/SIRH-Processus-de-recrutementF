@@ -28,3 +28,19 @@ class Employee(models.Model):
 
     class Meta:
         db_table = 'candidat'  
+
+
+
+class Annonce(models.Model):
+    approche = models.CharField(max_length=255, verbose_name='Approche')
+    contenu = models.TextField(verbose_name='Contenu')
+    descriptif_societe = models.TextField(verbose_name='Descriptif de la société')
+    description_poste = models.TextField(verbose_name='Description du poste')
+    profil_recherche = models.TextField(verbose_name='Profil recherché')
+    modalite_reponse = models.TextField(verbose_name='Modalité de réponse')
+
+    class Meta:
+        db_table = 'annonce'  # Nom de la table dans la base de données
+
+    def __str__(self):
+        return self.approche  # Champ utilisé pour représenter l'objet Annonce dans l'administration Django

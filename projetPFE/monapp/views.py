@@ -63,9 +63,9 @@ def team(request):
 def terms(request):
     return render(request, 'terms.html')
 
-def jobs(request):
+""" def jobs(request):
     return render(request, 'jobs.html')
-
+ """
 
 def candidatForm(request):
     return render (request,'candidateForm.html')
@@ -122,4 +122,11 @@ def job_details(request):
 
 
 
+
+from django.shortcuts import render
+from .models import Annonce
+
+def jobs(request):
+    annonces = Annonce.objects.all()  # Récupère toutes les annonces depuis la base de données
+    return render(request, 'jobs.html', {'annonces': annonces})
 
