@@ -1,18 +1,17 @@
 <odoo>
     <data>
-
 <!--        <record id="act_open_description_poste" model="ir.actions.act_window">-->
 <!--            <field name="name">Ouvrir la description de poste</field>-->
 <!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <firecrutementseld name="res_model">rh.formdesc</firecrutementseld>-->
+<!--            <field name="res_model">rh.formdesc</field>-->
 <!--            <field name="view_mode">form</field>-->
 <!--            <field name="view_id" ref="view_form_description_poste"/>-->
 <!--        </record>-->
 
-<!--        Liste des recrutements-->
+        <!--                Liste des recrutements-->
         <record id="view_form_recruitment_tree" model="ir.ui.view">
-            <field name="name">rh.formentry.tree</field>
-            <field name="model">rh.formentry</field>
+            <field name="name">rh.form.tree</field>
+            <field name="model">rh.form</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des recrutements">
@@ -30,13 +29,9 @@
             </field>
         </record>
 
-<<<<<<< HEAD
-=======
-        <!--        test-->
-
         <record id="view_form_description_poste" model="ir.ui.view">
-            <field name="name">rh.formdesc.form</field>
-            <field name="model">rh.formdesc</field>
+            <field name="name">rh.desc.form</field>
+            <field name="model">rh.desc</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -60,23 +55,13 @@
             </field>
         </record>
 
->>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
-
-<!--        Formulaire de recrutement-->
+        <!--        Formulaire de recrutement-->
         <record id="view_form_recruitment_form" model="ir.ui.view">
-            <field name="name">rh.formentry.form</field>
-            <field name="model">rh.formentry</field>
+            <field name="name">rh.forme.form</field>
+            <field name="model">rh.form</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-<<<<<<< HEAD
-                <form >
-=======
-                <header>
-                    <button name="action_open_description_poste" string="Ajouter description" type="object"
-                            class="oe_highlight"/>
-                </header>
                 <form>
->>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
                     <sheet>
                         <group>
                             <field name="motif"/>
@@ -99,41 +84,36 @@
         <record id="act_form_recruitment" model="ir.actions.act_window">
             <field name="name">Formulaire de recrutement</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rh.formentry</field>
+            <field name="res_model">rh.form</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{}</field>
         </record>
-
-<<<<<<< HEAD
         <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment" parent="hr_recruitment.menu_hr_job_position"/>
-=======
-        <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment"
-                  parent="hr_recruitment.menu_hr_job_position"/>
 
         <!-- Action pour ouvrir la description du poste -->
-        <record id="act_open_description_poste" model="ir.actions.act_window">
-            <field name="name">Ouvrir la description de poste</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rh.formdesc</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_form_description_poste"/>
-        </record>
+        <!--        <record id="act_open_description_poste" model="ir.actions.act_window">-->
+        <!--            <field name="name">Ouvrir la description de poste</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">rh.formdesc</field>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="view_id" ref="view_form_description_poste"/>-->
+        <!--        </record>-->
 
         <!-- Liaison de l'action au bouton -->
-        <record id="button_open_description_poste" model="ir.ui.view">
-            <field name="name">rh.formentry.form.button</field>
-            <field name="model">rh.formentry</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-                        <!-- Bouton pour ouvrir la description du poste -->
-                        <button name="action_open_description_poste" string="Ouvrir la description de poste"
-                                type="action" class="oe_highlight"/>
-                    </header>
-                    <!-- Reste du formulaire -->
-                </form>
-            </field>
-        </record>
->>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
+        <!--        <record id="button_open_description_poste" model="ir.ui.view">-->
+        <!--            <field name="name">rh.formentry.form.button</field>-->
+        <!--            <field name="model">rh.formentry</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form>-->
+        <!--                    <header>-->
+        <!--                        &lt;!&ndash; Bouton pour ouvrir la description du poste &ndash;&gt;-->
+        <!--                        <button name="action_open_description_poste" string="Ouvrir la description de poste"-->
+        <!--                                type="action" class="oe_highlight"/>-->
+        <!--                    </header>-->
+        <!--                    &lt;!&ndash; Reste du formulaire &ndash;&gt;-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
     </data>
 </odoo>
+
