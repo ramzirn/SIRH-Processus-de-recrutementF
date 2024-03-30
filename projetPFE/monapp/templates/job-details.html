@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}">
+
    <!-- import icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -215,7 +217,7 @@
         </div>
     </footer>
 <!-- structure pop up -->  
- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -228,7 +230,65 @@
               <!-- Balise de formulaire Django -->
               <form method="post">
                   {% csrf_token %}
-                  {{ form.as_p }}
+                  <div class="row">
+                      <div class="col-md-6">
+                          <!-- Première moitié du formulaire -->
+                          <div class="form-group">
+                              <label for="id_sexe">Sexe</label>
+                              {{ form.sexe }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_nom">Nom</label>
+                              {{ form.nom }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_prenom">Prénom</label>
+                              {{ form.prenom }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_date_naissance">Date de Naissance</label>
+                              {{ form.date_naissance }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_lieu_naissance">Lieu de Naissance</label>
+                              {{ form.lieu_naissance }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_adresse">Adresse</label>
+                              {{ form.adresse }}
+                          </div>
+                         
+                      </div>
+                      <div class="col-md-6">
+
+                        <div class="form-group">
+                          <label for="id_mobile">Mobile</label>
+                          {{ form.mobile }}
+                      </div>
+                      <div class="form-group">
+                          <label for="id_telephone">Téléphone</label>
+                          {{ form.telephone }}
+                      </div>
+                      <div class="form-group">
+                          <label for="id_email">Email</label>
+                          {{ form.email }}
+                      </div>
+                          <!-- Deuxième moitié du formulaire -->
+                          <div class="form-group">
+                              <label for="id_situation_familiale">Situation Familiale</label>
+                              {{ form.situation_familiale }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_diplome_id">ID du Diplôme</label>
+                              {{ form.diplome_id }}
+                          </div>
+                          <div class="form-group">
+                              <label for="id_specialite">Spécialité</label>
+                              {{ form.specialite }}
+                          </div>
+                       
+                      </div>
+                  </div>
                   <button type="submit" class="btn btn-primary">Enregistrer</button>
               </form>
               <!-- Fin du formulaire -->
@@ -238,7 +298,11 @@
           </div>
       </div>
   </div>
-</div> 
+</div>
+
+
+
+
 
 
     

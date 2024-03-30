@@ -19,7 +19,7 @@ class Employee(models.Model):
     date_naissance = models.DateField(verbose_name='Date de Naissance', null=True, blank=True)
     lieu_naissance = models.CharField(max_length=100, verbose_name='Lieu de Naissance', null=True, blank=True)
     situation_familiale = models.CharField(choices=SITUATION_CHOICES, max_length=10, verbose_name='Situation Familiale', null=True, blank=True)
-    adresse = models.TextField(verbose_name='Adresse', null=True, blank=True)
+    adresse = models.CharField(verbose_name='Adresse', null=True, blank=True , max_length=1000)
     mobile = models.CharField(max_length=20, verbose_name='Mobile', null=True, blank=True)
     telephone = models.CharField(max_length=20, verbose_name='Téléphone', null=True, blank=True)
     email = models.EmailField(verbose_name='Email', null=True, blank=True)
