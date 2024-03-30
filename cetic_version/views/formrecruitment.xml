@@ -59,7 +59,7 @@
             </field>
         </record>
 
->>>>>>> 685191511935363faf5b529be9df8ce96febfbcc
+
 
 <!--        Formulaire de recrutement-->
         <record id="view_form_recruitment_form" model="ir.ui.view">
