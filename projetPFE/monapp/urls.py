@@ -14,4 +14,5 @@ urlpatterns = [
     path('terms/', views.terms, name='terms'),
     path('jobs/', views.jobs, name='jobs'),
     path('candidatForm/',views.candidatForm , name='candidatForm'),
+    path('job_details/<int:id>/', views.job_details, name='job_details'),
 ]

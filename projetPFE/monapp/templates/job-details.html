@@ -147,25 +147,56 @@
                   <article id='tabs-1'>
                     <h4>Job Description</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eum expedita nobis cum vitae totam voluptate temporibus nostrum, repellendus accusantium.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo hic quis quo tempora, totam non vero velit. Inventore, obcaecati placeat perspiciatis neque enim laudantium. Sit eaque, aliquid et nisi illo.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nam placeat ut cumque ipsa iste, commodi omnis aperiam perferendis incidunt. Provident doloremque, quia labore eius adipisci asperiores voluptatum nisi porro corporis ex explicabo magnam eligendi, autem quae, voluptate et molestiae?</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae soluta architecto modi. Et ullam ipsam, tempore sequi nesciunt dignissimos animi odio eaque illum eligendi pariatur. Porro delectus a rem rerum ex similique fugit dolorem fugiat libero sint aliquam velit, eligendi adipisci fuga assumenda, dolorum, deserunt ea inventore quis voluptas accusantium omnis iure quia temporibus. Accusamus, adipisci facere ullam ea amet.</p>
-                  </article>
-
+                    
+                    
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <ul>
+                                <li><strong>Intitulé du poste:</strong> {{ description.intitule }}</li>
+                                <li><strong>Description du poste:</strong> {{ description.descr }}</li>
+                                <li><strong>Niveau d'étude:</strong> {{ description.get_niveau_display }}</li>
+                                <li><strong>Diplôme:</strong> {{ description.get_diplome_display }}</li>
+                                <li><strong>Formation:</strong> {{ description.get_formation_display }}</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1;">
+                            <ul>
+                                <li><strong>Formation liée à l'expérience du poste:</strong> {{ description.get_formation_experience_display }}</li>
+                                <li><strong>Savoir-faire:</strong> {{ description.savoir_faire }}</li>
+                                <li><strong>Savoir-être:</strong> {{ description.savoir_etre }}</li>
+                                <li><strong>Type de contrat:</strong> {{ description.get_type_display }}</li>
+                                <li><strong>Horaires de travail:</strong> {{ description.horaires }}</li>
+                                <li><strong>Rémunération:</strong> {{ description.remuneration }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+</article>
                   <article id='tabs-2'>
                     <h4>About Employer</h4>
 
-                    <p class="lead"> <i class="fa fa-map-marker"></i> London </p>
+                    <p class="lead"> <i class="fa fa-map-marker"></i> algiers </p>
                     
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia doloremque sit, enim sint odio corporis illum perferendis, unde repellendus aut dolore doloribus minima qui ullam vel possimus magnam ipsa deleniti.</p> 
-                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ducimus ab numquam magnam aliquid, odit provident consectetur corporis eius blanditiis alias nulla commodi qui voluptatibus laudantium quaerat tempore possimus esse nam sed accusantium inventore? Sapiente minima dicta sed quia sunt?</p>
-                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum qui, corrupti consequuntur. Officia consectetur error amet debitis esse minus quasi, dicta suscipit tempora, natus, vitae voluptatem quae libero. Sunt nulla culpa impedit! Aliquid cupiditate, impedit reiciendis dolores, illo adipisci, omnis dolor distinctio voluptas expedita maxime officiis maiores cumque sequi quaerat culpa blanditiis. Quia tenetur distinctio rem, quibusdam officiis voluptatum neque!</p>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <ul>
+                                <li><strong>Motif de recrut:</strong> {{ recrut.get_motif_display }}</li>
+                                <li><strong>Pour l'exercice:</strong> {{ recrut.pourex }}</li>
+                                <li><strong>Intitulé du poste:</strong> {{ recrut.intitule }}</li>
+                                <li><strong>Budget:</strong> {{ recrut.budget }}</li>
+                                <li><strong>Échéance du contrat:</strong> {{ recrut.echeanceContrat }}</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1;">
+                            <ul>
+                                <li><strong>Années d'expérience:</strong> {{ recrut.xp }}</li>
+                                <li><strong>Lieu de travail:</strong> {{ recrut.lieu }}</li>
+                                <li><strong>Déplacement à prévoir:</strong> {{ recrut.Deplacement }}</li>
+                                <li><strong>Autres aspects à considérer:</strong> {{ recrut.autre }}</li>
+                                <li><strong>Date d'entrée:</strong> {{ recrut.dateEntree }}</li>
+                            </ul>
+                        </div>
+                    </div>
                    </article>
 
                   <article id='tabs-3'>
@@ -303,7 +334,18 @@
 
 
 
-
+<style>
+    h2 {
+        color: blue; /* Couleur bleue pour les sous-titres */
+    }
+    ul {
+        list-style-type: none; /* Supprime les puces des listes */
+        padding-left: 0; /* Supprime le padding gauche par défaut */
+    }
+    li {
+        margin-bottom: 10px; /* Ajoute un espace entre chaque élément de la liste */
+    }
+</style>
 
     
     <!-- jQuery -->

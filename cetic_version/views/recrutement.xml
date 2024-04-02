@@ -1,9 +1,10 @@
 <odoo>
     <data>
         <!-- Liste des recrutements -->
+        <!--                Liste des recrutements-->
         <record id="view_form_recruitment_tree" model="ir.ui.view">
-            <field name="name">rh.form.tree</field>
-            <field name="model">rh.form</field>
+            <field name="name">sirh.form.tree</field>
+            <field name="model">sirh.form</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des recrutements">
@@ -16,18 +17,16 @@
                     <field name="lieu"/>
                     <field name="Deplacement"/>
                     <field name="dateEntree"/>
-                    <field name="annonce_id"/> <!-- Ajout de l'ID de l'annonce -->
                     <button name="show_description" string="Voir description" type="object" class="oe_highlight"/>
                     <button name="show_annonce" string="Voir annonce" type="object" class="oe_highlight"/>
-
                 </tree>
             </field>
         </record>
 
         <!-- Vue pour décrire le poste -->
         <record id="view_form_description_poste" model="ir.ui.view">
-            <field name="name">rh.desc.form</field>
-            <field name="model">rh.desc</field>
+            <field name="name">sirh.desc.form</field>
+            <field name="model">sirh.desc</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -51,16 +50,41 @@
             </field>
         </record>
 
+        <!--        <record id="view_form_description_poste" model="ir.ui.view">-->
+        <!--            <field name="name">rh.desc.form</field>-->
+        <!--            <field name="model">rh.desc</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form>-->
+        <!--                    <sheet>-->
+        <!--                        <group string="Décrire le poste:">-->
+        <!--                            <field name="intitule"/>-->
+        <!--                            <field name="descr"/>-->
+        <!--                            <field name="niveau"/>-->
+        <!--                            <field name="diplome"/>-->
+        <!--                            <field name="formation"/>-->
+        <!--                            <field name="formation_experience"/>-->
+        <!--                            <field name="savoir_faire"/>-->
+        <!--                            <field name="savoir_etre"/>-->
+        <!--                        </group>-->
+        <!--                        <group>-->
+        <!--                            <field name="type"/>-->
+        <!--                            <field name="horaires"/>-->
+        <!--                            <field name="remuneration"/>-->
+        <!--                        </group>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
         <!-- Formulaire de recrutement -->
         <record id="view_form_recruitment_form" model="ir.ui.view">
-            <field name="name">rh.forme.form</field>
-            <field name="model">rh.form</field>
+            <field name="name">sirh.forme.form</field>
+            <field name="model">sirh.form</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form>
-                    <header>
-                        <button name="action_open_description_poste" string="Ajouter description" type="object" class="oe_highlight"/>
-                    </header>
+
+
                     <sheet>
                         <group>
                             <field name="motif"/>
@@ -74,10 +98,11 @@
                             <field name="autre"/>
                             <field name="dateEntree"/>
                             <field name="annonce_id"/> <!-- Ajout de l'ID de l'annonce -->
-                            <button name="fill_description" string="Fill Description Form" type="object" class="btn btn-primary"/>
 
                             <button name="ajout_description" string="Ajouter une description" type="object" class="btn btn-primary" attrs="{'required': True}"/>
                             <button name="ajout_annonce" string="Ajouter une annonce" type="object" class="btn btn-primary"/>
+
+
                         </group>
                     </sheet>
                 </form>
@@ -86,8 +111,8 @@
 
         <!-- Action pour ouvrir la description du poste -->
         <record id="button_open_description_poste" model="ir.ui.view">
-            <field name="name">rh.form.form.button</field>
-            <field name="model">rh.form</field>
+            <field name="name">sirh.form.form.button</field>
+            <field name="model">sirh.form</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
@@ -99,16 +124,20 @@
         </record>
 
         <!-- Action pour le formulaire de recrutement -->
+
         <record id="act_form_recruitment" model="ir.actions.act_window">
             <field name="name">Formulaire de recrutement</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rh.form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="context">{}</field>
+            <field name="res_model">sirh.form</field>
+            <!--            <field name="view_mode">tree,form</field>-->
+            <!--            <field name="context">{}</field>-->
         </record>
 
         <!-- Menu pour le formulaire de recrutement -->
         <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment" parent="hr_recruitment.menu_hr_job_position"/>
 
+
+        <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment"
+                  parent="hr_recruitment.menu_hr_job_position"/>
     </data>
 </odoo>

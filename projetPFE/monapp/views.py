@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from .forms import  *
 from projetPFE import settings
+from .models import Recrutement , HRJob ,Description
 # Create your views here.
 
 
@@ -130,7 +131,11 @@ def jobs(request):
     annonces = Annonce.objects.all()  # Récupère toutes les annonces depuis la base de données
     return render(request, 'jobs.html', {'annonces': annonces})
 
-def job_details(request):
+def job_details(request , id):
+    recrutement = Recrutement.objects.get(id=id)
+    description = Description.objects.get(recruitment_id=id)
+    tt=recrutement.intitule
+    intitule=HRJob.objects.get(id=tt)
     if request.method == 'POST':
         form = EmployeeForm(request.POST)
         if form.is_valid():
@@ -167,4 +172,4 @@ def job_details(request):
     else:
         form = EmployeeForm()
 
-    return render(request, 'job-details.html', {'form': form})
+    return render(request, 'job-details.html', {'form': form , 'recrut': recrutement , 'intitule' : intitule ,'description' : description})
