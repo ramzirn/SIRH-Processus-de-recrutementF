@@ -22,32 +22,6 @@
             </field>
         </record>
 
-        <!--        <record id="view_form_description_poste" model="ir.ui.view">-->
-        <!--            <field name="name">rh.desc.form</field>-->
-        <!--            <field name="model">rh.desc</field>-->
-        <!--            <field name="arch" type="xml">-->
-        <!--                <form>-->
-        <!--                    <sheet>-->
-        <!--                        <group string="Décrire le poste:">-->
-        <!--                            <field name="intitule"/>-->
-        <!--                            <field name="descr"/>-->
-        <!--                            <field name="niveau"/>-->
-        <!--                            <field name="diplome"/>-->
-        <!--                            <field name="formation"/>-->
-        <!--                            <field name="formation_experience"/>-->
-        <!--                            <field name="savoir_faire"/>-->
-        <!--                            <field name="savoir_etre"/>-->
-        <!--                        </group>-->
-        <!--                        <group>-->
-        <!--                            <field name="type"/>-->
-        <!--                            <field name="horaires"/>-->
-        <!--                            <field name="remuneration"/>-->
-        <!--                        </group>-->
-        <!--                    </sheet>-->
-        <!--                </form>-->
-        <!--            </field>-->
-        <!--        </record>-->
-
         <!--        Formulaire de recrutement-->
         <record id="view_form_recruitment_form" model="ir.ui.view">
             <field name="name">sirh.forme.form</field>
@@ -67,10 +41,12 @@
                             <field name="Deplacement"/>
                             <field name="autre"/>
                             <field name="dateEntree"/>
-                            <button name="ajout_description" string="Ajouter une description" type="object"
-                                    class="btn btn-primary" attrs="{'required': True}"/>
-                            <button name="ajout_annonce" string="Ajouter une annonce" type="object"
-                                    class="btn btn-primary"/>
+                        </group>
+                        <group string="Description du poste:">
+                            <field name="desc_id"/>
+                        </group>
+                        <group string="Annonce">
+                            <field name="annonce_id"/>
                         </group>
                     </sheet>
                 </form>

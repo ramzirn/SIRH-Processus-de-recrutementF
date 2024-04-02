@@ -15,8 +15,9 @@ Shows you a list of applications features to install from.
         'hr_recruitment',
     ],
     'data': [
-        'views/formrecruitment.xml',
+        'views/recrutement.xml',
         'views/annonce.xml',
+        'views/description.xml',
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',
         'views/grilleCandidature.xml',
