@@ -73,13 +73,11 @@
                             <field name="Deplacement"/>
                             <field name="autre"/>
                             <field name="dateEntree"/>
-<<<<<<< HEAD
                             <field name="annonce_id"/> <!-- Ajout de l'ID de l'annonce -->
                             <button name="fill_description" string="Fill Description Form" type="object" class="btn btn-primary"/>
-=======
+
                             <button name="ajout_description" string="Ajouter une description" type="object" class="btn btn-primary" attrs="{'required': True}"/>
                             <button name="ajout_annonce" string="Ajouter une annonce" type="object" class="btn btn-primary"/>
->>>>>>> walid
                         </group>
                     </sheet>
                 </form>

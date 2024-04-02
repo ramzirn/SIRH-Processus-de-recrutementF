@@ -32,6 +32,7 @@ class Employee(models.Model):
 
 
 class Annonce(models.Model):
+    id = models.IntegerField(verbose_name='ID')
     approche = models.CharField(max_length=255, verbose_name='Approche')
     contenu = models.TextField(verbose_name='Contenu')
     descriptif_societe = models.TextField(verbose_name='Descriptif de la société')
