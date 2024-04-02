@@ -1,5 +1,5 @@
-<!--<odoo>-->
-<!--    <data>-->
+<odoo>
+    <data>
 <!--        &lt;!&ndash; Vue liste &ndash;&gt;-->
 <!--        <record id="view_candidate_tree" model="ir.ui.view">-->
 <!--            <field name="name">candidat.tree</field>-->
@@ -39,5 +39,5 @@
 <!--        &lt;!&ndash;        <menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"/>&ndash;&gt;-->
 
 
-<!--    </data>-->
-<!--</odoo>-->
+    </data>
+</odoo>

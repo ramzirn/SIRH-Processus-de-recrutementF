@@ -30,14 +30,14 @@
                             </p>
                             <p>3) Situation Familiale :
                                 <input type="checkbox" id="celibataire" name="situation_familiale"
-                                       value="Célibataire"></input>
+                                       value="Célibataire"> </input>
                                 <label for="celibataire">Célibataire</label>
-                                <input type="checkbox" id="marie" name="situation_familiale" value="Marié(e)"></input>
+                                <input type="checkbox" id="marie" name="situation_familiale" value="Marié(e)"> </input>
                                 <label for="marie">Marié(e)</label>
                                 <input type="checkbox" id="divorce" name="situation_familiale"
-                                       value="Divorcé(e)"></input>
+                                       value="Divorcé(e)"> </input>
                                 <label for="divorce">Divorcé(e)</label>
-                                <input type="checkbox" id="veuf" name="situation_familiale" value="Veuf(ve)"></input>
+                                <input type="checkbox" id="veuf" name="situation_familiale" value="Veuf(ve)"> </input>
                                 <label for="veuf">Veuf(ve)</label>
                             </p>
                             <p>4) Parcours scolaire :</p>
