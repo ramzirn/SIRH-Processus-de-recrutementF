@@ -249,8 +249,10 @@
                                     <img class="d-block w-100" src="{% static 'images/job-image-1-1200x600.jpg' %}" alt="First slide">                                </div>
                                 <div class="down-content">
                                     <span> {{ annonce.descriptif_societe }} </span>
-                
-                                    <h4>Description :{{ annonce.description_poste }}</h4>
+
+                                    <h4>Description :</h4>
+                                    <br>
+                                    <p>{{ annonce.contenu }}</p>
                 
                                     <p>Profil recherché : {{ annonce.profil_recherche }}</p>
                 
