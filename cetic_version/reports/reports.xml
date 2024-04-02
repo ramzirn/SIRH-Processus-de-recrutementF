@@ -1,24 +1,24 @@
 <odoo>
     <report
-            id = 'dem_porvoi_act'
-            string = 'Demande de Pourvoi de Poste'
-            model = 'r.formentry'
-            report_type = 'qweb-html'
-            name = 'cetic_version.dem_pourvoi_temp'
-            file = 'Demande de Pourvoi de Poste'/>
+            id='dem_porvoi_act'
+            string='Demande de Pourvoi de Poste'
+            model='r.formentry'
+            report_type='qweb-html'
+            name='cetic_version.dem_pourvoi_temp'
+            file='Demande de Pourvoi de Poste'/>
 
 
-<!--    changer le model-->
+    <!--    changer le model-->
     <report
-            id = 'fiche_pre_selection_act'
-            string = 'Fiche de présélection de candidats'
-            model = 'candidat'
-            report_type = 'qweb-html'
-            name = 'cetic_version.fiche_pre_selection_temp'
-            file = 'Fiche de présélection de candidats'/>
+            id='fiche_pre_selection_act'
+            string='Fiche de présélection de candidats'
+            model='candidat'
+            report_type='qweb-html'
+            name='cetic_version.fiche_pre_selection_temp'
+            file='Fiche de présélection de candidats'/>
 
     <report
-            id = "quest_act"
+            id="quest_act"
             model="hr.applicant"
             string="Applicant Report"
             report_type="qweb-html"

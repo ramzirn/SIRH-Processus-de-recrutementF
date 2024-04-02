@@ -1,66 +1,68 @@
 <odoo>
     <data>
-<!--        &lt;!&ndash; Vue liste &ndash;&gt;-->
-<!--        <record id="view_annonce_tree1" model="ir.ui.view">-->
-<!--            <field name="name">annonce.tree</field>-->
-<!--            <field name="model">annonce</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string="Liste des annonces">-->
-<!--                    <field name="approche"/>-->
-<!--                    <field name="contenu"/>-->
-<!--                    <field name="descriptif_societe"/>-->
-<!--                    <field name="description_poste"/>-->
-<!--                    <field name="profil_recherche"/>-->
-<!--                    <field name="modalite_reponse"/>-->
-<!--                    <field name="obligations"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!-- Vue liste -->
+        <record id="view_annonce_tree1" model="ir.ui.view">
+            <field name="name">sirh.annonce.tree</field>
+            <field name="model">sirh.annonce</field>
+            <field name="arch" type="xml">
+                <tree string="Liste des annonces">
+                    <field name="recruitment_id" string="Intitulé du poste"/>
+                    <field name="description_id" string="Description"/>
+                    <field name="contenu"/>
+                    <field name="approche"/>
+                    <field name="descriptif_societe"/>
+                    <field name="profil_recherche"/>
+                    <field name="modalite_reponse"/>
+                    <field name="obligations"/>
+                </tree>
+            </field>
+        </record>
 
-<!--        &lt;!&ndash; Vue formulaire &ndash;&gt;-->
-<!--        <record id="view_annonce_form" model="ir.ui.view">-->
-<!--            <field name="name">annonce.form</field>-->
-<!--            <field name="model">annonce</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <form string="Annonce">-->
-<!--                    <sheet>-->
-<!--                        <group>-->
-<!--                            <field name="approche"/>-->
-<!--                            <field name="contenu"/>-->
-<!--                            <field name="descriptif_societe"/>-->
-<!--                            <field name="description_poste"/>-->
-<!--                            <field name="profil_recherche"/>-->
-<!--                            <field name="modalite_reponse"/>-->
-<!--                            <field name="obligations"/>-->
-<!--                        </group>-->
-<!--                    </sheet>-->
-<!--                </form>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!--        &lt;!&ndash; Vue formulaire &ndash;&gt;-->
+        <!--        <record id="view_annonce_form" model="ir.ui.view">-->
+        <!--            <field name="name">annonce.form</field>-->
+        <!--            <field name="model">annonce</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form string="Annonce">-->
+        <!--                    <sheet>-->
+        <!--                        <group>-->
+        <!--                            <field name="approche"/>-->
+        <!--                            <field name="contenu"/>-->
+        <!--                            <field name="descriptif_societe"/>-->
+        <!--                            <field name="description_poste"/>-->
+        <!--                            <field name="profil_recherche"/>-->
+        <!--                            <field name="modalite_reponse"/>-->
+        <!--                            <field name="obligations"/>-->
+        <!--                        </group>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
 
-<!--        &lt;!&ndash; Action liste des annonces &ndash;&gt;-->
-<!--        <record id="action_annonce_list" model="ir.actions.act_window">-->
-<!--            <field name="name">Liste des Annonces</field>-->
-<!--            <field name="res_model">annonce</field>-->
-<!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <field name="view_mode">tree,form</field>-->
-<!--            <field name="domain">[]</field>-->
-<!--        </record>-->
+        <!-- Action liste des annonces -->
+        <record id="action_annonce_tree" model="ir.actions.act_window">
+            <field name="name">Liste des annonces</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sirh.annonce</field>
+            <field name="view_mode">tree</field>
+            <!--            <field name="view_mode">tree,form</field>-->
+            <!--            <field name="domain">[]</field>-->
+        </record>
 
-<!--        &lt;!&ndash; Action formulaire une annonce &ndash;&gt;-->
-<!--        <record id="action_annonce_form" model="ir.actions.act_window">-->
-<!--            <field name="name">Créer une Annonce</field>-->
-<!--            <field name="res_model">annonce</field>-->
-<!--            <field name="view_mode">form</field>-->
-<!--            <field name="view_id" ref="view_annonce_form"/>-->
-<!--            <field name="target">new</field>-->
-<!--        </record>-->
+        <!--        &lt;!&ndash; Action formulaire une annonce &ndash;&gt;-->
+        <!--        <record id="action_annonce_form" model="ir.actions.act_window">-->
+        <!--            <field name="name">Créer une Annonce</field>-->
+        <!--            <field name="res_model">annonce</field>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="view_id" ref="view_annonce_form"/>-->
+        <!--            <field name="target">new</field>-->
+        <!--        </record>-->
 
 
-<!--        &lt;!&ndash; Menu Annonces &ndash;&gt;-->
-<!--        <menuitem id="menu_annonces" name="Annonces" sequence="10" parent="hr_recruitment.menu_hr_recruitment_root"/>-->
-<!--        <menuitem id="menu_annonce_list" name="Liste des Annonces" parent="menu_annonces" action="action_annonce_list"/>-->
-<!--        <menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"/>-->
+        <!-- Menu Annonces -->
+        <menuitem id="menu_annonces" name="Annonces" sequence="10" parent="hr_recruitment.menu_hr_recruitment_root"/>
+        <menuitem id="menu_annonce_list" name="Liste des Annonces" parent="menu_annonces" action="action_annonce_tree"/>
+        <!--<menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"/>-->
 
 
     </data>

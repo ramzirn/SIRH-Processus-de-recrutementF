@@ -13,19 +13,19 @@ def est_annee(val):
     return False
 
 
-class FormRecruitment(models.Model):
-    _name = 'rh.form'
+class Recrutement(models.Model):
+    _name = 'sirh.form'
 
-    description_id = fields.Many2one('rh.desc', string='Description', ondelete='cascade')
-    annonce_id = fields.Many2one('annonce', string='Annonce', ondelete='cascade')
+    description_id = fields.Many2one('sirh.desc', string='Description', ondelete='cascade')
+    annonce_id = fields.Many2one('sirh.annonce', string='Annonce', ondelete='cascade')
 
     # perfect!
     @api.model
     def create(self, vals):
-        record = super(FormRecruitment, self).create(vals)
+        record = super(Recrutement, self).create(vals)
         if record and not record.description_id:
             # Automatically create a description record when a form is created for the first time
-            desc_record = self.env['rh.desc'].create({
+            desc_record = self.env['sirh.desc'].create({
                 'intitule': vals.get('intitule', 'Default Intitule'),  # Add other necessary fields
                 'descr': 'Default Description',
                 'recruitment_id': record.id,
@@ -34,7 +34,7 @@ class FormRecruitment(models.Model):
             # ////
         if record and not record.annonce_id:
             # Automatically create an annonce record when a form is created for the first time
-            annonce_record = self.env['annonce'].create({
+            annonce_record = self.env['sirh.annonce'].create({
                 'contenu': vals.get('contenu', 'Default Contenu'),  # Add other necessary fields
                 'recruitment_id': record.id,
             })
@@ -46,7 +46,7 @@ class FormRecruitment(models.Model):
         self.description_id.unlink()
         # ////
         self.annonce_id.unlink()
-        return super(FormRecruitment, self).unlink()
+        return super(Recrutement, self).unlink()
 
     motif = fields.Selection([
         ('interne', 'Recrutement interne'),
@@ -74,7 +74,7 @@ class FormRecruitment(models.Model):
     def ajout_description(self):
         return {
             'type': 'ir.actions.act_window',
-            'res_model': 'rh.desc',
+            'res_model': 'sirh.desc',
             'view_mode': 'form',
             'target': 'new',
             'res_id': self.description_id.id,
@@ -85,7 +85,7 @@ class FormRecruitment(models.Model):
             return {
                 'name': 'Description du poste',
                 'type': 'ir.actions.act_window',
-                'res_model': 'rh.desc',
+                'res_model': 'sirh.desc',
                 'view_mode': 'form',
                 'view_type': 'readonly',
                 'target': 'new',
@@ -101,8 +101,9 @@ class FormRecruitment(models.Model):
 
     def ajout_annonce(self):
         return {
+            'name': 'Annonce',
             'type': 'ir.actions.act_window',
-            'res_model': 'annonce',
+            'res_model': 'sirh.annonce',
             'view_mode': 'form',
             'target': 'new',
             'res_id': self.annonce_id.id,
@@ -113,7 +114,7 @@ class FormRecruitment(models.Model):
             return {
                 'name': 'Détails de l\'annonce',
                 'type': 'ir.actions.act_window',
-                'res_model': 'annonce',
+                'res_model': 'sirh.annonce',
                 'view_mode': 'form',
                 'view_type': 'readonly',
                 'target': 'current',
@@ -121,67 +122,3 @@ class FormRecruitment(models.Model):
             }
         else:
             return {'warning': 'Aucune annonce associée à ce recrutement.'}
-
-
-class Descriptionposte(models.Model):
-    _name = 'rh.desc'
-
-    recruitment_id = fields.Many2one('rh.form', string='Recrutement', ondelete='cascade')
-    @api.model
-    def create(self, vals):
-        # Vérifier s'il existe déjà une description pour ce recrutement
-        existing_desc = self.search([('recruitment_id', '=', vals.get('recruitment_id'))])
-        if existing_desc:
-            return existing_desc[0]  # Retourner l'instance existante
-
-        # S'il n'existe pas encore de description, créer une nouvelle instance
-        return super(Descriptionposte, self).create(vals)
-
-    def write(self, vals):
-        res = super(Descriptionposte, self).write(vals)
-        # Mettre à jour le formulaire avec l'ID de la description (après création ou modification)
-        self.recruitment_id.description_id = self.id if self.recruitment_id else False
-        return res
-
-    intitule = fields.Many2one('hr.job', string='Intitulé du poste')
-    descr = fields.Text(string='Description du poste', required=True)
-    niveau = fields.Selection([
-        ('bac', 'Baccalauréat'),
-        ('licence', 'Licence'),
-        ('master', 'Master'),
-        ('doctorat', 'Doctorat'),
-    ], string="Niveau d'étude", required=True, default='licence')
-    diplome = fields.Selection([('g', 'f')], string="Diplôme")
-    formation = fields.Selection([('g', 'f')], string="Formation")
-    formation_experience = fields.Selection([('g', 'f')], string="Formation liée à l'expérience du poste")
-    savoir_faire = fields.Text(string="Savoir-faire")
-    savoir_etre = fields.Text(string="Savoir-être")
-    type = fields.Selection([
-        ('CDI', 'CDI'),
-        ('CDD', 'CDD')
-    ], default='CDI', required=True)
-    horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=False)
-    remuneration = fields.Float(string='Rémunération', required=True, default=0)
-
-
-class Annonce(models.Model):
-    _name = 'annonce'
-
-    recruitment_id = fields.Many2one('rh.form', string='Recrutement', ondelete='cascade')
-
-    approche = fields.Selection([
-        ('interne', 'Interne'),
-        ('externe', 'Externe'),
-        ('mixte', 'Mixte')
-    ], string='Approche de l\'annonce', default='interne', required=True)
-
-    contenu = fields.Text(string='Contenu de l\'annonce', required=True)
-    descriptif_societe = fields.Text(string='Descriptif rapide de la société')
-    # description_poste = fields.Text(string='Description du poste')
-    profil_recherche = fields.Text(string='Description du profil recherché')
-    modalite_reponse = fields.Selection([
-        ('a', 'E-mail'),
-        ('b', 'Telephone'),
-        ('c', 'Autre')
-    ], string='Modalités de réponse', default='a', required=True)
-    obligations = fields.Text(string='Obligations')

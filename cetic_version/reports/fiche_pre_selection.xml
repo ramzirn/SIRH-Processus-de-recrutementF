@@ -39,7 +39,10 @@
                     <div>
                         <h1 style="text-align: center;">Fiche de présélection de candidats</h1>
                         <br/>
-                        <p style="text-align: center; width:100%;"><b>FP Etabli par :</b>......................................                      <b> Lieu </b> : ..............................                      <b>Date :</b>.............
+                        <p style="text-align: center; width:100%;">
+                            <b>FP Etabli par :</b>
+                            ......................................                      <b>Lieu</b> :
+                            ..............................                      <b>Date :</b>.............
                         </p>
                         <p>I- Informations sur le candidat :</p>
                         <table style="border-collapse: collapse; margin: 20px auto; width: 100%;">
@@ -83,56 +86,56 @@
                         <table>
                             <tr>
                                 <td rowspan="2" style="text-align:center;">Critère d'appréciation</td>
-                                <td class="spacer-cell"> </td>
+                                <td class="spacer-cell"></td>
                                 <td colspan="3" style="text-align:center;">Appréciation</td>
                             </tr>
                             <tr>
-                                <td class="spacer-cell"> </td>
+                                <td class="spacer-cell"></td>
                                 <td class="no-border-right no-border-top" style="text-align:center;">Bon</td>
                                 <td class="no-border-top no-border-right" style="text-align:center;">Moyen</td>
                                 <td class="no-border-top" style="text-align:center;">Faible</td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Expression orale</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right" style="width=33%"> </td>
-                                <td class="no-border-top no-border-right" style="width=33%"> </td>
-                                <td class="no-border-top" style="width=33%"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right" style="width=33%"></td>
+                                <td class="no-border-top no-border-right" style="width=33%"></td>
+                                <td class="no-border-top" style="width=33%"></td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Stabilité du candidat</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top"></td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Présentation et tenue du candidat</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top"></td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Contact et relations humaines</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top"></td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Motivations pour le poste de travail</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top"></td>
                             </tr>
                             <tr>
                                 <td class="no-border-top">Autre (à préciser)</td>
-                                <td class="spacer-cell"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top no-border-right"> </td>
-                                <td class="no-border-top"> </td>
+                                <td class="spacer-cell"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top no-border-right"></td>
+                                <td class="no-border-top"></td>
                             </tr>
                         </table>
                     </div>
@@ -144,7 +147,7 @@
                         <br/>
                         <table>
                             <tr style="width: 100%">
-                                <td style="height: 330px"> </td>
+                                <td style="height: 330px"></td>
                             </tr>
                         </table>
                     </div>
