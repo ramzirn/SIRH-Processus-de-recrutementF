@@ -1,5 +1,7 @@
 <odoo>
     <data>
+
+
         <!--                Liste des recrutements-->
         <record id="view_form_recruitment_tree" model="ir.ui.view">
             <field name="name">sirh.form.tree</field>
@@ -11,15 +13,12 @@
                     <field name="pourex"/>
                     <field name="budget"/>
                     <field name="intitule"/>
-                    <field name="type"/>
                     <field name="echeanceContrat"/>
-                    <field name="stru"/>
                     <field name="xp"/>
                     <field name="lieu"/>
                     <field name="deplacement"/>
                     <field name="autre"/>
                     <field name="dateEntree"/>
-                    <field name="dom"/>
                 </tree>
             </field>
         </record>
@@ -37,15 +36,18 @@
                             <field name="pourex"/>
                             <field name="budget"/>
                             <field name="intitule"/>
-                            <field name="type"/>
                             <field name="echeanceContrat"/>
-                            <field name="stru"/>
                             <field name="xp"/>
                             <field name="lieu"/>
                             <field name="deplacement"/>
                             <field name="autre"/>
                             <field name="dateEntree"/>
-                            <field name="dom"/>
+                        </group>
+                         <group string="Description du poste:">
+                            <field name="desc_id"/>
+                        </group>
+                        <group string="Annonce">
+                            <field name="annonce_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -60,8 +62,10 @@
             <field name="context">{}</field>
         </record>
 
-        <menuitem name="Formulaire" id="menu_form_recruitment" action="act_form_recruitment"
-                  parent="hr_recruitment.menu_hr_job_position"/>
+        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root" sequence="1"/>
+
+        <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_recruitment"
+                  parent="menu_besoin"/>
     </data>
 </odoo>
 

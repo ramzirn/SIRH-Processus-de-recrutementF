@@ -28,79 +28,31 @@ class Recrutement(models.Model):
             if not est_annee(record.pourex):
                 raise ValidationError("Date d'exercice doit etre superieure a la date d'aujourd'hui.")
 
-    intitule = fields.Many2one('hr.job', string='Intitulé du poste', required=True)
-    budget = fields.Float(string='Budget', required=True)
-    echeanceContrat = fields.Date(string='Échéance du contrat')
-    xp = fields.Integer(string='Années d\'expérience', required=True)
+    budget = fields.Float(string='Budget alloué', required=True)
+    intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
+    type = fields.Selection([
+        ('CDI', 'CDI'),
+        ('CDD', 'CDD')
+    ], default='CDI', string='Nature du contrat', required=True)
+    echeanceContrat = fields.Date(string='Échéance du contrat', required=True)
+    stru = fields.Many2one('hr.department', string='Structure concernée', required=True)
+    xp = fields.Integer(string='Nombre d\'années d\'expérience', required=True)
     lieu = fields.Char(string='Lieu de travail', required=True)
-    Deplacement = fields.Char(string='Déplacement à prévoir')
+    deplacement = fields.Char(string='Déplacement à prévoir', required=True)
     autre = fields.Char(string="Autres aspects à considérer")
-    dateEntree = fields.Date(string="Date d'entrée")
+    dateEntree = fields.Date(string="Date d'entrée souhaitée", required=True)
+    dom = fields.Many2one('sirh.domainexp', string="Domaine(s) d'experience(s) attendu(s)", required=True)
 
-    desc_id = fields.Many2one('sirh.desc', required=True)
-    annonce_id = fields.Many2one('sirh.annonce')
 
-    # def ajout_description(self):
-    #     return {
-    #         'type': 'ir.actions.act_window',
-    #         'res_model': 'sirh.desc',
-    #         'view_mode': 'form',
-    #         'target': 'new',
-    #         'res_id': self.description_id.id,
-    #     }
+class DomaineExp(models.Model):
+    _name = 'sirh.domainexp'
+    _rec_name = 'dom'
 
-    # def ajout_description(self):
-    #     return {
-    #         'type': 'ir.actions.act_window',
-    #         'res_model': 'sirh.desc',
-    #         'view_mode': 'form',
-    #         'view_type': 'form',
-    #         'view_id': self.env.ref('cetic_version.view_form_description').id,  # Remplacez 'your_module_name'
-    #         'target': 'new',
-    #         'res_id': self.desc_id.id,
-    #     }
+    dom = fields.Char(string="Domaine(s) d'experience(s) attendu(s)", size=50)
 
-    # def show_description(self):
-    #     if self.description_id:
-    #         return {
-    #             'name': 'Description du poste',
-    #             'type': 'ir.actions.act_window',
-    #             'res_model': 'sirh.desc',
-    #             'view_mode': 'form',
-    #             'view_type': 'readonly',
-    #             'target': 'new',
-    #             'res_id': self.description_id.id,
-    #         }
-    #     else:
-    #         return {
-    #             'warning': {
-    #                 'title': 'Aucune description',
-    #                 'message': 'La description n\'est pas disponible pour cet enregistrement.',
-    #             }
-    #         }
 
-    def ajout_annonce(self):
-        return {
-            'name': 'Annonce',
-            'type': 'ir.actions.act_window',
-            'res_model': 'sirh.annonce',
-            'view_mode': 'form',
-            'target': 'new',
-            'res_id': self.annonce_ids.id,
-        }
+class Poste(models.Model):
+    _name = 'sirh.poste'
+    _rec_name = 'post'
 
-    def show_annonce(self):
-        if self.annonce_id:
-            return {
-                'type': 'ir.actions.act_window',
-                'res_model': 'sirh.annonce',
-                'view_mode': 'form',
-                'view_type': 'readonly',
-                'target': 'current',
-                'res_id': self.annonce_id.id,
-            }
-        else:
-            return {'warning': 'Aucune annonce associée à ce recrutement.'}
-
-    def show_description(self):
-        a = self.env['sirh.desc'].search([('id', '=', self.desc_id.id)])
+    post = fields.Char(string="Intitulé du poste", size=50)
