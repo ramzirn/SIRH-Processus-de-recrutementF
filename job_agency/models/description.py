@@ -24,17 +24,27 @@ class Description(models.Model):
     #     self.recruitment_id.description_id = self.id if self.recruitment_id else False
     #     return res
 
-    intitule = fields.Many2one('hr.job', string='Intitulé du poste')
+    intitule = fields.Many2one('sirh.poste', string='Intitulé du poste')
     descr = fields.Text(string='Description du poste', required=True)
-    niveau = fields.Many2one('rh.recruitment.degree', string="Niveau d'étude", required=True, default='licence')
-    diplome = fields.Selection([('g', 'f')], string="Diplôme")  # CLASSE
-    formation = fields.Selection([('g', 'f')], string="Formation")  # CLASSE
-    formation_experience = fields.Selection([('g', 'f')], string="Formation liée à l'expérience du poste")  # CLASSE
+    # Compétences demandées
+    niveau = fields.Many2one('hr.recruitment.degree', string="Niveau d'étude", required=True)
+    diplome = fields.Many2one('sirh.diplome', string="Diplômes")
+    formation = fields.Many2one('sirh.formation', string='Formation')
+    formation_experience = fields.Many2one('sirh.formation', string="Formation obligatoire à l’expérience du poste", required=True)
     savoir_faire = fields.Text(string="Savoir-faire")
     savoir_etre = fields.Text(string="Savoir-être")
+    # Conditions de l’emploi
     type = fields.Selection([
         ('CDI', 'CDI'),
         ('CDD', 'CDD')
-    ], default='CDI', required=True)
-    horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=False)
+    ], default='CDI', string='Type de contrat', required=True)
+    temps = fields.Char(string='Temps de travail', required=True)
+    horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=True)
     remuneration = fields.Float(string='Rémunération', required=True, default=0)
+
+
+class Formation(models.Model):
+    _name = 'sirh.formation'
+    _rec_name = 'formation'
+
+    formation = fields.Char(string='Formation', size=100)

@@ -1,5 +1,6 @@
 <odoo>
     <data>
+<!--        Formulaire de description-->
         <record id="view_form_description" model="ir.ui.view">
             <field name="name">sirh.desc.form</field>
             <field name="model">sirh.desc</field>
@@ -7,23 +8,31 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="intitule"/>
-                            <field name="descr"/>
-                            <field name="niveau"/>
-                            <field name="diplome"/>
-                            <field name="formation"/>
-                            <field name="formation_experience"/>
-                            <field name="savoir_faire"/>
-                            <field name="savoir_etre"/>
-                            <field name="type"/>
-                            <field name="horaires"/>
-                            <field name="remuneration"/>
+                            <group>
+                                <field name="intitule" readonly="1"/>
+                                <field name="descr"/>
+                            </group>
+                            <group string="Compétences demandées">
+                                <field name="niveau"/>
+                                <field name="diplome"/>
+                                <field name="formation"/>
+                                <field name="formation_experience"/>
+                                <field name="savoir_faire"/>
+                                <field name="savoir_etre"/>
+                            </group>
+                            <group string="Conditions de l'emploi">
+                                <field name="type"/>
+                                <field name="temps"/>
+                                <field name="horaires"/>
+                                <field name="remuneration"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
+<!--        action pour la vue formulaire-->
         <record id="action_show_form_description" model="ir.actions.act_window">
             <field name="name">Description du poste</field>
             <field name="type">ir.actions.act_window</field>
@@ -31,9 +40,10 @@
             <field name="view_mode">form</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="view_form_description"/>
-            <field name="target">new</field>
+            <field name="target">current</field>
         </record>
 
+<!--        vue formulaire readonly-->
         <record id="view_description" model="ir.ui.view">
             <field name="name">sirh.desc.form</field>
             <field name="model">sirh.desc</field>
@@ -41,45 +51,38 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="intitule" readonly="1"/>
-                            <field name="descr" readonly="1"/>
-                            <field name="niveau" readonly="1"/>
-                            <field name="diplome" readonly="1"/>
-                            <field name="formation" readonly="1"/>
-                            <field name="formation_experience" readonly="1"/>
-                            <field name="savoir_faire" readonly="1"/>
-                            <field name="savoir_etre" readonly="1"/>
-                        </group>
-                        <group>
-                            <field name="type" readonly="1"/>
-                            <field name="horaires" readonly="1"/>
-                            <field name="remuneration" readonly="1"/>
+                            <group>
+                                <field name="intitule" invisible="1"/>
+                                <field name="descr" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="niveau" readonly="1"/>
+                                <field name="diplome" readonly="1"/>
+                                <field name="formation" readonly="1"/>
+                                <field name="formation_experience" readonly="1"/>
+                                <field name="savoir_faire" readonly="1"/>
+                                <field name="savoir_etre" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="type" readonly="1"/>
+                                <field name="temps" readonly="1"/>
+                                <field name="horaires" readonly="1"/>
+                                <field name="remuneration" readonly="1"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-<!--        <record id="action_show_description" model="ir.actions.act_window">-->
-<!--            <field name="name">Description du poste</field>-->
-<!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <field name="res_model">sirh.desc</field>-->
-<!--            <field name="view_mode">form</field>-->
-<!--            <field name="view_type">form</field>-->
-<!--            <field name="view_id" ref="view_form_description"/>-->
-<!--            <field name="target">new</field>-->
-<!--            <field name="context">{}</field>-->
-<!--            <field name="flags">{"form": {"options": {"mode": "readonly"}}}</field>-->
-<!--        </record>-->
-
-        <!--                Liste des descriptions-->
+<!--        vue tree description-->
         <record id="view_desc_tree" model="ir.ui.view">
             <field name="name">sirh.desc.tree</field>
             <field name="model">sirh.desc</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des descriptions">
-                    <field name="intitule" invisible="1"/>
+                    <field name="intitule"/>
                     <field name="descr"/>
                     <field name="niveau"/>
                     <field name="diplome"/>
@@ -88,12 +91,14 @@
                     <field name="savoir_faire"/>
                     <field name="savoir_etre"/>
                     <field name="type"/>
+                    <field name="temps"/>
                     <field name="hoeaires"/>
                     <field name="remuneration"/>
                 </tree>
             </field>
         </record>
 
+<!--        action pour vue tree description-->
         <record id="act_list_desc" model="ir.actions.act_window">
             <field name="name">Liste des descriptions</field>
             <field name="type">ir.actions.act_window</field>
@@ -102,8 +107,12 @@
             <field name="context">{}</field>
         </record>
 
-<!--        <menuitem name="Liste des descriptions" id="menu_liste_desc" action="act_list_desc" parent="menu_besoin"/>-->
+        <!--        <menuitem name="Liste des descriptions" id="menu_liste_desc" action="act_list_desc" parent="menu_besoin"/>-->
         <menuitem name="Liste des descriptions" id="menu_liste_desc" action="act_list_desc"
-                  parent="hr_recruitment.menu_besoin"/>
+                  parent="menu_besoin"/>
+
+        <menuitem name="Description du poste" id="form_desc" action="action_show_form_description"
+                  parent="menu_besoin"/>
+<!--        hr_recruitment-->
     </data>
 </odoo>
