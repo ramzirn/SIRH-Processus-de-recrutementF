@@ -132,8 +132,9 @@ def jobs(request):
     return render(request, 'jobs.html', {'annonces': annonces})
 
 def job_details(request , id):
-    recrutement = Recrutement.objects.get(id=id)
-    description = Description.objects.get(recruitment_id=id)
+    recrutement = Recrutement.objects.get(annonce_id=id)
+    desc_id= recrutement.desc_id
+    description = Description.objects.get(id=desc_id)
     tt=recrutement.intitule
     intitule=HRJob.objects.get(id=tt)
     if request.method == 'POST':

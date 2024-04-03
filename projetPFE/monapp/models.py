@@ -35,8 +35,6 @@ from django.db import models
 from datetime import datetime
 
 class Annonce(models.Model):
-    recruitment_id = models.CharField(max_length=50, verbose_name='Recrutement', null=True, blank=True)
-    description_id = models.CharField(max_length=50, verbose_name='Description', null=True, blank=True)
 
     APPROACH_CHOICES = [
         ('interne', 'Interne'),
@@ -62,9 +60,7 @@ class Annonce(models.Model):
 
 
 class Recrutement(models.Model):
-    description_id = models.CharField(max_length=50, verbose_name='Description', null=True, blank=True)
-    annonce_id = models.CharField(max_length=50, verbose_name='Annonce', null=True, blank=True)
-
+   
     MOTIF_CHOICES = [
         ('interne', 'Recrutement interne'),
         ('temp', 'Remplacement temporaire'),
@@ -81,6 +77,8 @@ class Recrutement(models.Model):
     autre = models.CharField(max_length=100, verbose_name='Autres aspects à considérer', null=True, blank=True)
 
     dateEntree = models.DateField(verbose_name="Date d'entrée", null=True, blank=True)
+    desc_id = models.CharField(max_length=50, verbose_name='Description', null=True, blank=True)
+    annonce_id = models.CharField(max_length=50, verbose_name='Annonce', null=True, blank=True)
 
     class Meta:
         db_table = 'sirh_form'
@@ -105,7 +103,6 @@ class HRJob(models.Model):
 from django.db import models
 
 class Description(models.Model):
-    recruitment_id = models.CharField(max_length=100, verbose_name='Recrutement', unique=True)
 
     intitule = models.CharField(max_length=100, verbose_name='Intitulé du poste')
     descr = models.TextField(verbose_name='Description du poste')
