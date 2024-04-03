@@ -4,9 +4,6 @@ from odoo import models, fields
 class Annonce(models.Model):
     _name = 'sirh.annonce'
 
-    recruitment_id = fields.Many2one('sirh.form', string='Recrutement', ondelete='cascade')
-    description_id = fields.Many2one('sirh.desc', string='Description', ondelete='cascade')
-
     approche = fields.Selection([
         ('interne', 'Interne'),
         ('externe', 'Externe'),
