@@ -12,13 +12,15 @@
                     <field name="pourex"/>
                     <field name="budget"/>
                     <field name="intitule"/>
+                    <field name="type"/>
                     <field name="echeanceContrat"/>
+                    <field name="stru"/>
                     <field name="xp"/>
                     <field name="lieu"/>
-                    <field name="Deplacement"/>
+                    <field name="deplacement"/>
+                    <field name="autre"/>
                     <field name="dateEntree"/>
-                    <button name="show_description" string="Voir description" type="object" class="oe_highlight"/>
-                    <button name="show_annonce" string="Voir annonce" type="object" class="oe_highlight"/>
+                    <field name="dom"/>
                 </tree>
             </field>
         </record>
@@ -86,23 +88,20 @@
 
 
                     <sheet>
-                        <group>
-                            <field name="motif"/>
+                        <group string="Definir le besoin">
+                            <field name="motif" class="oe_block"/>
                             <field name="pourex"/>
                             <field name="budget"/>
                             <field name="intitule"/>
+                            <field name="type"/>
                             <field name="echeanceContrat"/>
+                            <field name="stru"/>
                             <field name="xp"/>
                             <field name="lieu"/>
-                            <field name="Deplacement"/>
+                            <field name="deplacement"/>
                             <field name="autre"/>
                             <field name="dateEntree"/>
-                        </group>
-                        <group string="Description du poste:">
-                            <field name="desc_id"/>
-                        </group>
-                        <group string="Annonce">
-                            <field name="annonce_id"/>
+                            <field name="dom"/>
                         </group>
                     </sheet>
                 </form>
@@ -126,7 +125,7 @@
         <!-- Action pour le formulaire de recrutement -->
 
         <record id="act_form_recruitment" model="ir.actions.act_window">
-            <field name="name">Formulaire de recrutement</field>
+            <field name="name">Definition du besoin</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sirh.form</field>
             <!--            <field name="view_mode">tree,form</field>-->
