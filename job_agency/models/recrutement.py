@@ -30,6 +30,12 @@ class Recrutement(models.Model):
 
     budget = fields.Float(string='Budget alloué', required=True)
     intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
+
+    # @api on change
+    # sur intitule
+    # un code
+    # intitule de desc recoit cette valeur
+
     echeanceContrat = fields.Date(string='Échéance du contrat')
     xp = fields.Integer(string='Années d\'expérience', required=True)
     lieu = fields.Char(string='Lieu de travail', required=True)

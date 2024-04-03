@@ -32,7 +32,7 @@
                 <form>
                     <sheet>
                         <group string="Definir le besoin">
-                            <field name="motif" class="oe_block"/>
+                            <field name="motif"/>
                             <field name="pourex"/>
                             <field name="budget"/>
                             <field name="intitule"/>
@@ -66,6 +66,8 @@
 
         <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_recruitment"
                   parent="menu_besoin"/>
+
+<!--        menu item pour desc pour ouvrir mon formulaire-->
     </data>
 </odoo>
 
