@@ -1,6 +1,9 @@
 from datetime import datetime
+
 from odoo import api, models, fields
 from odoo.exceptions import ValidationError
+
+
 class Poste(models.Model):
     _name = 'sirh.poste'
     _rec_name = 'post'

@@ -10,7 +10,7 @@
                     <field name="motif"/>
                     <field name="pourex"/>
                     <field name="budget"/>
-                    <field name="intitule"/>
+                    <!--                    <field name="intitule"/>-->
                     <field name="echeanceContrat"/>
                     <field name="xp"/>
                     <field name="lieu"/>
@@ -32,8 +32,9 @@
                         <group string="Definir le besoin">
                             <field name="motif"/>
                             <field name="pourex"/>
+                            from . import formation
                             <field name="budget"/>
-                            <field name="intitule"/>
+                            <!--                            <field name="intitule"/>-->
                             <field name="echeanceContrat"/>
                             <field name="xp"/>
                             <field name="lieu"/>

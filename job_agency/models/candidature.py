@@ -22,5 +22,4 @@ class Candidature(models.Model):
     # structure =
     # unite =
     # cv = fields.Binary(string='CV')
-    docs = fields.Many2many('sirh.document', '', string='Documents')
-
+    docs = fields.Many2many('sirh.document', string='Documents')

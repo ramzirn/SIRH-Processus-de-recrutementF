@@ -92,7 +92,7 @@
                     <field name="savoir_etre"/>
                     <field name="type"/>
                     <field name="temps"/>
-                    <field name="hoeaires"/>
+                    <field name="horaires"/>
                     <field name="remuneration"/>
                 </tree>
             </field>
