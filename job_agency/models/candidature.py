@@ -1,25 +1,26 @@
 from odoo import models, fields
 
 
-class HrApplicant(models.Model):
-    _inherit = 'hr.applicant'
+class Candidature(models.Model):
+    _name = 'sirh.candidature'
 
-    candidat_obj = fields.Many2one('candidat', string='Candidat')
+    candidat_id = fields.Many2one('sirh.candidat', string='Candidat', required=True)
+
     datedepot = fields.Date(required=True)
+    disponibilite = fields.Boolean(string="Disponibilité")
     conditionphysique = fields.Selection([
-        ('a', 'Bonne'),
-        ('b', 'Mauvaise'),
-        ('c', 'Handicapé'),
-    ], string='Condition physique', required=True)
+        ('excellente', 'Excellente'),
+        ('bonne', 'Bonne'),
+        ('moyenne', 'Moyenne'),
+        ('faible', 'Faible'),
+        ('handicap_leger', 'Handicap léger'),
+        ('handicap_important', 'Handicap important'),
+        ('apte', 'Apte'),
+        ('inapte', 'Inapte')],
+        string='Condition Physique')
+    departement = fields.Many2one('hr.department')
+    # structure =
+    # unite =
+    # cv = fields.Binary(string='CV')
+    docs = fields.Many2many('sirh.document', '', string='Documents')
 
-    structure = fields.Selection([
-        ('aa', 'A'),
-        ('bb', 'B'),
-        ('cc', 'C'),
-    ], string='Structure', required=True)
-
-    unite = fields.Selection([
-        ('aa', 'A'),
-        ('bb', 'B'),
-        ('cc', 'C'),
-    ], string='Unité', required=True)

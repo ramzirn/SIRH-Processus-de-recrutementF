@@ -1,107 +1,107 @@
 <odoo>
-    <record id="my_custom_hr_applicant_form" model="ir.ui.view">
-        <field name="name">hr.applicant.form.inherited</field>
-        <field name="model">hr.applicant</field>
-        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
-        <field name="arch" type="xml">
-            <data>
+<!--    <record id="my_custom_hr_applicant_form" model="ir.ui.view">-->
+<!--        <field name="name">hr.applicant.form.inherited</field>-->
+<!--        <field name="model">hr.applicant</field>-->
+<!--        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <data>-->
 
 
-                <xpath expr="//field[@name='name']" position="before">
-                    <field name="candidat_obj" string="Candidat" options="{'no_create': True}"/>
+<!--                <xpath expr="//field[@name='name']" position="before">-->
+<!--                    <field name="candidat_obj" string="Candidat" options="{'no_create': True}"/>-->
 
-                </xpath>
-
-
-                <xpath expr="//field[@name='partner_name']" position="after">
-                    <field name="datedepot" string="Date de depot de dossier" options="{'no_create': True}"/>
-                </xpath>
-                <xpath expr="//field[@name='categ_ids']" position="after">
-                    <field name="conditionphysique" options="{'no_create': True}"/>
-                </xpath>
-
-                <xpath expr="//field[@name='department_id']" position="after">
-                    <field name="structure" string="Structure" options="{'no_create': True}"/>
-                </xpath>
-
-                <xpath expr="//field[@name='structure']" position="after">
-                    <field name="unite" string="Unité" options="{'no_create': True}"/>
-                </xpath>
+<!--                </xpath>-->
 
 
-                <field name="name" position="attributes">
-                    <attribute name="invisible">0</attribute>
-                    <attribute name="required">False</attribute>
-                    <!-- Rendre le champ invisible -->
-                </field>
+<!--                <xpath expr="//field[@name='partner_name']" position="after">-->
+<!--                    <field name="datedepot" string="Date de depot de dossier" options="{'no_create': True}"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='categ_ids']" position="after">-->
+<!--                    <field name="conditionphysique" options="{'no_create': True}"/>-->
+<!--                </xpath>-->
 
-                <field name="partner_name" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="partner_id" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="partner_mobile" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="partner_phone" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
+<!--                <xpath expr="//field[@name='department_id']" position="after">-->
+<!--                    <field name="structure" string="Structure" options="{'no_create': True}"/>-->
+<!--                </xpath>-->
 
-                    <!-- Rendre le c hamp invisible -->
-                </field>
-                <field name="type_id" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="email_from" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="categ_ids" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="user_id" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="priority" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="medium_id" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-                <field name="source_id" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
-
-                <field name="reference" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                    <attribute name="required">False</attribute><!-- Rendre le champ invisible -->
-                </field>
+<!--                <xpath expr="//field[@name='structure']" position="after">-->
+<!--                    <field name="unite" string="Unité" options="{'no_create': True}"/>-->
+<!--                </xpath>-->
 
 
-            </data>
-        </field>
-    </record>
-    <record id="action_my_custom_action" model="ir.actions.act_window">
-        <field name="name">Custom Action</field>
-        <field name="res_model">hr.applicant</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="my_custom_hr_applicant_form"/>
-        <field name="target">current</field> <!-- Ou 'new', selon vos besoins -->
-    </record>
+<!--                <field name="name" position="attributes">-->
+<!--                    <attribute name="invisible">0</attribute>-->
+<!--                    <attribute name="required">False</attribute>-->
+<!--                    &lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+
+<!--                <field name="partner_name" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="partner_id" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="partner_mobile" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="partner_phone" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Rendre le c hamp invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="type_id" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="email_from" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="categ_ids" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="user_id" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="priority" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="medium_id" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+<!--                <field name="source_id" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
+
+<!--                <field name="reference" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    <attribute name="required">False</attribute>&lt;!&ndash; Rendre le champ invisible &ndash;&gt;-->
+<!--                </field>-->
 
 
-    <menuitem id="menutest" name="candidat" parent="hr_recruitment.menu_hr_recruitment_root"
-              action="action_my_custom_action"/>
+<!--            </data>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="action_my_custom_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Custom Action</field>-->
+<!--        <field name="res_model">hr.applicant</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="view_id" ref="my_custom_hr_applicant_form"/>-->
+<!--        <field name="target">current</field> &lt;!&ndash; Ou 'new', selon vos besoins &ndash;&gt;-->
+<!--    </record>-->
+
+
+<!--    <menuitem id="menutest" name="candidat" parent="hr_recruitment.menu_hr_recruitment_root"-->
+<!--              action="action_my_custom_action"/>-->
 
 
 </odoo>

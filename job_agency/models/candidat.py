@@ -1,8 +1,9 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
-class Employee(models.Model):
-    _name = 'candidat'
+class Candidat(models.Model):
+    _name = 'sirh.candidat'
+    _rec_name = 'nom_complet'
 
     sexe = fields.Selection([('male', 'Homme'), ('female', 'Femme')], string='Sexe')
     nom = fields.Char(string='Nom', required=True)
@@ -14,14 +15,13 @@ class Employee(models.Model):
         string='Situation Familiale')
     adresse = fields.Text(string='Adresse')
     mobile = fields.Char(string='Mobile')
-    telephone = fields.Char(string='Téléphone')
     email = fields.Char(string='Email')
-    diplome_id = fields.Many2one('hr.recruitment.degree', string='Diplôme')
-    specialite = fields.Char(string='Spécialité')
+    diplome = fields.Many2one('sirh.diplome', string="Diplômes")
+    specialite = fields.Char(string='Spécialité', size=50)
 
-    def name_get(self):
-        result = []
-        for record in self:
-            name = "%s %s" % (record.nom, record.prenom)
-            result.append((record.id, name))
-        return result
+    nom_complet = fields.Char(string='Nom Complet', compute='_compute_nom_complet', store=True)
+
+    @api.depends('nom', 'prenom')
+    def _compute_nom_complet(self):
+        for candidat in self:
+            candidat.nom_complet = f"{candidat.nom} {candidat.prenom}".upper()
