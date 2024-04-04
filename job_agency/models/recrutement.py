@@ -1,7 +1,11 @@
 from datetime import datetime
-
 from odoo import api, models, fields
 from odoo.exceptions import ValidationError
+class Poste(models.Model):
+    _name = 'sirh.poste'
+    _rec_name = 'post'
+
+    post = fields.Char(string="Intitulé du poste", size=50)
 
 
 def est_annee(val):
@@ -29,7 +33,7 @@ class Recrutement(models.Model):
                 raise ValidationError("Date d'exercice doit etre superieure a la date d'aujourd'hui.")
 
     budget = fields.Float(string='Budget alloué', required=True)
-    intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
+    # intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
 
     # @api on change
     # sur intitule
@@ -141,9 +145,4 @@ class Recrutement(models.Model):
                 }
             }
 
-
-class Poste(models.Model):
-    _name = 'sirh.poste'
-    _rec_name = 'post'
-
-    post = fields.Char(string="Intitulé du poste", size=50)
+        # les fonctions a changer

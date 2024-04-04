@@ -16,14 +16,18 @@ Shows you a list of applications features to install from.
     ],
     'data': [
         'views/recrutement.xml',
+        'views/description'
+        'views/annonce'
+        'views/candidat'
         'views/FicheCandidat.xml',
         'views/modifcandidatures.xml',
         'views/grilleCandidature.xml',
+        'views/VueListeeCandidats'
+        
         'reports/reports.xml',
         'reports/fiche_pre_selection.xml',
         'reports/questionnaire.xml',
         'reports/demande_de_pourvoi_de_poste.xml',
-
     ],
     'demo': [],
     'installable': True,

@@ -1,7 +1,5 @@
 <odoo>
     <data>
-
-
         <!--                Liste des recrutements-->
         <record id="view_form_recruitment_tree" model="ir.ui.view">
             <field name="name">sirh.form.tree</field>
@@ -43,7 +41,7 @@
                             <field name="autre"/>
                             <field name="dateEntree"/>
                         </group>
-                         <group string="Description du poste:">
+                        <group string="Description du poste:">
                             <field name="desc_id"/>
                         </group>
                         <group string="Annonce">
@@ -67,7 +65,7 @@
         <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_recruitment"
                   parent="menu_besoin"/>
 
-<!--        menu item pour desc pour ouvrir mon formulaire-->
+        <!--        menu item pour desc pour ouvrir mon formulaire-->
     </data>
 </odoo>
 

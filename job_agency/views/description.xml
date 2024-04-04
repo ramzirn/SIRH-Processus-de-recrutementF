@@ -1,6 +1,6 @@
 <odoo>
     <data>
-<!--        Formulaire de description-->
+        <!--        Formulaire de description-->
         <record id="view_form_description" model="ir.ui.view">
             <field name="name">sirh.desc.form</field>
             <field name="model">sirh.desc</field>
@@ -32,7 +32,7 @@
             </field>
         </record>
 
-<!--        action pour la vue formulaire-->
+        <!--        action pour la vue formulaire-->
         <record id="action_show_form_description" model="ir.actions.act_window">
             <field name="name">Description du poste</field>
             <field name="type">ir.actions.act_window</field>
@@ -43,7 +43,7 @@
             <field name="target">current</field>
         </record>
 
-<!--        vue formulaire readonly-->
+        <!--        vue formulaire readonly-->
         <record id="view_description" model="ir.ui.view">
             <field name="name">sirh.desc.form</field>
             <field name="model">sirh.desc</field>
@@ -75,7 +75,7 @@
             </field>
         </record>
 
-<!--        vue tree description-->
+        <!--        vue tree description-->
         <record id="view_desc_tree" model="ir.ui.view">
             <field name="name">sirh.desc.tree</field>
             <field name="model">sirh.desc</field>
@@ -98,7 +98,7 @@
             </field>
         </record>
 
-<!--        action pour vue tree description-->
+        <!--        action pour vue tree description-->
         <record id="act_list_desc" model="ir.actions.act_window">
             <field name="name">Liste des descriptions</field>
             <field name="type">ir.actions.act_window</field>
@@ -113,6 +113,6 @@
 
         <menuitem name="Description du poste" id="form_desc" action="action_show_form_description"
                   parent="menu_besoin"/>
-<!--        hr_recruitment-->
+        <!--        hr_recruitment-->
     </data>
 </odoo>

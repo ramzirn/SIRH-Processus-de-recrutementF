@@ -18,4 +18,4 @@ class Annonce(models.Model):
         ('tel', 'Telephone'),
         ('fax', 'Fax'),
     ], string='Modalités de réponse', default='email', required=True)
-    obligations = fields.Text(string='Les obligations')
+    obligations = fields.Text(string='Obligations')
