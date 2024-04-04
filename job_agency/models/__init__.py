@@ -2,6 +2,9 @@ from . import annonce
 from . import candidat
 from . import candidature
 from . import description
+from . import document
+from . import formation
 from . import grilleCandidature
+from . import poste
 from . import questionnaire_model
 from . import recrutement

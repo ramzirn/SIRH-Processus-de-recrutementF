@@ -1,11 +1,11 @@
 <odoo>
     <data>
         <!--        view form candidat-->
-        <record id="view_employee_form" model="ir.ui.view">
-            <field name="name">candidat.form</field>
-            <field name="model">candidat</field>
+        <record id="view_candidat_form" model="ir.ui.view">
+            <field name="name">sirh.candidat.form</field>
+            <field name="model">sirh.candidat</field>
             <field name="arch" type="xml">
-                <form string="Formulaire Employé">
+                <form string="Fiche Candidat">
                     <sheet>
                         <group>
                             <field name="sexe"/>
@@ -17,64 +17,72 @@
                             <field name="adresse"/>
                             <field name="mobile"/>
                             <field name="email"/>
-                            <field name="diplome_id"/>
+                            <field name="diplome"/>
                             <field name="specialite"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
         <!--        view liste candidats-->
-        <record>
-
+        <record id="view_candidat_tree" model="ir.ui.view">
+            <field name="name">sirh.candidat.tree</field>
+            <field name="model">sirh.candidat</field>
+            <field name="arch" type="xml">
+                <form string="Liste des candidats">
+                    <sheet>
+                        <field name="sexe"/>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="date_naissance"/>
+                        <field name="lieu_naissance"/>
+                        <field name="situation_familiale"/>
+                        <field name="adresse"/>
+                        <field name="mobile"/>
+                        <field name="email"/>
+                        <field name="diplome"/>
+                        <field name="specialite"/>
+                    </sheet>
+                </form>
+            </field>
         </record>
+
         <!--        view liste candidatures-->
-        <record>
-
+        <record id="view_cadidature_tree" model="ir.ui.view">
+            <field name="name">sirh.candidature.tree</field>
+            <field name="model">sirh.candidature</field>
+            <field name="arch" type="xml">
+                <form string="Liste des candidatures">
+                    <sheet>
+                        <field name="candidat_id"/>
+                        <field name="datedepot"/>
+                        <field name="disponibilite"/>
+                        <field name="conditionphysique"/>
+                        <field name="departement"/>
+                        <field name="docs"/>
+                    </sheet>
+                </form>
+            </field>
         </record>
 
 
-        <!--    <record id="view_employee_tree" model="ir.ui.view">-->
-        <!--        <field name="name">candidat.tree</field>-->
-        <!--        <field name="model">candidat</field>-->
-        <!--        <field name="arch" type="xml">-->
-        <!--            <form string="Formulaire Employé">-->
-        <!--                <sheet>-->
-        <!--                    <group>-->
-        <!--                        <field name="sexe"/>-->
-        <!--                        <field name="nom"/>-->
-        <!--                        <field name="prenom"/>-->
-        <!--                        <field name="date_naissance"/>-->
-        <!--                        <field name="lieu_naissance"/>-->
-        <!--                        <field name="situation_familiale"/>-->
-        <!--                        <field name="adresse"/>-->
-        <!--                        <field name="mobile"/>-->
-        <!--                        <field name="telephone"/>-->
-        <!--                        <field name="email"/>-->
-        <!--                        <field name="diplome_id"/>-->
-        <!--                        <field name="specialite"/>-->
-        <!--                    </group>-->
-        <!--                </sheet>-->
-        <!--            </form>-->
-        <!--        </field>-->
-        <!--    </record>-->
-
-        <!--    definition de laction-->
+<!--        &lt;!&ndash;    definition de laction&ndash;&gt;-->
 
 
-        <record id="action_employee_form" model="ir.actions.act_window">
-            <field name="name">Action Employee Form</field>
-            <field name="res_model">candidat</field>
-            <field name="view_mode">form</field>
-            <field name="view_type">form</field>
-            <field name="target">current</field>
-        </record>
+<!--        <record id="action_employee_form" model="ir.actions.act_window">-->
+<!--            <field name="name">Action Employee Form</field>-->
+<!--            <field name="res_model">candidat</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_type">form</field>-->
+<!--            <field name="target">current</field>-->
+<!--        </record>-->
 
-        <!-- Définition du menu pour accéder au formulaire de l'employé -->
-        <menuitem id="menu_employee" name="Fiche candidat" parent="hr_recruitment.menu_hr_recruitment_root"
-                  action="action_employee_form"/>
+<!--        &lt;!&ndash; Définition du menu pour accéder au formulaire de l'employé &ndash;&gt;-->
+<!--        <menuitem id="menu_employee" name="Fiche candidat" parent="hr_recruitment.menu_hr_recruitment_root"-->
+<!--                  action="action_employee_form"/>-->
 
-        <menuitem id="menuitem_employee_form" name="Employee Form" parent="menu_employee"
-                  action="action_employee_form"/>
+<!--        <menuitem id="menuitem_employee_form" name="Employee Form" parent="menu_employee"-->
+<!--                  action="action_employee_form"/>-->
     </data>
 </odoo>
