@@ -21,5 +21,5 @@ class Candidature(models.Model):
     departement = fields.Many2one('hr.department')
     # structure =
     # unite =
-    # cv = fields.Binary(string='CV')
-    docs = fields.Many2many('sirh.document', string='Documents')
+    cv = fields.Binary(string='CV')
+    # docs = fields.Many2many('sirh.document', string='Documents')

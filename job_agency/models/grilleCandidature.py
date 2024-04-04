@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class GrilleCandidature(models.Model):
-    _name = "grillecandidature"
+    _name = "sirh.grillecandidature"
 
     y = fields.Many2one('candidat', string='Candidat')
 

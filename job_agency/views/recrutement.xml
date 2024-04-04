@@ -32,7 +32,6 @@
                         <group string="Definir le besoin">
                             <field name="motif"/>
                             <field name="pourex"/>
-                            from . import formation
                             <field name="budget"/>
                             <!--                            <field name="intitule"/>-->
                             <field name="echeanceContrat"/>

@@ -2,6 +2,7 @@ from . import annonce
 from . import candidat
 from . import candidature
 from . import description
+from . import diplome
 from . import document
 from . import formation
 from . import grilleCandidature

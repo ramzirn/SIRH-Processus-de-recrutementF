@@ -1,11 +1,19 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class Description(models.Model):
     _name = 'sirh.desc'
-    _rec_name = 'intitule'
+    # _rec_name = 'intitule'
 
     intitule = fields.Many2one('sirh.poste', string='Intitulé du poste')
+    # Champ calculé pour afficher le champ lié 'post' de sirh.poste
+    # intitule = fields.Char(string="Intitulé du poste", compute='_compute_intitule', store=True)
+
+    # @api.depends('poste_id')
+    # def _compute_intitule(self):
+    #     for record in self:
+    #         record.intitule = record.poste_id.post
+
     descr = fields.Text(string='Description du poste', required=True)
     # Compétences demandées
     niveau = fields.Many2one('hr.recruitment.degree', string="Niveau d'étude", required=True)

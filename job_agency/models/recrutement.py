@@ -4,13 +4,6 @@ from odoo import api, models, fields
 from odoo.exceptions import ValidationError
 
 
-class Poste(models.Model):
-    _name = 'sirh.poste'
-    _rec_name = 'post'
-
-    post = fields.Char(string="Intitulé du poste", size=50)
-
-
 def est_annee(val):
     if isinstance(val, int):
         if int(datetime.today().year) <= val:
@@ -36,13 +29,7 @@ class Recrutement(models.Model):
                 raise ValidationError("Date d'exercice doit etre superieure a la date d'aujourd'hui.")
 
     budget = fields.Float(string='Budget alloué', required=True)
-    # intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
-
-    # @api on change
-    # sur intitule
-    # un code
-    # intitule de desc recoit cette valeur
-
+    # intitule = fields'intitule'.Many2one('sirh.poste', string='Intitulé du poste', required=True)
     echeanceContrat = fields.Date(string='Échéance du contrat')
     xp = fields.Integer(string='Années d\'expérience', required=True)
     lieu = fields.Char(string='Lieu de travail', required=True)
