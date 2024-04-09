@@ -60,12 +60,10 @@
             <field name="context">{}</field>
         </record>
 
-        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root" sequence="1"/>
+        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root"/>
 
         <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_recruitment"
                   parent="menu_besoin"/>
-
-        <!--        menu item pour desc pour ouvrir mon formulaire-->
     </data>
 </odoo>
 

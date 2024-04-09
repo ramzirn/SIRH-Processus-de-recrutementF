@@ -6,7 +6,6 @@
     'category': 'Human Ressources',
     'description': """
 This module helps to configure the system at the installation of a new database.
-gggggggggggggggggggggggggggggggggggggggggggggggggg
 Shows you a list of applications features to install from.
     """,
     'depends': [
@@ -17,9 +16,9 @@ Shows you a list of applications features to install from.
     'data': [
         'views/annonce.xml',
         'views/candidat.xml',
+        'views/candidature.xml',
         'views/description.xml',
         'views/FicheCandidat.xml',
-        'views/grilleCandidature.xml',
         'views/modifcandidatures.xml',
         'views/recrutement.xml',
         'views/VueListeeCandidats.xml',

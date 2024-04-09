@@ -8,6 +8,7 @@ class Candidat(models.Model):
     sexe = fields.Selection([('male', 'Homme'), ('female', 'Femme')], string='Sexe')
     nom = fields.Char(string='Nom', required=True)
     prenom = fields.Char(string='Prénom', required=True)
+
     date_naissance = fields.Date(string='Date de Naissance')
     lieu_naissance = fields.Char(string='Lieu de Naissance')
     situation_familiale = fields.Selection(
@@ -30,6 +31,7 @@ class Candidat(models.Model):
     def _compute_total_points(self):
         for record in self:
             record.total_points = record.savoir_et_connaissance + record.savoir_faire_et_experience + record.savoir_etre_et_qualite_requises + record.formations_diplome
+
     nom_complet = fields.Char(string='Nom Complet', compute='_compute_nom_complet', store=True)
 
     @api.depends('nom', 'prenom')

@@ -48,42 +48,18 @@
             </field>
         </record>
 
-        <!--        view liste candidatures-->
-        <record id="view_cadidature_tree" model="ir.ui.view">
-            <field name="name">sirh.candidature.tree</field>
-            <field name="model">sirh.candidature</field>
-            <field name="arch" type="xml">
-                <form string="Liste des candidatures">
-                    <sheet>
-                        <field name="candidat_id"/>
-                        <field name="datedepot"/>
-                        <field name="disponibilite"/>
-                        <field name="conditionphysique"/>
-                        <field name="departement"/>
-                        <field name="cv"/>
-                        <!--                        <field name="docs"/>-->
-                    </sheet>
-                </form>
-            </field>
+        <!--        action pour vue tree candidat-->
+        <record id="act_list_candidat" model="ir.actions.act_window">
+            <field name="name">Liste des candidats</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sirh.candidat</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
         </record>
 
+        <!-- Menu pour accéder à la vue de type tree de la classe Employee -->
+        <menuitem id="menu_candidats" name="Candidats" parent="hr_recruitment.menu_hr_recruitment_root" sequence="20"/>
+        <menuitem id="menu_liste_candidat" name="Liste des candidats" parent="menu_candidats" action="act_list_candidat"/>
 
-        <!--        &lt;!&ndash;    definition de laction&ndash;&gt;-->
-
-
-        <!--        <record id="action_employee_form" model="ir.actions.act_window">-->
-        <!--            <field name="name">Action Employee Form</field>-->
-        <!--            <field name="res_model">candidat</field>-->
-        <!--            <field name="view_mode">form</field>-->
-        <!--            <field name="view_type">form</field>-->
-        <!--            <field name="target">current</field>-->
-        <!--        </record>-->
-
-        <!--        &lt;!&ndash; Définition du menu pour accéder au formulaire de l'employé &ndash;&gt;-->
-        <!--        <menuitem id="menu_employee" name="Fiche candidat" parent="hr_recruitment.menu_hr_recruitment_root"-->
-        <!--                  action="action_employee_form"/>-->
-
-        <!--        <menuitem id="menuitem_employee_form" name="Employee Form" parent="menu_employee"-->
-        <!--                  action="action_employee_form"/>-->
     </data>
 </odoo>
