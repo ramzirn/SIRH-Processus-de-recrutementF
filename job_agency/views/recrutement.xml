@@ -29,24 +29,32 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <group string="Definir le besoin">
-                            <field name="motif"/>
-                            <field name="pourex"/>
-                            <field name="budget"/>
-                            <!--                            <field name="intitule"/>-->
-                            <field name="echeanceContrat"/>
-                            <field name="xp"/>
-                            <field name="lieu"/>
-                            <field name="deplacement"/>
-                            <field name="autre"/>
-                            <field name="dateEntree"/>
-                        </group>
-                        <group string="Description du poste:">
-                            <field name="desc_id"/>
-                        </group>
-                        <group string="Annonce">
-                            <field name="annonce_id"/>
-                        </group>
+                        <notebook>
+                            <page string="Definition du besoin">
+                                <group>
+                                    <field name="motif"/>
+                                    <field name="pourex"/>
+                                    <field name="budget"/>
+                                    <!--                            <field name="intitule"/>-->
+                                    <field name="echeanceContrat"/>
+                                    <field name="xp"/>
+                                    <field name="lieu"/>
+                                    <field name="deplacement"/>
+                                    <field name="autre"/>
+                                    <field name="dateEntree"/>
+                                </group>
+                            </page>
+                            <page string="Desccription du poste">
+                                <group>
+                                    <field name="desc_id"/>
+                                </group>
+                            </page>
+                            <page string="Annonce">
+                                <group>
+                                    <field name="annonce_id"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

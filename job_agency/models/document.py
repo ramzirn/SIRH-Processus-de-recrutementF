@@ -7,4 +7,4 @@ class Document(models.Model):
 
     name = fields.Char(string='Nom du document')
     data = fields.Binary(string='Document')
-    mon_model_id = fields.Many2one('sirh.candidature', string='Candidature')
+    doc_id = fields.Many2one('sirh.candidature', string='Candidature')

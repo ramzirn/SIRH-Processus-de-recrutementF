@@ -4,8 +4,8 @@ from . import candidature
 from . import description
 from . import diplome
 from . import document
+from . import evaluation
 from . import formation
-from . import grilleCandidature
 from . import poste
 from . import questionnaire_model
 from . import recrutement

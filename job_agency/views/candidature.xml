@@ -13,9 +13,26 @@
                             <field name="disponibilite"/>
                             <field name="conditionphysique"/>
                             <field name="departement"/>
-                            <field name="cv"/>
-                            <!--                        <field name="docs"/>-->
                         </group>
+                        <notebook>
+                            <page string="Evaluation">
+                                <field name="eval" widget="one2many_list">
+                                    <tree editable="bottom">
+                                        <field name="crit"/>
+                                        <field name="observation"/>
+                                        <field name="note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Documentation">
+                                <field name="docs" widget="one2many_list">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="data"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -25,32 +42,32 @@
         <record id="view_cadidature_tree" model="ir.ui.view">
             <field name="name">sirh.candidature.tree</field>
             <field name="model">sirh.candidature</field>
+            <field name="type">tree</field>
             <field name="arch" type="xml">
-                <form string="Liste des candidatures">
-                    <sheet>
-                        <field name="candidat_id"/>
-                        <field name="datedepot"/>
-                        <field name="disponibilite"/>
-                        <field name="conditionphysique"/>
-                        <field name="departement"/>
-                        <field name="cv"/>
-                        <!--                        <field name="docs"/>-->
-                    </sheet>
-                </form>
+                <tree string="Liste des candidatures">
+                    <field name="candidat_id"/>
+                    <field name="recrutement_id"/>
+                    <field name="datedepot"/>
+                    <field name="disponibilite"/>
+                    <field name="conditionphysique"/>
+                    <field name="departement"/>
+                </tree>
             </field>
         </record>
+
 
         <!--        action pour vue tree candidature-->
         <record id="act_list_candidature" model="ir.actions.act_window">
             <field name="name">Liste des candidatures</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sirh.candidature</field>
-            <field name="view_mode">tree</field>
-            <field name="context">{}</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_candidatures" name="Candidatures" parent="hr_recruitment.menu_hr_recruitment_root" sequence="30"/>
-        <menuitem id="menu_liste_candidature" name="Liste des candidatures" parent="menu_candidatures" action="act_list_candidature"/>
+        <menuitem id="menu_candidatures" name="Candidatures" parent="hr_recruitment.menu_hr_recruitment_root"
+                  sequence="30"/>
+        <menuitem id="menu_liste_candidature" name="Liste des candidatures" parent="menu_candidatures"
+                  action="act_list_candidature"/>
 
     </data>
 </odoo>

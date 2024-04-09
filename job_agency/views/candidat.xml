@@ -1,65 +1,115 @@
 <odoo>
     <data>
-        <!--        view form candidat-->
-        <record id="view_candidat_form" model="ir.ui.view">
-            <field name="name">sirh.candidat.form</field>
-            <field name="model">sirh.candidat</field>
-            <field name="arch" type="xml">
-                <form string="Fiche Candidat">
-                    <sheet>
-                        <group>
-                            <field name="sexe"/>
-                            <field name="nom"/>
-                            <field name="prenom"/>
-                            <field name="date_naissance"/>
-                            <field name="lieu_naissance"/>
-                            <field name="situation_familiale"/>
-                            <field name="adresse"/>
-                            <field name="mobile"/>
-                            <field name="email"/>
-                            <field name="diplome"/>
-                            <field name="specialite"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <!--        view liste candidats-->
-        <record id="view_candidat_tree" model="ir.ui.view">
+        <!-- Vue Tree -->
+        <record id="view_tree_sirh_candidat" model="ir.ui.view">
             <field name="name">sirh.candidat.tree</field>
             <field name="model">sirh.candidat</field>
             <field name="arch" type="xml">
-                <form string="Liste des candidats">
+                <tree>
+                    <field name="sexe"/>
+                    <field name="date_naissance"/>
+                    <field name="lieu_naissance"/>
+                    <field name="situation_familiale"/>
+                    <field name="adresse"/>
+                    <field name="mobile"/>
+                    <field name="email"/>
+                    <field name="diplome"/>
+                    <field name="specialite"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue Form -->
+        <record id="view_form_sirh_candidat" model="ir.ui.view">
+            <field name="name">sirh.candidat.form</field>
+            <field name="model">sirh.candidat</field>
+            <field name="arch" type="xml">
+                <form>
                     <sheet>
-                        <field name="sexe"/>
-                        <field name="nom"/>
-                        <field name="prenom"/>
-                        <field name="date_naissance"/>
-                        <field name="lieu_naissance"/>
-                        <field name="situation_familiale"/>
-                        <field name="adresse"/>
-                        <field name="mobile"/>
-                        <field name="email"/>
-                        <field name="diplome"/>
-                        <field name="specialite"/>
+                        <!-- Onglet 1 -->
+                        <notebook>
+                            <page string="Informations Générales">
+                                <group>
+                                    <field name="sexe"/>
+                                    <field name="nom"/>
+                                    <field name="prenom"/>
+                                    <field name="date_naissance"/>
+                                    <field name="lieu_naissance"/>
+                                    <field name="situation_familiale"/>
+                                    <field name="adresse"/>
+                                    <field name="mobile"/>
+                                    <field name="email"/>
+                                    <field name="diplome"/>
+                                    <field name="specialite"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <!--        action pour vue tree candidat-->
+
+        <!--        &lt;!&ndash;        view form candidat&ndash;&gt;-->
+        <!--        <record id="view_candidat_form" model="ir.ui.view">-->
+        <!--            <field name="name">sirh.candidat.form</field>-->
+        <!--            <field name="model">sirh.candidat</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form string="Fiche Candidat">-->
+        <!--                    <sheet>-->
+        <!--                        <group>-->
+        <!--                            <field name="sexe"/>-->
+        <!--                            <field name="nom"/>-->
+        <!--                            <field name="prenom"/>-->
+        <!--                            <field name="date_naissance"/>-->
+        <!--                            <field name="lieu_naissance"/>-->
+        <!--                            <field name="situation_familiale"/>-->
+        <!--                            <field name="adresse"/>-->
+        <!--                            <field name="mobile"/>-->
+        <!--                            <field name="email"/>-->
+        <!--                            <field name="diplome"/>-->
+        <!--                            <field name="specialite"/>-->
+        <!--                        </group>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        &lt;!&ndash;        view liste candidats&ndash;&gt;-->
+        <!--        <record id="view_candidat_tree" model="ir.ui.view">-->
+        <!--            <field name="name">sirh.candidat.tree</field>-->
+        <!--            <field name="model">sirh.candidat</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form string="Liste des candidats">-->
+        <!--                    <sheet>-->
+        <!--                        <field name="sexe"/>-->
+        <!--                        <field name="nom"/>-->
+        <!--                        <field name="prenom"/>-->
+        <!--                        <field name="date_naissance"/>-->
+        <!--                        <field name="lieu_naissance"/>-->
+        <!--                        <field name="situation_familiale"/>-->
+        <!--                        <field name="adresse"/>-->
+        <!--                        <field name="mobile"/>-->
+        <!--                        <field name="email"/>-->
+        <!--                        <field name="diplome"/>-->
+        <!--                        <field name="specialite"/>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
         <record id="act_list_candidat" model="ir.actions.act_window">
             <field name="name">Liste des candidats</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sirh.candidat</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,form</field>
             <field name="context">{}</field>
         </record>
 
         <!-- Menu pour accéder à la vue de type tree de la classe Employee -->
         <menuitem id="menu_candidats" name="Candidats" parent="hr_recruitment.menu_hr_recruitment_root" sequence="20"/>
-        <menuitem id="menu_liste_candidat" name="Liste des candidats" parent="menu_candidats" action="act_list_candidat"/>
+        <menuitem id="menu_list_candidat" name="Liste des candidats" parent="menu_candidats"
+                  action="act_list_candidat"/>
 
     </data>
 </odoo>
