@@ -6,7 +6,7 @@ class Candidature(models.Model):
 
     candidat_id = fields.Many2one('sirh.candidat', string='Candidat', required=True)
     recrutement_id = fields.Many2one('sirh.form', string='Recrutement', required=True)
-    datedepot = fields.Date(required=True)
+    datedepot = fields.Date(required=True, string="Date depot")
     disponibilite = fields.Boolean(string="Disponibilité")
     conditionphysique = fields.Selection([
         ('excellente', 'Excellente'),

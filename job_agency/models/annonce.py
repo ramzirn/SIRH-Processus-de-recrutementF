@@ -1,21 +1,35 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class Annonce(models.Model):
     _name = 'sirh.annonce'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     accroche = fields.Selection([
         ('interne', 'Interne'),
         ('externe', 'Externe'),
         ('mixte', 'Mixte')
-    ], string='l\'accroche de l\'annonce', default='interne', required=True)
-    # contenu de l'annonce
-    desc_societe = fields.Text(string='Descriptif rapide de la société', default='CETIC')
-    desc_poste = fields.Text(string='Décrire le poste')
-    profil_recherche = fields.Text(string='Décrire le profil recherché')
+    ], string='l\'accroche de l\'annonce', default='interne', required=True, track_visibility='always')
+    # contenu de l'anRecrutementnonce
+    desc_societe = fields.Text(string='Descriptif rapide de la société', track_visibility='always')
+    desc_poste = fields.Text(string='Décrire le poste', track_visibility='always')
+    profil_recherche = fields.Text(string='Décrire le profil recherché', track_visibility='always')
     modalite_reponse = fields.Selection([
         ('email', 'Email'),
         ('tel', 'Telephone'),
         ('fax', 'Fax'),
-    ], string='Modalités de réponse', default='email', required=True)
-    obligations = fields.Text(string='Obligations')
+    ], string='Modalités de réponse', default='email', required=True, track_visibility='always')
+    obligations = fields.Text(string='Obligations', track_visibility='always')
+
+    create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
+    write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
+
+    @api.model
+    def create(self, vals):
+        vals['create_uid'] = self.env.user.id
+        return super(Annonce, self).create(vals)
+
+    @api.multi
+    def write(self, vals):
+        vals['write_uid'] = self.env.user.id
+        return super(Annonce, self).write(vals)

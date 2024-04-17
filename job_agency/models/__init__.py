@@ -4,6 +4,7 @@ from . import candidature
 from . import description
 from . import diplome
 from . import document
+from . import entretien
 from . import evaluation
 from . import formation
 from . import poste

@@ -4,9 +4,9 @@ from odoo import models, fields, api
 class Evaluation(models.Model):
     _name = 'sirh.evaluation'
 
-    crit = fields.Char(string='Crit')
+    crit = fields.Char(string='Critère')
     observation = fields.Text(string='Observation')
-    note = fields.Integer()
+    note = fields.Integer(string='Note/5')
     # savoir_et_connaissance = fields.Integer(string='Savoir et Connaissance', default=0)
     # savoir_faire_et_experience = fields.Integer(string='Savoir-Faire et Expérience', default=0)
     # savoir_etre_et_qualite_requises = fields.Integer(string='Savoir-Être et Qualité Requises', default=0)
