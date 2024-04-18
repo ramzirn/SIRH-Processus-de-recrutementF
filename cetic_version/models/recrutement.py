@@ -40,9 +40,6 @@ class Recrutement(models.Model):
     lieu = fields.Char(string='Lieu de travail', required=True)
     deplacement = fields.Char(string='Déplacement à prévoir', required=True)
     autre = fields.Char(string="Autres aspects à considérer")
-<<<<<<< HEAD
-
-    dateEntree = fields.Date(string="Date d'entrée")
 
     def ajout_description(self):
 
@@ -75,11 +72,9 @@ class Recrutement(models.Model):
 
     desc_id = fields.Many2one('sirh.desc', required=True)
     annonce_id = fields.Many2one('sirh.annonce')
-=======
     dateEntree = fields.Date(string="Date d'entrée souhaitée", required=True)
     dom = fields.Many2one('sirh.domainexp', string="Domaine(s) d'experience(s) attendu(s)", required=True)
 
->>>>>>> 5fd5ac4cca5f751607f3b0c09a02a7d3b6b2065f
 
 class DomaineExp(models.Model):
     _name = 'sirh.domainexp'
@@ -92,7 +87,6 @@ class Poste(models.Model):
     _name = 'sirh.poste'
     _rec_name = 'post'
 
-<<<<<<< HEAD
     def show_annonce(self):
         if self.annonce_id:
             return {
@@ -109,6 +103,4 @@ class Poste(models.Model):
     def show_description(self):
         a = self.env['sirh.desc'].search([('id', '=', self.desc_id.id)])
 
-=======
     post = fields.Char(string="Intitulé du poste", size=50)
->>>>>>> 5fd5ac4cca5f751607f3b0c09a02a7d3b6b2065f

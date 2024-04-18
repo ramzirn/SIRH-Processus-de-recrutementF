@@ -1,5 +1,5 @@
-<!--<odoo>-->
-<!--    <data>-->
+<odoo>
+    <data>
 <!--        <record id="view_candidature_form" model="ir.ui.view">-->
 <!--            <field name="name">sirh.candidature.form</field>-->
 <!--            <field name="model">sirh.candidature</field>-->
@@ -80,5 +80,5 @@
 
 <!--        <menuitem id="menu_form_candidature" name="Ajouter une candidature" parent="menu_candidatures"-->
 <!--                  action="act_form_candidature" sequence="10"/>-->
-<!--    </data>-->
-<!--</odoo>-->
+    </data>
+</odoo>

@@ -1,5 +1,5 @@
-<!--<odoo>-->
-<!--    <data>-->
+<odoo>
+    <data>
 <!--        <record id="view_form_entretien" model="ir.ui.view">-->
 <!--            <field name="name">sirh.entretien.form</field>-->
 <!--            <field name="model">sirh.entretien</field>-->
@@ -78,5 +78,5 @@
 <!--        <menuitem id="menu_form_entretien" name="Planifier un entretien" parent="menu_entretiens"-->
 <!--                  action="act_form_entretien" sequence="10"/>-->
 
-<!--    </data>-->
-<!--</odoo>-->
+    </data>
+</odoo>

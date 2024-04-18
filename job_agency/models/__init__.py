@@ -5,7 +5,7 @@ from . import description
 from . import diplome
 from . import document
 # from . import entretien
-from . import evaluation
+# from . import evaluation
 from . import formation
 from . import poste
 from . import questionnaire_model
