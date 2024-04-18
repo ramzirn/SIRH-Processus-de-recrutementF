@@ -32,3 +32,4 @@ class Entretien(models.Model):
     def _get_responsable_domain(self):
         job_responsable_id = self.env['hr.job'].search([('name', '=', 'Responsable de recrutement')], limit=1)
         return [('job_id', '=', job_responsable_id.id)]
+#

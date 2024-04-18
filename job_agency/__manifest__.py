@@ -19,7 +19,7 @@ Shows you a list of applications features to install from.
         'views/candidat.xml',
         'views/candidature.xml',
         'views/description.xml',
-        'views/entretien.xml',
+        # 'views/entretien.xml',
         'views/FicheCandidat.xml',
         'views/VueListeeCandidats.xml',
         'reports/reports.xml',
