@@ -10,3 +10,4 @@ from . import formation
 from . import poste
 from . import questionnaire_model
 from . import recrutement
+from . import salle

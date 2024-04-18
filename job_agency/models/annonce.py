@@ -9,17 +9,17 @@ class Annonce(models.Model):
         ('interne', 'Interne'),
         ('externe', 'Externe'),
         ('mixte', 'Mixte')
-    ], string='l\'accroche de l\'annonce', default='interne', required=True, track_visibility='always')
+    ], string='l\'accroche de l\'annonce', default='interne', required=True, track_visibility='onchange')
     # contenu de l'anRecrutementnonce
-    desc_societe = fields.Text(string='Descriptif rapide de la société', track_visibility='always')
-    desc_poste = fields.Text(string='Décrire le poste', track_visibility='always')
-    profil_recherche = fields.Text(string='Décrire le profil recherché', track_visibility='always')
+    desc_societe = fields.Text(string='Descriptif rapide de la société', track_visibility='onchange')
+    desc_poste = fields.Text(string='Décrire le poste', track_visibility='onchange')
+    profil_recherche = fields.Text(string='Décrire le profil recherché', track_visibility='onchange')
     modalite_reponse = fields.Selection([
         ('email', 'Email'),
         ('tel', 'Telephone'),
         ('fax', 'Fax'),
-    ], string='Modalités de réponse', default='email', required=True, track_visibility='always')
-    obligations = fields.Text(string='Obligations', track_visibility='always')
+    ], string='Modalités de réponse', default='email', required=True, track_visibility='onchange')
+    obligations = fields.Text(string='Obligations', track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
