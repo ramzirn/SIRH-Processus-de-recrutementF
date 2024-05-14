@@ -6,7 +6,7 @@ class Candidature(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     candidat_id = fields.Many2one('sirh.candidat', string='Candidat', required=True, track_visibility='onchange')
-    recrutement_id = fields.Many2one('sirh.form', string='Recrutement', required=True, track_visibility='onchange')
+    besoin_id = fields.Many2one('sirh.besoin', string='Besoin', required=True, track_visibility='onchange')
     datedepot = fields.Date(required=True, string="Date depot", track_visibility='onchange')
     disponibilite = fields.Boolean(string="Disponibilité", track_visibility='onchange')
     conditionphysique = fields.Selection([

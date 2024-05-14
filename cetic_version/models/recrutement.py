@@ -12,7 +12,7 @@ def est_annee(val):
 
 
 class Recrutement(models.Model):
-    _name = 'sirh.form'
+    _name = 'sirh.besoin'
     _rec_name = 'motif'
 
     motif = fields.Selection([

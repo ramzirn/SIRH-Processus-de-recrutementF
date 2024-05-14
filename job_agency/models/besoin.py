@@ -10,8 +10,8 @@ def est_annee(val):
     return False
 
 
-class Recrutement(models.Model):
-    _name = 'sirh.form'
+class Besoin(models.Model):
+    _name = 'sirh.besoin'
     _rec_name = 'motif'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -46,9 +46,9 @@ class Recrutement(models.Model):
     @api.model
     def create(self, vals):
         vals['create_uid'] = self.env.user.id
-        return super(Recrutement, self).create(vals)
+        return super(Besoin, self).create(vals)
 
     @api.multi
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
-        return super(Recrutement, self).write(vals)
+        return super(Besoin, self).write(vals)

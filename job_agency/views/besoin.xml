@@ -1,12 +1,12 @@
 <odoo>
     <data>
-        <!--                Liste des recrutements-->
-        <record id="view_form_recruitment_tree" model="ir.ui.view">
-            <field name="name">sirh.form.tree</field>
-            <field name="model">sirh.form</field>
+        <!--                Liste des besoins-->
+        <record id="view_form_besoin_tree" model="ir.ui.view">
+            <field name="name">sirh.besoin.tree</field>
+            <field name="model">sirh.besoin</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Liste des recrutements">
+                <tree string="Liste des besoins">
                     <field name="motif"/>
                     <field name="pourex"/>
                     <field name="budget"/>
@@ -20,10 +20,10 @@
             </field>
         </record>
 
-        <!--        Formulaire de recrutement-->
-        <record id="view_form_recruitment_form" model="ir.ui.view">
-            <field name="name">sirh.forme.form</field>
-            <field name="model">sirh.form</field>
+        <!--        Formulaire de besoin-->
+        <record id="view_form_besoin_form" model="ir.ui.view">
+            <field name="name">sirh.besoin.form</field>
+            <field name="model">sirh.besoin</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form>
@@ -62,28 +62,28 @@
             </field>
         </record>
 
-        <record id="act_form_liste_recruitment" model="ir.actions.act_window">
+        <record id="act_form_liste_besoin" model="ir.actions.act_window">
             <field name="name">Definition du besoin</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">sirh.form</field>
+            <field name="res_model">sirh.besoin</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{}</field>
         </record>
 
-        <record id="act_form_recruitment" model="ir.actions.act_window">
+        <record id="act_form_besoin" model="ir.actions.act_window">
             <field name="name">Definition du besoin</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">sirh.form</field>
+            <field name="res_model">sirh.besoin</field>
             <field name="view_mode">form</field>
             <field name="context">{}</field>
         </record>
 
         <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root"/>
 
-        <menuitem name="Definir un besoin" id="menu_definir_besoin" action="act_form_recruitment"
+        <menuitem name="Definir un besoin" id="menu_definir_besoin" action="act_form_besoin"
                   parent="menu_besoin" sequence="10"/>
 
-        <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_liste_recruitment"
+        <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_liste_besoin"
                   parent="menu_besoin" sequence="20"/>
     </data>
 </odoo>

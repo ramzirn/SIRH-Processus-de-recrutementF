@@ -10,7 +10,7 @@ class Annonce(models.Model):
         ('externe', 'Externe'),
         ('mixte', 'Mixte')
     ], string='l\'accroche de l\'annonce', default='interne', required=True, track_visibility='onchange')
-    # contenu de l'anRecrutementnonce
+    # contenu de l'annonce
     desc_societe = fields.Text(string='Descriptif rapide de la société', track_visibility='onchange')
     desc_poste = fields.Text(string='Décrire le poste', track_visibility='onchange')
     profil_recherche = fields.Text(string='Décrire le profil recherché', track_visibility='onchange')
