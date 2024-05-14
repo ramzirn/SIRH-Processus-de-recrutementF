@@ -81,7 +81,7 @@ class Recrutement(models.Model):
     annonce_id = models.CharField(max_length=50, verbose_name='Annonce', null=True, blank=True)
 
     class Meta:
-        db_table = 'sirh_form'
+        db_table = 'sirh_besoin'
 
 
 

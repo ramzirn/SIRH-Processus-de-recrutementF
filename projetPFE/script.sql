@@ -12,8 +12,8 @@ VALUES
 (2, 2, 'Description 2', 'Niveau 2', 'Diplôme 2', 'Formation 2', 'Expérience de formation 2', 'Savoir-faire 2', 'Savoir-être 2', 'Type 2', 35, 3500.00, 1, NOW(), 1, NOW()),
 (3, 3, 'Description 3', 'Niveau 3', 'Diplôme 3', 'Formation 3', 'Expérience de formation 3', 'Savoir-faire 3', 'Savoir-être 3', 'Type 3', 30, 4000.00, 1, NOW(), 1, NOW());
 
--- Insérer des données dans la table sirh_form
-INSERT INTO sirh_form (description_id, motif, pourex, intitule, budget, echeanceContrat, xp, lieu, Deplacement, autre, annonce_id, dateEntree, create_uid, create_date, write_uid, write_date)
+-- Insérer des données dans la table sirh_besoin
+INSERT INTO sirh_besoin (description_id, motif, pourex, intitule, budget, echeanceContrat, xp, lieu, Deplacement, autre, annonce_id, dateEntree, create_uid, create_date, write_uid, write_date)
 VALUES 
 (1, 'Motif 1', 1, 1, 5000.00, '2024-04-01', 2, 'Lieu 1', 'Deplacement 1', 'Autre 1', 1, '2024-04-15', 1, NOW(), 1, NOW()),
 (2, 'Motif 2', 2, 2, 6000.00, '2024-04-02', 3, 'Lieu 2', 'Deplacement 2', 'Autre 2', 2, '2024-04-16', 1, NOW(), 1, NOW()),

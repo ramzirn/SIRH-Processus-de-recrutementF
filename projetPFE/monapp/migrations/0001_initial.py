@@ -81,7 +81,7 @@ class Migration(migrations.Migration):
                 ('dateEntree', models.DateField(blank=True, null=True, verbose_name="Date d'entrée")),
             ],
             options={
-                'db_table': 'sirh_form',
+                'db_table': 'sirh_besoin',
             },
         ),
     ]
