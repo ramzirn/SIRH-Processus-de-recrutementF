@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'SIRH: Job Agency',
     'version': '1.0',
@@ -14,13 +13,13 @@ Shows you a list of applications features to install from.
         'hr_recruitment',
     ],
     'data': [
-        'views/recrutement.xml',
         'views/annonce.xml',
         'views/candidat.xml',
         'views/candidature.xml',
         'views/description.xml',
         'views/entretien.xml',
         'views/FicheCandidat.xml',
+        'views/recrutement.xml',
         'views/VueListeeCandidats.xml',
         'reports/reports.xml',
         'reports/fiche_pre_selection.xml',
@@ -31,3 +30,4 @@ Shows you a list of applications features to install from.
     'installable': True,
     'auto_install': False,
 }
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
