@@ -74,33 +74,3 @@ class Recrutement(models.Model):
     annonce_id = fields.Many2one('sirh.annonce')
     dateEntree = fields.Date(string="Date d'entrée souhaitée", required=True)
     dom = fields.Many2one('sirh.domainexp', string="Domaine(s) d'experience(s) attendu(s)", required=True)
-
-
-class DomaineExp(models.Model):
-    _name = 'sirh.domainexp'
-    _rec_name = 'dom'
-
-    dom = fields.Char(string="Domaine(s) d'experience(s) attendu(s)", size=50)
-
-
-class Poste(models.Model):
-    _name = 'sirh.poste'
-    _rec_name = 'post'
-
-    def show_annonce(self):
-        if self.annonce_id:
-            return {
-                'type': 'ir.actions.act_window',
-                'res_model': 'sirh.annonce',
-                'view_mode': 'form',
-                'view_type': 'readonly',
-                'target': 'current',
-                'res_id': self.annonce_id.id,
-            }
-        else:
-            return {'warning': 'Aucune annonce associée à ce recrutement.'}
-
-    def show_description(self):
-        a = self.env['sirh.desc'].search([('id', '=', self.desc_id.id)])
-
-    post = fields.Char(string="Intitulé du poste", size=50)

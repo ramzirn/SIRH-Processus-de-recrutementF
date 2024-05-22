@@ -11,7 +11,6 @@
                         <notebook>
                             <page string="Général">
                                 <group>
-                                    <field name="intitule"/>
                                     <field name="descr"/>
                                 </group>
                             </page>
@@ -20,7 +19,7 @@
                                     <field name="niveau"/>
                                     <field name="diplome"/>
                                     <field name="formation"/>
-                                    <field name="formation_experience"/>
+                                    <field name="formation_oblig"/>
                                     <field name="savoir_faire"/>
                                     <field name="savoir_etre"/>
                                 </group>
@@ -28,7 +27,6 @@
                             <page string="Conditions de l'emploi">
                                 <group>
                                     <field name="type"/>
-                                    <field name="temps"/>
                                     <field name="horaires"/>
                                     <field name="remuneration"/>
                                 </group>
@@ -50,16 +48,14 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des descriptions">
-                    <field name="intitule"/>
                     <field name="descr"/>
                     <field name="niveau"/>
                     <field name="diplome"/>
                     <field name="formation"/>
-                    <field name="formation_experience"/>
+                    <field name="formation_oblig"/>
                     <field name="savoir_faire"/>
                     <field name="savoir_etre"/>
                     <field name="type"/>
-                    <field name="temps"/>
                     <field name="horaires"/>
                     <field name="remuneration"/>
                 </tree>

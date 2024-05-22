@@ -7,9 +7,10 @@
                 <form>
                     <sheet>
                         <group string="Information">
+                            <field name="candidature_id"/>
                             <field name="date_heure" widget="datetime" options='{"format": "DD/MM/YYYY HH:mm"}'/>
-                            <field name="candidat_id"/>
                             <field name="responsable"/>
+                            <field name="interim"/>
                             <field name="salle"/>
                         </group>
                         <notebook>
@@ -47,9 +48,10 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des entretiens">
+                    <field name="candidature_id"/>
                     <field name="date_heure"/>
-                    <field name="candidat_id"/>
                     <field name="responsable"/>
+                    <field name="interim"/>
                     <field name="salle"/>
                 </tree>
             </field>

@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <!--                Liste des besoins-->
+        <!-- Liste des besoins-->
         <record id="view_form_besoin_tree" model="ir.ui.view">
             <field name="name">sirh.besoin.tree</field>
             <field name="model">sirh.besoin</field>
@@ -10,17 +10,20 @@
                     <field name="motif"/>
                     <field name="pourex"/>
                     <field name="budget"/>
+                    <field name="intitule"/>
                     <field name="echeanceContrat"/>
+<!--                    <field name="structure"/>-->
                     <field name="xp"/>
                     <field name="lieu"/>
                     <field name="deplacement"/>
                     <field name="autre"/>
                     <field name="dateEntree"/>
+                    <field name="domaine_ex"/>
                 </tree>
             </field>
         </record>
 
-        <!--        Formulaire de besoin-->
+        <!--  Formulaire de besoin-->
         <record id="view_form_besoin_form" model="ir.ui.view">
             <field name="name">sirh.besoin.form</field>
             <field name="model">sirh.besoin</field>
@@ -34,22 +37,25 @@
                                     <field name="motif"/>
                                     <field name="pourex"/>
                                     <field name="budget"/>
+                                    <field name="intitule"/>
                                     <field name="echeanceContrat"/>
+                <!--                    <field name="structure"/>-->
                                     <field name="xp"/>
                                     <field name="lieu"/>
                                     <field name="deplacement"/>
                                     <field name="autre"/>
                                     <field name="dateEntree"/>
+                                    <field name="domaine_ex"/>
                                 </group>
                             </page>
                             <page string="Description du poste">
                                 <group>
-                                    <field name="desc_id" placeholder="Votre description ici..."/>
+                                    <field name="desc_id" placeholder="Ajouter une description ici..."/>
                                 </group>
                             </page>
                             <page string="Annonce">
                                 <group>
-                                    <field name="annonce_id" placeholder="Votre annonce ici..."/>
+                                    <field name="annonce_id" placeholder="Ajouter une annonce ici..."/>
                                 </group>
                             </page>
                         </notebook>

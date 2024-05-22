@@ -7,9 +7,18 @@ class Evaluation(models.Model):
 
     crit = fields.Char(string='Critère', track_visibility='onchange')
     observation = fields.Text(string='Observation', track_visibility='onchange')
-    note = fields.Integer(string='Not\n(1 à 5)', track_visibility='onchange')
+    note = fields.Integer(string='Note\n(1 à 5)', track_visibility='onchange')
 
     candidature_id = fields.Many2one('sirh.candidature')
+    entretien_id = fields.Many2one('sirh.entretien')
+    @api.constrains('note')
+    def _check_note_range(self):
+        for record in self:
+            if not 1 <= record.note <= 5:
+                raise ValidationError("La note doit etre entre 1 et 5.")
+
+    candidature_id = fields.Many2one('sirh.candidature')
+    entretien_id = fields.Many2one('sirh.entretien')
 
     # savoir_et_connaissance = fields.Integer(string='Savoir et Connaissance', default=0)
     # savoir_faire_et_experience = fields.Integer(string='Savoir-Faire et Expérience', default=0)

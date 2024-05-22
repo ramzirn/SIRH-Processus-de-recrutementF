@@ -3,11 +3,9 @@ from odoo import fields, models, api
 
 class Poste(models.Model):
     _name = 'sirh.poste'
-    _rec_name = 'post'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    post = fields.Char(string="Intitulé du poste", size=50, track_visibility='onchange')
-
+    # details du poste
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 

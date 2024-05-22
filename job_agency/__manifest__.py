@@ -15,12 +15,9 @@ Shows you a list of applications features to install from.
     'data': [
         'views/besoin.xml',
         'views/annonce.xml',
-        'views/candidat.xml',
         'views/candidature.xml',
         'views/description.xml',
         'views/entretien.xml',
-        'views/FicheCandidat.xml',
-        'views/VueListeeCandidats.xml',
         'reports/reports.xml',
         'reports/fiche_pre_selection.xml',
         'reports/questionnaire.xml',

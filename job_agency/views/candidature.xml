@@ -7,12 +7,26 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="candidat_id"/>
-                            <field name="besoin_id"/>
+                            <field name="annonce_id"/>
+                            <field name="sexe"/>
+                            <field name="nom"/>
+                            <field name="prenom"/>
+                            <field name="date_naissance"/>
+                            <field name="lieu_naissance"/>
+                            <field name="situation_familiale"/>
+                            <field name="adresse"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                            <field name="niveau"/>
+                            <field name="diplomes"/>
+                            <field name="specialite"/>
+                            <field name="exp_prof"/>
+<!--                            \\\\\\\-->
                             <field name="datedepot"/>
                             <field name="disponibilite"/>
+                            <field name="salaire_dem"/>
+                            <field name="deplacement"/>
                             <field name="conditionphysique"/>
-                            <field name="departement"/>
                         </group>
                         <notebook>
                             <page string="Documentation">
@@ -48,12 +62,26 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Liste des candidatures">
-                    <field name="candidat_id"/>
-                    <field name="besoin_id"/>
+                    <field name="annonce_id"/>
+                    <field name="sexe"/>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                    <field name="date_naissance"/>
+                    <field name="lieu_naissance"/>
+                    <field name="situation_familiale"/>
+                    <field name="adresse"/>
+                    <field name="mobile"/>
+                    <field name="email"/>
+                    <field name="niveau"/>
+                    <field name="diplomes"/>
+                    <field name="specialite"/>
+                    <field name="exp_prof"/>
+                    <!--                            \\\\\\\-->
                     <field name="datedepot"/>
                     <field name="disponibilite"/>
+                    <field name="salaire_dem"/>
+                    <field name="deplacement"/>
                     <field name="conditionphysique"/>
-                    <field name="departement"/>
                 </tree>
             </field>
         </record>
