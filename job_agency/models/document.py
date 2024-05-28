@@ -8,7 +8,7 @@ class Document(models.Model):
 
     name = fields.Char(string='Nom du document', track_visibility='onchange')
     data = fields.Binary(string='Document', track_visibility='onchange')
-    doc_id = fields.Many2one('sirh.candidature', string='Candidature', track_visibility='onchange')
+    candidature_id = fields.Many2one('sirh.candidature', string='Candidature', track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')

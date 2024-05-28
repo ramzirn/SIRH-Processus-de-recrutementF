@@ -6,6 +6,7 @@
             <field name="model">sirh.annonce</field>
             <field name="arch" type="xml">
                 <tree string="Liste des annonces">
+                    <field name="besoin_id"/>
                     <!--                    <field name="recruitment_id" string="Intitulé du poste"/>-->
                     <!--                    <field name="description_id" string="Description"/>-->
                     <field name="accroche"/>
@@ -27,6 +28,7 @@
                 <form string="Annonce">
                     <sheet>
                         <group>
+                            <field name="besoin_id"/>
                             <field name="accroche"/>
                             <field name="desc_societe"/>
                             <field name="desc_poste"/>

@@ -21,6 +21,9 @@ class Annonce(models.Model):
     ], string='Modalités de réponse', default='email', required=True, track_visibility='onchange')
     obligations = fields.Text(string='Obligations', track_visibility='onchange')
 
+    besoin_id = fields.Many2one("sirh.besoin", string="Besoin", required=True)
+    candidature_ids = fields.One2many('sirh.candidature', 'annonce_id')
+
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 

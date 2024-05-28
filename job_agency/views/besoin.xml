@@ -19,6 +19,17 @@
                     <field name="autre"/>
                     <field name="dateEntree"/>
                     <field name="domaine_ex"/>
+<!--                    description-->
+                    <field name="descr"/>
+                    <field name="niveau"/>
+                    <field name="diplome"/>
+                    <field name="formation"/>
+                    <field name="formation_oblig"/>
+                    <field name="savoir_faire"/>
+                    <field name="savoir_etre"/>
+                    <field name="type"/>
+                    <field name="horaires"/>
+                    <field name="remuneration"/>
                 </tree>
             </field>
         </record>
@@ -48,16 +59,34 @@
                                     <field name="domaine_ex"/>
                                 </group>
                             </page>
-                            <page string="Description du poste">
+                            <page string="Général">
+<!--                                <field name="desc_id" placeholder="Ajouter une description ici..."/>-->
                                 <group>
-                                    <field name="desc_id" placeholder="Ajouter une description ici..."/>
+                                    <field name="descr"/>
                                 </group>
                             </page>
-                            <page string="Annonce">
+                            <page string="Compétences demandées">
                                 <group>
-                                    <field name="annonce_id" placeholder="Ajouter une annonce ici..."/>
+                                    <field name="niveau"/>
+                                    <field name="diplome"/>
+                                    <field name="formation"/>
+                                    <field name="formation_oblig"/>
+                                    <field name="savoir_faire"/>
+                                    <field name="savoir_etre"/>
                                 </group>
                             </page>
+                            <page string="Conditions de l'emploi">
+                                <group>
+                                    <field name="type"/>
+                                    <field name="horaires"/>
+                                    <field name="remuneration"/>
+                                </group>
+                            </page>
+<!--                            <page string="Annonce">-->
+<!--                                <group>-->
+<!--                                    <field name="annonce_id" placeholder="Ajouter une annonce ici..."/>-->
+<!--                                </group>-->
+<!--                            </page>-->
                         </notebook>
                         <div class="oe_chatter">
                             <field name="message_follower_ids" widget="mail_followers"/>

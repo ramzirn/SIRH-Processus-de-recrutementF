@@ -42,7 +42,7 @@ class Candidature(models.Model):
         ('apte', 'Apte'),
         ('inapte', 'Inapte')],
         string='Condition Physique', track_visibility='onchange')
-    docs = fields.One2many('sirh.document', 'doc_id', string='Documents', track_visibility='onchange')
+    docs = fields.One2many('sirh.document', 'candidature_id', string='Documents', track_visibility='onchange')
 
     status = fields.Selection([
         ('applied', 'Candidature déposée'),

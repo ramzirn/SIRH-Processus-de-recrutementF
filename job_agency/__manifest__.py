@@ -16,7 +16,6 @@ Shows you a list of applications features to install from.
         'views/besoin.xml',
         'views/annonce.xml',
         'views/candidature.xml',
-        'views/description.xml',
         'views/entretien.xml',
         'reports/reports.xml',
         'reports/fiche_pre_selection.xml',
