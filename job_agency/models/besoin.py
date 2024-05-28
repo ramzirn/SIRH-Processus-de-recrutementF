@@ -12,7 +12,7 @@ def est_annee(val):
 
 class Besoin(models.Model):
     _name = 'sirh.besoin'
-    _rec_name = 'intitule'
+    _rec_name = 'poste_id'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     motif = fields.Selection([
@@ -23,7 +23,7 @@ class Besoin(models.Model):
     pourex = fields.Integer(string='Pour l\'exercice', required=True, default=datetime.now().year,
                             track_visibility='onchange')
     budget = fields.Float(string='Budget alloué', required=True, track_visibility='onchange')
-    intitule = fields.Many2one('hr.job', 'Intitulé du poste', required=True)
+    poste_id = fields.Many2one('hr.job', 'Intitulé du poste', required=True)
     echeanceContrat = fields.Date(string='Échéance du contrat', track_visibility='onchange')
     # structure =
     xp = fields.Integer(string='Années d\'expérience', required=True, track_visibility='onchange')

@@ -5,7 +5,7 @@ class Poste(models.Model):
     _name = 'sirh.poste'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    besoin_ids = fields.One2many("sirh.besoin", "intitule", string="Besoins")
+    besoin_ids = fields.One2many("sirh.besoin", "poste_id", string="Besoins")
 
     # details du poste
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')

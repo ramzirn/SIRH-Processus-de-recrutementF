@@ -9,7 +9,7 @@ class Evaluation(models.Model):
     observation = fields.Text(string='Observation', track_visibility='onchange')
     note = fields.Integer(string='Note\n(1 à 5)', track_visibility='onchange')
 
-    candidature_id = fields.Many2one('sirh.candidature')
+    # candidature_id = fields.Many2one('sirh.candidature')
     entretien_id = fields.Many2one('sirh.entretien')
     @api.constrains('note')
     def _check_note_range(self):
