@@ -1,4 +1,6 @@
-from odoo import models, fields
+import datetime
+
+from odoo import api, models, fields
 
 
 class Candidature(models.Model):

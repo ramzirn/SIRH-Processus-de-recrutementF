@@ -91,7 +91,7 @@
 
 
 <!--                <field name="description" position="before">-->
-<!--                    <field name="eval" widget="one2many_list">-->
+<!--                    <field name="eval_id" widget="one2many_list">-->
 <!--                        <tree editable="bottom">-->
 <!--                            <field name="crit"/>-->
 <!--                            <field name="observation"/>-->

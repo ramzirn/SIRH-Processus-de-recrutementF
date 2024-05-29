@@ -57,7 +57,7 @@
         </record>
 
         <record id="act_form_liste_besoin" model="ir.actions.act_window">
-            <field name="name">Definition du besoin</field>
+            <field name="name">Liste des besoins</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sirh.besoin</field>
             <field name="view_mode">tree,form</field>
@@ -72,7 +72,8 @@
             <field name="context">{}</field>
         </record>
 
-        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root"/>
+        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root"
+                    sequence="2"/>
 
         <menuitem name="Definir un besoin" id="menu_definir_besoin" action="act_form_besoin"
                   parent="menu_besoin" sequence="10"/>
