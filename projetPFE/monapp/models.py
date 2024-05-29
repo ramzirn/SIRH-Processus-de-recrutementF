@@ -61,3 +61,30 @@ class Besoin(models.Model):
     class Meta:
         db_table = 'sirh_besoin'
    
+
+from django.db import models
+
+class HRJob(models.Model):
+    name = models.CharField(max_length=255)
+    expected_employees = models.IntegerField()
+    no_of_employee = models.IntegerField()
+    no_of_recruitment = models.IntegerField()
+    no_of_hired_employee = models.IntegerField()
+    description = models.TextField(blank=True, null=True)
+    requirements = models.TextField(blank=True, null=True)
+    department_id = models.IntegerField()
+    company_id = models.IntegerField()
+    state = models.CharField(max_length=255)
+    message_last_post = models.DateTimeField(blank=True, null=True)
+    create_uid = models.IntegerField()
+    create_date = models.DateTimeField()
+    write_uid = models.IntegerField()
+    write_date = models.DateTimeField()
+    address_id = models.IntegerField()
+    manager_id = models.IntegerField()
+    user_id = models.IntegerField(blank=True, null=True)
+    hr_responsible_id = models.IntegerField(blank=True, null=True)
+    class Meta:
+        db_table = 'hr_job'
+    def __str__(self):
+        return self.name
