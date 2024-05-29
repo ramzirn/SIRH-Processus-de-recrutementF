@@ -57,3 +57,4 @@ class Besoin(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Besoin, self).write(vals)
+
