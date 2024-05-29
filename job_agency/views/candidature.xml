@@ -1,112 +1,97 @@
 <odoo>
     <data>
-        <record id="view_candidature_form" model="ir.ui.view">
-            <field name="name">sirh.candidature.form</field>
-            <field name="model">sirh.candidature</field>
+        <record id="crm_case_form_view_job_inherit" model="ir.ui.view">
+            <field name="name">candidature.inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
             <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <field name="annonce_id"/>
-                            <field name="sexe"/>
-                            <field name="nom"/>
-                            <field name="prenom"/>
-                            <field name="date_naissance"/>
-                            <field name="lieu_naissance"/>
-                            <field name="situation_familiale"/>
-                            <field name="adresse"/>
-                            <field name="mobile"/>
-                            <field name="email"/>
-                            <field name="niveau"/>
-                            <field name="diplomes"/>
-                            <field name="specialite"/>
-                            <field name="exp_prof"/>
-<!--                            \\\\\\\-->
-                            <field name="datedepot"/>
-                            <field name="disponibilite"/>
-                            <field name="salaire_dem"/>
-                            <field name="deplacement"/>
-                            <field name="conditionphysique"/>
-                        </group>
-                        <notebook>
-                            <page string="Documentation">
-                                <field name="docs" widget="one2many_list">
-                                    <tree editable="bottom">
-                                        <field name="name"/>
-                                        <field name="data"/>
-                                    </tree>
-                                </field>
-                            </page>
-                            <page string="Evaluation">
-                                <field name="eval" widget="one2many_list">
-                                    <tree editable="bottom">
-                                        <field name="crit"/>
-                                        <field name="observation"/>
-                                        <field name="note"/>
-                                    </tree>
-                                </field>
-                            </page>
-                        </notebook>
-                    </sheet>
-                    <div class="oe_chatter">
-                            <field name="message_follower_ids" widget="mail_followers"/>
-                            <field name="message_ids" widget="mail_thread"/>
-                    </div>
-                </form>
-            </field>
-        </record>
+                <xpath expr="//div[@class='oe_title']//label[position()=1]" position="attributes">
+                    <attribute name="string">Candidat</attribute>
+                </xpath>
 
-        <record id="view_cadidature_tree" model="ir.ui.view">
-            <field name="name">sirh.candidature.tree</field>
-            <field name="model">sirh.candidature</field>
-            <field name="type">tree</field>
-            <field name="arch" type="xml">
-                <tree string="Liste des candidatures">
-                    <field name="annonce_id"/>
-                    <field name="sexe"/>
-                    <field name="nom"/>
-                    <field name="prenom"/>
+                <field name="partner_name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//label[@for='partner_name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <field name="categ_ids" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//label[@for='categ_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <field name="partner_id" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="medium_id" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="source_id" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="user_id" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="reference" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="salary_expected_extra" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="salary_proposed_extra" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="description" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <xpath expr="//group[@string='Job']" position="attributes">
+                    <attribute name="string">Poste</attribute>
+                </xpath>
+                <xpath expr="//group[@string='Contract']" position="attributes">
+                    <attribute name="string">Contrat</attribute>
+                </xpath>
+
+
+                <!--            ==========-->
+
+
+                <field name="partner_id" position="after">
+                    <field name="sexe" widget="radio"/>
                     <field name="date_naissance"/>
                     <field name="lieu_naissance"/>
                     <field name="situation_familiale"/>
-                    <field name="adresse"/>
-                    <field name="mobile"/>
-                    <field name="email"/>
-                    <field name="niveau"/>
+                    <field name="conditionphysique"/>
+                </field>
+
+                <field name="type_id" position="before" after="user_id"/>
+                <field name="user_id" position="after">
                     <field name="diplomes"/>
                     <field name="specialite"/>
                     <field name="exp_prof"/>
-                    <!--                            \\\\\\\-->
-                    <field name="datedepot"/>
-                    <field name="disponibilite"/>
-                    <field name="salaire_dem"/>
+                </field>
+
+                <field name="availability" position="before">
                     <field name="deplacement"/>
-                    <field name="conditionphysique"/>
-                </tree>
+                </field>
+
+                <xpath expr="//separator" position="attributes">
+                    <attribute name="string">Evaluation</attribute>
+                </xpath>
+
+                <field name="description" position="before">
+                    <field name="eval" widget="one2many_list">
+                        <tree editable="bottom">
+                            <field name="crit"/>
+                            <field name="observation"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </field>
             </field>
         </record>
-
-        <record id="act_list_candidature" model="ir.actions.act_window">
-            <field name="name">Liste des candidatures</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">sirh.candidature</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <record id="act_form_candidature" model="ir.actions.act_window">
-            <field name="name">Ajouter une candidature</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">sirh.candidature</field>
-            <field name="view_mode">form</field>
-        </record>
-
-        <menuitem id="menu_candidatures" name="Candidatures" parent="hr_recruitment.menu_hr_recruitment_root"
-                  sequence="30"/>
-
-        <menuitem id="menu_liste_candidature" name="Liste des candidatures" parent="menu_candidatures"
-                  action="act_list_candidature" sequence="20"/>
-
-        <menuitem id="menu_form_candidature" name="Ajouter une candidature" parent="menu_candidatures"
-                  action="act_form_candidature" sequence="10"/>
     </data>
 </odoo>
