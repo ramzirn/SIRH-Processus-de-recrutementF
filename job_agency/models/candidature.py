@@ -53,12 +53,11 @@ class Candidature(models.Model):
     totalgeneral = fields.Integer(string='Total géneral', default = 0, track_visibility='onchange')
 
     # annonce_id = fields.Many2one('sirh.annonce', string='Annonce', required=True, track_visibility='onchange')
-    # eval = fields.One2many('sirh.evaluation', 'candidature_id', track_visibility='onchange')
+    eval = fields.One2many('sirh.evaluation', 'applicant_id', track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 
-    nom_complet = fields.Char(string='Nom Complet', compute='_compute_nom_complet', store=True)
 
 
     @api.constrains('email', 'mobile')

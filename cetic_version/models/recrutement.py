@@ -29,7 +29,7 @@ class Recrutement(models.Model):
                 raise ValidationError("Date d'exercice doit etre superieure a la date d'aujourd'hui.")
 
     budget = fields.Float(string='Budget alloué', required=True)
-    intitule = fields.Many2one('sirh.poste', string='Intitulé du poste', required=True)
+    intitule = fields.Many2one('hr.job', string='Intitulé du poste', required=True)
     type = fields.Selection([
         ('CDI', 'CDI'),
         ('CDD', 'CDD')

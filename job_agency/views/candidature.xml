@@ -6,8 +6,8 @@
             <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='oe_title']//label[position()=1]" position="attributes">
-          <attribute name="string">Candidat</attribute>
-        </xpath>
+                    <attribute name="string">Candidat</attribute>
+                </xpath>
 
                 <field name="partner_name" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -32,9 +32,30 @@
                 <field name="source_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
-                <field name="reference_id" position="attributes">-->
+                <field name="user_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+                <field name="reference" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="salary_expected_extra" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="salary_proposed_extra" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="description" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <xpath expr="//group[@string='Job']" position="attributes">
+                    <attribute name="string">Poste</attribute>
+                </xpath>
+                <xpath expr="//group[@string='Contract']" position="attributes">
+                    <attribute name="string">Contrat</attribute>
+                </xpath>
+
+
                 <!--            ==========-->
 
 
@@ -43,16 +64,32 @@
                     <field name="date_naissance"/>
                     <field name="lieu_naissance"/>
                     <field name="situation_familiale"/>
-                    <field name="diplomes"/>
-                    <field name="specialite"/>
+                    <field name="conditionphysique"/>
                 </field>
 
+                <field name="type_id" position="before" after="user_id"/>
                 <field name="user_id" position="after">
+                    <field name="diplomes"/>
+                    <field name="specialite"/>
                     <field name="exp_prof"/>
-                    <field name="availability"/>
-                    <field name="salary_expected"/>
+                </field>
+
+                <field name="availability" position="before">
                     <field name="deplacement"/>
-                    <field name="conditionphysique"/>
+                </field>
+
+                <xpath expr="//separator" position="attributes">
+                    <attribute name="string">Evaluation</attribute>
+                </xpath>
+
+                <field name="description" position="before">
+                    <field name="eval" widget="one2many_list">
+                        <tree editable="bottom">
+                            <field name="crit"/>
+                            <field name="observation"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
                 </field>
             </field>
         </record>

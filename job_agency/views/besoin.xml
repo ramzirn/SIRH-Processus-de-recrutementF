@@ -10,7 +10,7 @@
                     <field name="motif"/>
                     <field name="pourex"/>
                     <field name="budget"/>
-                    <field name="poste_id"/>
+                    <field name="intitule"/>
                     <field name="echeanceContrat"/>
 <!--                    <field name="structure"/>-->
                     <field name="xp"/>
@@ -48,7 +48,7 @@
                                     <field name="motif"/>
                                     <field name="pourex"/>
                                     <field name="budget"/>
-                                    <field name="poste_id"/>
+                                    <field name="intitule"/>
                                     <field name="echeanceContrat"/>
                 <!--                    <field name="structure"/>-->
                                     <field name="xp"/>
