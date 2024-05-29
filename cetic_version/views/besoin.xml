@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+        <!-- Liste des besoins-->
+        <record id="view_form_besoin_tree" model="ir.ui.view">
+            <field name="name">sirh.besoin.tree</field>
+            <field name="model">sirh.besoin</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Liste des besoins">
+                    <field name="motif"/>
+                    <field name="pourex"/>
+                    <field name="budget"/>
+                    <field name="intitule"/>
+                    <field name="echeanceContrat"/>
+<!--                    <field name="structure"/>-->
+                    <field name="type"/>
+                    <field name="xp"/>
+                    <field name="lieu"/>
+                    <field name="deplacement"/>
+                    <field name="autre"/>
+                    <field name="dateEntree"/>
+                    <field name="domaine_ex"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  Formulaire de besoin-->
+        <record id="view_form_besoin_form" model="ir.ui.view">
+            <field name="name">sirh.besoin.form</field>
+            <field name="model">sirh.besoin</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="motif"/>
+                            <field name="pourex"/>
+                            <field name="budget"/>
+                            <field name="intitule"/>
+                            <field name="echeanceContrat"/>
+                            <!--                    <field name="structure"/>-->
+                            <field name="type"/>
+                            <field name="xp"/>
+                            <field name="lieu"/>
+                            <field name="deplacement"/>
+                            <field name="autre"/>
+                            <field name="dateEntree"/>
+                            <field name="domaine_ex"/>
+                        </group>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_form_liste_besoin" model="ir.actions.act_window">
+            <field name="name">Definition du besoin</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sirh.besoin</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="act_form_besoin" model="ir.actions.act_window">
+            <field name="name">Definition du besoin</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sirh.besoin</field>
+            <field name="view_mode">form</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_besoin" name="Besoin" parent="hr_recruitment.menu_hr_recruitment_root"/>
+
+        <menuitem name="Definir un besoin" id="menu_definir_besoin" action="act_form_besoin"
+                  parent="menu_besoin" sequence="10"/>
+
+        <menuitem name="Liste des besoins" id="menu_liste_besoins" action="act_form_liste_besoin"
+                  parent="menu_besoin" sequence="20"/>
+    </data>
+</odoo>
+

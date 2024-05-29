@@ -5,7 +5,7 @@ class PourvoiPosteReport(models.AbstractModel):
     _name = 'report.cetic_version.dem_pourvoi_temp'
 
     def get_report_values(self, docids, data=None):
-        var1 = self.env['rh.formentry'].browse(docids[0])
+        var1 = self.env['sirh.besoin'].browse(docids[0])
 
         report_data = {
             'di': var1,
