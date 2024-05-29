@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record id="view_candidate_evaluation_form" model="ir.ui.view">
+            <field name="name">candidate.evaluation.form</field>
+            <field name="model">candidate.evaluation</field>
+            <field name="arch" type="xml">
+                <form string="Candidate Evaluation">
+                    <group>
+                        <field name="candidate_name"/>
+                        <field name="interview_date"/>
+                        <field name="position"/>
+                    </group>
+                    <group string="Critère de recrutement">
+                        <group string="Compétences techniques">
+                            <field name="tech_competence_points"/>
+                            <field name="tech_competence_develop"/>
+                            <field name="tech_competence_note"/>
+                        </group>
+                        <group string="Capacité">
+                            <field name="teamwork_capacity"/>
+                            <field name="adaptation_capacity"/>
+                            <field name="decision_capacity"/>
+                            <field name="emotion_management"/>
+                        </group>
+                    </group>
+                    <group string="Potentiel du candidat">
+                        <group string="Capacité d'analyse">
+                            <field name="analysis_capacity_points"/>
+                            <field name="analysis_capacity_develop"/>
+                            <field name="analysis_capacity_note"/>
+                        </group>
+                        <group string="Autres capacités">
+                            <field name="synthesis_capacity"/>
+                            <field name="vision_recul"/>
+                            <field name="leadership"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="recruitment_decision"/>
+                        <field name="availability_date"/>
+                        <field name="integration_appointment"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_candidate_evaluation" model="ir.actions.act_window">
+            <field name="name">Candidate Evaluation</field>
+            <field name="res_model">candidate.evaluation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+               <menuitem id="menu_eval" name="Evaluation candidat" parent="hr_recruitment.menu_hr_recruitment_root"/>
+                 <menuitem name="Definir un evaluation" id="menu_definir_eval" action="action_candidate_evaluation"
+                  parent="menu_eval" sequence="10"/>
+    </data>
+</odoo>

@@ -5,3 +5,4 @@ from . import entretien
 from . import evaluation
 # from . import poste
 from . import besoin
+from . import Evalcandidat
