@@ -1,135 +1,90 @@
 from django.db import models
 
-class Employee(models.Model):
-    SEXE_CHOICES = [
-        ('male', 'Homme'),
-        ('female', 'Femme')
-    ]
 
-    SITUATION_CHOICES = [
-        ('single', 'Célibataire'),
-        ('married', 'Marié(e)'),
-        ('divorced', 'Divorcé(e)'),
-        ('widowed', 'Veuf/Veuve')
-    ]
-
-    sexe = models.CharField(choices=SEXE_CHOICES, max_length=6, verbose_name='Sexe')
-    nom = models.CharField(max_length=100, verbose_name='Nom')
-    prenom = models.CharField(max_length=100, verbose_name='Prénom')
-    date_naissance = models.DateField(verbose_name='Date de Naissance', null=True, blank=True)
-    lieu_naissance = models.CharField(max_length=100, verbose_name='Lieu de Naissance', null=True, blank=True)
-    situation_familiale = models.CharField(choices=SITUATION_CHOICES, max_length=10, verbose_name='Situation Familiale', null=True, blank=True)
-    adresse = models.CharField(verbose_name='Adresse', null=True, blank=True , max_length=1000)
-    mobile = models.CharField(max_length=20, verbose_name='Mobile', null=True, blank=True)
-    telephone = models.CharField(max_length=20, verbose_name='Téléphone', null=True, blank=True)
-    email = models.EmailField(verbose_name='Email', null=True, blank=True)
-    diplome_id = models.IntegerField(verbose_name='ID du Diplôme', null=True, blank=True)
-    specialite = models.CharField(max_length=100, verbose_name='Spécialité', null=True, blank=True)
-
-    class Meta:
-        db_table = 'candidat'  
 
 
 
 from django.db import models
 from datetime import datetime
 
-class Annonce(models.Model):
+from django.db import models
 
-    APPROACH_CHOICES = [
-        ('interne', 'Interne'),
-        ('externe', 'Externe'),
-        ('mixte', 'Mixte')
-    ]
-    approche = models.CharField(max_length=10, choices=APPROACH_CHOICES, default='interne', verbose_name='Approche de l\'annonce')
-    contenu = models.TextField(verbose_name='Contenu de l\'annonce')
-    descriptif_societe = models.TextField(default='CETIC', verbose_name='Descriptif rapide de la société')
-    profil_recherche = models.TextField(verbose_name='Description du profil recherché')
-    MODALITY_CHOICES = [
-        ('a', 'E-mail'),
-        ('b', 'Telephone'),
-    ]
-    modalite_reponse = models.CharField(max_length=1, choices=MODALITY_CHOICES, default='a', verbose_name='Modalités de réponse')
-    obligations = models.TextField(verbose_name='Obligations')
+class Annonce(models.Model):
+    id = models.AutoField(primary_key=True)
+    accroche = models.CharField(max_length=255, default='')
+    desc_societe = models.TextField(default='')
+    desc_poste = models.TextField(default='')
+    profil_recherche = models.TextField(default='')
+    modalite_reponse = models.CharField(max_length=255, default='')
+    obligations = models.TextField(default='')
+    create_uid = models.IntegerField(default=0)
+    write_uid = models.IntegerField(default=0)
+    message_last_post = models.DateTimeField(default='2000-01-01 00:00:00')
+    activity_date_deadline = models.DateField(default='2000-01-01')
 
     class Meta:
         db_table = 'sirh_annonce'
 
-    def __str__(self):
-        return self.approche
 
 
-class Recrutement(models.Model):
-   
-    MOTIF_CHOICES = [
-        ('interne', 'Recrutement interne'),
-        ('temp', 'Remplacement temporaire'),
-        ('retr', 'Retraite'),
-    ]
-    motif = models.CharField(max_length=10, choices=MOTIF_CHOICES, verbose_name='Motif de recrutement', null=True, blank=True)
-    pourex = models.IntegerField(verbose_name='Pour l\'exercice', default=datetime.now().year)
-    intitule = models.CharField(max_length=100, verbose_name='Intitulé du poste')
-    budget = models.FloatField(verbose_name='Budget')
-    echeanceContrat = models.DateField(verbose_name='Échéance du contrat', null=True, blank=True)
-    xp = models.IntegerField(verbose_name='Années d\'expérience')
-    lieu = models.CharField(max_length=100, verbose_name='Lieu de travail')
-    Deplacement = models.CharField(max_length=100, verbose_name='Déplacement à prévoir', null=True, blank=True)
-    autre = models.CharField(max_length=100, verbose_name='Autres aspects à considérer', null=True, blank=True)
-
-    dateEntree = models.DateField(verbose_name="Date d'entrée", null=True, blank=True)
-    desc_id = models.CharField(max_length=50, verbose_name='Description', null=True, blank=True)
-    annonce_id = models.CharField(max_length=50, verbose_name='Annonce', null=True, blank=True)
+class Besoin(models.Model):
+    motif = models.CharField(max_length=255, blank=True, null=True)
+    pourex = models.IntegerField(blank=True, null=True)
+    budget = models.FloatField(blank=True, null=True)
+    intitule = models.IntegerField(blank=True, null=True)
+    echeanceContrat = models.DateField(blank=True, null=True)
+    xp = models.IntegerField(blank=True, null=True)
+    lieu = models.CharField(max_length=255, blank=True, null=True)
+    deplacement = models.CharField(max_length=255, blank=True, null=True)
+    autre = models.CharField(max_length=255, blank=True, null=True)
+    dateEntree = models.DateField(blank=True, null=True)
+    domaine_ex = models.CharField(max_length=255, blank=True, null=True)
+    desc_id = models.IntegerField(blank=True, null=True)
+    annonce_id = models.IntegerField(blank=True, null=True)
+    create_uid = models.IntegerField(blank=True, null=True)
+    write_uid = models.IntegerField(blank=True, null=True)
+    activity_date_deadline = models.DateField(blank=True, null=True)
+    message_last_post = models.DateTimeField(blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    descr = models.TextField(blank=True, null=True)
+    niveau = models.IntegerField(blank=True, null=True)
+    diplome = models.TextField(blank=True, null=True)
+    formation = models.TextField(blank=True, null=True)
+    formation_oblig = models.TextField(blank=True, null=True)
+    savoir_faire = models.TextField(blank=True, null=True)
+    savoir_etre = models.TextField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    horaires = models.IntegerField(blank=True, null=True)
+    remuneration = models.FloatField(blank=True, null=True)
 
     class Meta:
         db_table = 'sirh_besoin'
-
-
+   
 
 from django.db import models
 
 class HRJob(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Nom du poste')
-
-
+    name = models.CharField(max_length=255)
+    expected_employees = models.IntegerField()
+    no_of_employee = models.IntegerField()
+    no_of_recruitment = models.IntegerField()
+    no_of_hired_employee = models.IntegerField()
+    description = models.TextField(blank=True, null=True)
+    requirements = models.TextField(blank=True, null=True)
+    department_id = models.IntegerField()
+    company_id = models.IntegerField()
+    state = models.CharField(max_length=255)
+    message_last_post = models.DateTimeField(blank=True, null=True)
+    create_uid = models.IntegerField()
+    create_date = models.DateTimeField()
+    write_uid = models.IntegerField()
+    write_date = models.DateTimeField()
+    address_id = models.IntegerField()
+    manager_id = models.IntegerField()
+    user_id = models.IntegerField(blank=True, null=True)
+    hr_responsible_id = models.IntegerField(blank=True, null=True)
     class Meta:
         db_table = 'hr_job'
-     
-
     def __str__(self):
         return self.name
-
-
-
-from django.db import models
-
-class Description(models.Model):
-
-    intitule = models.CharField(max_length=100, verbose_name='Intitulé du poste')
-    descr = models.TextField(verbose_name='Description du poste')
-    niveau_choices = [
-        ('bac', 'Baccalauréat'),
-        ('licence', 'Licence'),
-        ('master', 'Master'),
-        ('doctorat', 'Doctorat'),
-    ]
-    niveau = models.CharField(max_length=20, choices=niveau_choices, verbose_name="Niveau d'étude")
-    diplome = models.CharField(max_length=1, choices=[('g', 'f')], verbose_name="Diplôme")
-    formation = models.CharField(max_length=1, choices=[('g', 'f')], verbose_name="Formation")
-    formation_experience = models.CharField(max_length=1, choices=[('g', 'f')], verbose_name="Formation liée à l'expérience du poste")
-    savoir_faire = models.TextField(verbose_name="Savoir-faire")
-    savoir_etre = models.TextField(verbose_name="Savoir-être")
-    type_choices = [
-        ('CDI', 'CDI'),
-        ('CDD', 'CDD')
-    ]
-    type = models.CharField(max_length=3, choices=type_choices, default='CDI', verbose_name='Type de contrat')
-    horaires = models.CharField(max_length=100, verbose_name='Horaires de travail', null=True, blank=True)
-    remuneration = models.FloatField(verbose_name='Rémunération', default=0)
-
-    class Meta:
-        db_table ='sirh_desc'
-        verbose_name = 'Description'
-        verbose_name_plural = 'Descriptions'
-
-    def __str__(self):
-        return self.intitule
