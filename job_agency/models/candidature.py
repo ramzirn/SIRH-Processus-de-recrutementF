@@ -83,7 +83,3 @@ class Candidature(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Candidature, self).write(vals)
-
-
-class Caa(models.Model):
-    _name = 'sirh.candidature'

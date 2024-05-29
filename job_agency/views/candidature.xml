@@ -5,10 +5,7 @@
             <field name="model">hr.applicant</field>
             <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[@class='oe_title']//label[position()=1]" position="attributes">
-                    <attribute name="string">Candidat</attribute>
-                </xpath>
-
+<!--                making fields invisible-->
                 <field name="partner_name" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </field>
@@ -26,44 +23,53 @@
                 <field name="partner_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="medium_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="source_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
 
-
                 <field name="type_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="user_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="reference" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="salary_expected_extra" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="salary_proposed_extra" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
+
                 <field name="description" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
 
-                <xpath expr="//group[@string='Job']" position="attributes">
-                    <attribute name="string">Poste</attribute>
-                </xpath>
-                <xpath expr="//group[@string='Contract']" position="attributes">
-                    <attribute name="string">Contrat</attribute>
-                </xpath>
+<!--                changing labels/string-->
+<!--                <xpath expr="//label[@for='name']" position="attributes">-->
+<!--                    <attribute name="string">Candidat</attribute>-->
+<!--                </xpath>-->
 
+<!--                <xpath expr="//group[@string='Contract']" position="attributes">-->
+<!--                    <attribute name="string">Contrat</attribute>-->
+<!--                </xpath>-->
 
-                <!--            ==========-->
+<!--                <xpath expr="//separator" position="attributes">-->
+<!--                    <attribute name="string">Evaluation</attribute>-->
+<!--                </xpath>-->
 
-
+<!--                adding fields-->
                 <field name="partner_id" position="after">
                     <field name="sexe" widget="radio"/>
                     <field name="date_naissance"/>
@@ -83,9 +89,6 @@
                     <field name="deplacement"/>
                 </field>
 
-                <xpath expr="//separator" position="attributes">
-                    <attribute name="string">Evaluation</attribute>
-                </xpath>
 
 <!--                <field name="description" position="before">-->
 <!--                    <field name="eval" widget="one2many_list">-->
