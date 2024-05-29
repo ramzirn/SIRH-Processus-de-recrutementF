@@ -98,7 +98,7 @@
         </record>
 
         <record id="act_form_liste_besoin" model="ir.actions.act_window">
-            <field name="name">Definition du besoin</field>
+            <field name="name">Liste des besoins</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sirh.besoin</field>
             <field name="view_mode">tree,form</field>

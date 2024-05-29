@@ -16,7 +16,7 @@ class Entretien(models.Model):
 
     totalpt = fields.Integer(string='Total des points', default = 0, track_visibility='onchange')
 
-    # eval = fields.One2many('sirh.evaluation', 'entretien_id', track_visibility='onchange')
+    # eval_id = fields.One2many('sirh.evaluation', 'entretien_id', track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
