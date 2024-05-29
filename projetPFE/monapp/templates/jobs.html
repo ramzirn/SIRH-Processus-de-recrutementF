@@ -239,23 +239,20 @@
                     
                     <br>
                 </div>
-
-              <div class="col-lg-8">
+                <div class="col-lg-8">
                     <div class="row">
                         {% for annonce in annonces %}
                         <div class="col-md-6">
                             <div class="trainer-item">
                                 <div class="image-thumb">
-                                    <img class="d-block w-100" src="{% static 'images/job-image-1-1200x600.jpg' %}" alt="First slide">                                </div>
+                                    <img class="d-block w-100" src="{% static 'images/job-image-1-1200x600.jpg' %}" alt="First slide">
+                                </div>
                                 <div class="down-content">
-                                    <span> {{ annonce.descriptif_societe }} </span>
-
+                                    <span>{{ annonce.desc_societe }}</span>
                                     <h4>Description :</h4>
                                     <br>
-                                    <p>{{ annonce.contenu }}</p>
-                
+                                    <p>{{ annonce.desc_poste }}</p>
                                     <p>Profil recherché : {{ annonce.profil_recherche }}</p>
-                
                                     <ul class="social-icons">
                                         <li><a href="{% url 'job_details' annonce.id %}">+ View More</a></li>
                                     </ul>
@@ -265,8 +262,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                 
-
+                
                 
 
             

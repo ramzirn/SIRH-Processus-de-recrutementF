@@ -1,7 +1,7 @@
 from django.shortcuts import render , redirect
 from .forms import  *
 from projetPFE import settings
-from .models import Recrutement , HRJob ,Description
+
 # Create your views here.
 
 
