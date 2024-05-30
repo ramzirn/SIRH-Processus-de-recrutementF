@@ -23,6 +23,7 @@ Shows you a list of applications features to install from.
         'reports/fiche_pre_selection.xml',
         'reports/questionnaire.xml',
         'reports/demande_de_pourvoi_de_poste.xml',
+        'data/candi.xml',
     ],
     'demo': [],
     'installable': True,

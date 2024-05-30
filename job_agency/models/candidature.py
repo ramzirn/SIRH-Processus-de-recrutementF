@@ -83,3 +83,9 @@ class Candidature(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Candidature, self).write(vals)
+
+    @api.constrains('note')
+    def _check_note_range(self):
+        for record in self:
+            if not 1 <= record.note <= 5:
+                raise ValidationError("La note doit etre entre 1 et 5.")

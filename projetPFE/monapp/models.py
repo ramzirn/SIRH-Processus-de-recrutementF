@@ -88,3 +88,51 @@ class HRJob(models.Model):
         db_table = 'hr_job'
     def __str__(self):
         return self.name
+
+
+
+from django.db import models
+
+class HrApplicant(models.Model):
+    name = models.CharField(max_length=255)
+    active = models.BooleanField(default=True)
+    description = models.TextField(blank=True, null=True)
+    email_from = models.CharField(max_length=128, blank=True, null=True)
+    email_cc = models.TextField(blank=True, null=True)
+    probability = models.FloatField(blank=True, null=True)
+    partner_id = models.IntegerField(blank=True, null=True)
+    create_date = models.DateTimeField(auto_now_add=True)
+    write_date = models.DateTimeField(auto_now=True)
+    stage_id = models.IntegerField(blank=True, null=True)
+    last_stage_id = models.IntegerField(blank=True, null=True)
+    company_id = models.IntegerField(blank=True, null=True)
+    user_id = models.IntegerField(blank=True, null=True)
+    date_closed = models.DateTimeField(blank=True, null=True)
+    date_open = models.DateTimeField(blank=True, null=True)
+    date_last_stage_update = models.DateTimeField(blank=True, null=True)
+    priority = models.CharField(max_length=255, blank=True, null=True)
+    job_id = models.IntegerField(blank=True, null=True)
+    salary_proposed_extra = models.CharField(max_length=255, blank=True, null=True)
+    salary_expected_extra = models.CharField(max_length=255, blank=True, null=True)
+    salary_proposed = models.FloatField(blank=True, null=True)
+    salary_expected = models.FloatField(blank=True, null=True)
+    availability = models.DateField(blank=True, null=True)
+    partner_name = models.CharField(max_length=255, blank=True, null=True)
+    partner_phone = models.CharField(max_length=32, blank=True, null=True)
+    partner_mobile = models.CharField(max_length=32, blank=True, null=True)
+    type_id = models.IntegerField(blank=True, null=True)
+    department_id = models.IntegerField(blank=True, null=True)
+    reference = models.CharField(max_length=255, blank=True, null=True)
+    delay_close = models.FloatField(blank=True, null=True)
+    color = models.IntegerField(blank=True, null=True)
+    emp_id = models.IntegerField(blank=True, null=True)
+    campaign_id = models.IntegerField(blank=True, null=True)
+    source_id = models.IntegerField(blank=True, null=True)
+    medium_id = models.IntegerField(blank=True, null=True)
+    message_last_post = models.DateTimeField(blank=True, null=True)
+    activity_date_deadline = models.DateField(blank=True, null=True)
+    create_uid = models.IntegerField(blank=True, null=True)
+    write_uid = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name

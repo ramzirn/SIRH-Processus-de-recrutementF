@@ -32,3 +32,5 @@ class Evaluation(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Evaluation, self).write(vals)
+
+
