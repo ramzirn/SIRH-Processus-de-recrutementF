@@ -19,7 +19,13 @@
                 <xpath expr="//label[@for='categ_ids']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
+                <xpath expr="//button[@name='create_employee_from_applicant']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
 
+                  <xpath expr="//button[@name='archive_applicant']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
                 <field name="partner_id" position="attributes">-->
                     <attribute name="invisible">1</attribute>
                 </field>
@@ -90,15 +96,15 @@
                 </field>
 
 
-<!--                <field name="description" position="before">-->
-<!--                    <field name="eval_id" widget="one2many_list">-->
-<!--                        <tree editable="bottom">-->
-<!--                            <field name="crit"/>-->
-<!--                            <field name="observation"/>-->
-<!--                            <field name="note"/>-->
-<!--                        </tree>-->
-<!--                    </field>-->
-<!--                </field>-->
+                <field name="description" position="before">
+                    <field name="eval_id" widget="one2many_list">
+                        <tree editable="bottom">
+                            <field name="crit"/>
+                            <field name="observation"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </field>
             </field>
         </record>
     </data>

@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class CandidateEvaluation(models.Model):
     _name = 'candidate.evaluation'
+
     _description = 'Candidate Evaluation'
 
     candidate_name = fields.Many2one('hr.applicant', string='Candidat')

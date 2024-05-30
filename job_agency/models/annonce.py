@@ -37,3 +37,5 @@ class Annonce(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Annonce, self).write(vals)
+
+
