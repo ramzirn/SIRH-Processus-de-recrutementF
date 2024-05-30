@@ -49,8 +49,16 @@ class Candidature(models.Model):
         ('approved', 'Approuvée'),
     ], string='État', default='applied')
 
-    totalpt = fields.Integer(string='Total des points', default=0, track_visibility='onchange')
     totalgeneral = fields.Integer(string='Total géneral', default = 0, track_visibility='onchange')
+
+    # Partie evaluation
+    pt_conaissances = fields.Integer('Savoirs et connaissances', default=0, track_visibility='onchange')
+    pt_experiences = fields.Integer('Savoir-faire et expériences', default=0, track_visibility='onchange')
+    pt_qualite = fields.Integer('Savoir-être Qualités requises', default=0, track_visibility='onchange')
+    pt_diplomes = fields.Integer('Formations et Diplômes', default=0, track_visibility='onchange')
+    obs = fields.Text('Observations', track_visibility='onchange')
+
+    pt_total = fields.Integer(string='Total', compute='_compute_pt_total')
 
     # annonce_id = fields.Many2one('sirh.annonce', string='Annonce', required=True, track_visibility='onchange')
     eval_id = fields.One2many('sirh.evaluation', 'applicant_id', track_visibility='onchange')
@@ -58,7 +66,14 @@ class Candidature(models.Model):
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 
-
+    def _compute_pt_total(self):
+        for record in self:
+            record.pt_total = sum([
+                record.pt_conaissances,
+                record.pt_experiences,
+                record.pt_qualite,
+                record.pt_diplomes,
+            ])
 
     @api.constrains('email', 'mobile')
     def _validate_email_phone(self):
