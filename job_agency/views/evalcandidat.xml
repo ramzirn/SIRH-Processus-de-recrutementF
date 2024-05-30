@@ -36,7 +36,8 @@
                         </group>
                     </group>
                     <group>
-                        <field name="recruitment_decision"/>
+
+                        <field name="recruitment_decision" widget="radio"/>
                         <field name="availability_date"/>
                         <field name="integration_appointment"/>
                     </group>
