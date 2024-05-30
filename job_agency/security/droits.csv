@@ -1,0 +1,4 @@
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestionnaire_rh,access.sirh.annonce,model_sirh_annonce,group_gestionnaire_rh,1,1,1,1
+

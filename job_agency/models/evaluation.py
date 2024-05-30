@@ -9,7 +9,7 @@ class Evaluation(models.Model):
     observation = fields.Text(string='Observation', track_visibility='onchange')
     note = fields.Integer(string='Note\n(1 à 5)', track_visibility='onchange')
 
-    # applicant_id = fields.Many2one('hr.applicant', string='Applicant', ondelete='cascade', track_visibility='onchange')
+    applicant_id = fields.Many2one('hr.applicant', string='Applicant', ondelete='cascade', track_visibility='onchange')
     # entretien_id = fields.Many2one('sirh.entretien')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True,

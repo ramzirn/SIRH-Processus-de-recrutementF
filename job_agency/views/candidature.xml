@@ -90,15 +90,15 @@
                 </field>
 
 
-<!--                <field name="description" position="before">-->
-<!--                    <field name="eval_id" widget="one2many_list">-->
-<!--                        <tree editable="bottom">-->
-<!--                            <field name="crit"/>-->
-<!--                            <field name="observation"/>-->
-<!--                            <field name="note"/>-->
-<!--                        </tree>-->
-<!--                    </field>-->
-<!--                </field>-->
+                <field name="description" position="before">
+                    <field name="eval_id" widget="one2many_list">
+                        <tree editable="bottom">
+                            <field name="crit"/>
+                            <field name="observation"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </field>
             </field>
         </record>
     </data>
