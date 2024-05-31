@@ -62,6 +62,19 @@
                     <attribute name="invisible">1</attribute>
                 </field>
 
+                <field name="email_from" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <field name="partner_phone" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <field name="partner_mobile" position="attributes">-->
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+
                 <!--                changing labels/string-->
                 <!--                <xpath expr="//label[@for='name']" position="attributes">-->
                 <!--                    <attribute name="string">Candidat</attribute>-->
@@ -82,6 +95,11 @@
                     <field name="lieu_naissance"/>
                     <field name="situation_familiale"/>
                     <field name="conditionphysique"/>
+                </field>
+
+                <field name="email_from" position="after">
+                    <field name="email"/>
+                    <field name="mobile"/>
                 </field>
 
                 <field name="user_id" position="after">

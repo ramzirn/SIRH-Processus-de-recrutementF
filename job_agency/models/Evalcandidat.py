@@ -7,9 +7,9 @@ class CandidateEvaluation(models.Model):
 
     _description = 'Candidate Evaluation'
 
-    candidate_name = fields.Many2one('hr.applicant', string='Candidat')
-    interview_date = fields.Date(string="Date d'entretien")
-    position = fields.Many2one('hr.job', string='Poste à pourvoir')
+    candidate_name = fields.Many2one('hr.applicant', string='Candidat', required=True)
+    interview_date = fields.Date(string="Date d'entretien", required=True)
+    position = fields.Many2one('hr.job', string='Poste à pourvoir', required=True)
 
     tech_competence_points = fields.Selection([
         ('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')],
@@ -48,22 +48,42 @@ class CandidateEvaluation(models.Model):
         ('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')],
         string='Leadership', default='0')
 
-    recruitment_decision = fields.Selection([('yes', 'Oui'), ('no', 'Non')], string='Décision de recrutement')
+    create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
+    write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
+
+    @api.model
+    def create(self, vals):
+        vals['create_uid'] = self.env.user.id
+        return super(CandidateEvaluation, self).create(vals)
+
+    @api.multi
+    def write(self, vals):
+        vals['write_uid'] = self.env.user.id
+        return super(CandidateEvaluation, self).write(vals)
+
+
+class Decison(models.Model):
+    _name = 'decision'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
+    candidate_name = fields.Many2one('hr.applicant', string='Candidat', required=True)
+    position = fields.Many2one('hr.job', string='Poste à pourvoir', required=True)
+
+    recruitment_decision = fields.Selection([('yes', 'Oui'), ('no', 'Non')], string='Décision de recrutement', required=True)
     availability_date = fields.Date(string='Date de disponibilité prévisionnelle')
     integration_appointment = fields.Date(string='Rendez-vous pour intégration')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 
-    @api.depends('recruitment_decision')
-    def _compute_update_readonly(self):
-        for record in self:
-            if record.recruitment_decision == 'yes':
-                record.availability_date = False
-                record.integration_appointment = False
-            else:
-                record.availability_date = True
-                record.integration_appointment = True
+    # @api.depends('recruitment_decision')
+    # def _compute_update_readonly(self):
+    #     for record in self:
+    #         record.availability_date = False
+    #         record.integration_appointment = False
+    #         if record.recruitment_decision == 'yes':
+    #             record.availability_date = True
+    #             record.integration_appointment = True
 
     @api.depends('recruitment_decision')
     def _compute_update_stage(self):
@@ -77,9 +97,9 @@ class CandidateEvaluation(models.Model):
     @api.model
     def create(self, vals):
         vals['create_uid'] = self.env.user.id
-        return super(CandidateEvaluation, self).create(vals)
+        return super(Decision, self).create(vals)
 
     @api.multi
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
-        return super(CandidateEvaluation, self).write(vals)
+        return super(Desicion, self).write(vals)
