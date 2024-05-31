@@ -1,63 +1,190 @@
 <odoo>
     <data>
-        <record id="view_candidate_evaluation_form" model="ir.ui.view">
-            <field name="name">candidate.evaluation.form</field>
+        <!-- Vue liste -->
+        <record id="view_evaluation_tree" model="ir.ui.view">
+            <field name="name">candidate.evaluation.tree1</field>
             <field name="model">candidate.evaluation</field>
             <field name="arch" type="xml">
-                <form string="Candidate Evaluation">
-                    <notebook>
-                        <page string="Informations du candidat">
-                            <group>
-                                <field name="candidate_name"/>
-                                <field name="interview_date"/>
-                                <field name="position"/>
-                            </group>
-                        </page>
-                        <page string="Critère de recrutement">
-                            <group string="Compétences techniques">
-                                <field name="tech_competence_points"/>
-                                <field name="tech_competence_develop"/>
-                                <field name="tech_competence_note"/>
-                            </group>
-                            <group string="Capacité">
-                                <field name="teamwork_capacity"/>
-                                <field name="adaptation_capacity"/>
-                                <field name="decision_capacity"/>
-                                <field name="emotion_management"/>
-                            </group>
-                        </page>
-                        <page string="Potentiel du candidat">
-                            <group string="Capacité d'analyse">
-                                <field name="analysis_capacity_points"/>
-                                <field name="analysis_capacity_develop"/>
-                                <field name="analysis_capacity_note"/>
-                            </group>
-                            <group string="Autres capacités">
-                                <field name="synthesis_capacity"/>
-                                <field name="vision_recul"/>
-                                <field name="leadership"/>
-                            </group>
-                        </page>
-                        <page string="Décision de recrutement">
-                            <group>
-                                <field name="recruitment_decision" widget="radio"/>
-                                <field name="availability_date"/>
-                                <field name="integration_appointment"/>
-                            </group>
-                        </page>
-                    </notebook>
+                <tree string="Liste des évaluations">
+                    <field name="candidate_name"/>
+                    <field name="interview_date"/>
+                    <field name="position"/>
+                    <field name="tech_competence_points"/>
+                    <field name="tech_competence_develop"/>
+                    <field name="tech_competence_note"/>
+                    <field name="teamwork_capacity"/>
+                    <field name="adaptation_capacity"/>
+                    <field name="decision_capacity"/>
+                    <field name="emotion_management"/>
+                    <field name="analysis_capacity_points"/>
+                    <field name="analysis_capacity_develop"/>
+                    <field name="analysis_capacity_note"/>
+                    <field name="synthesis_capacity"/>
+                    <field name="vision_recul"/>
+                    <field name="leadership"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="view_decision_tree" model="ir.ui.view">-->
+<!--            <field name="name">candidate.evaluation.tree2</field>-->
+<!--            <field name="model">candidate.evaluation</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Liste des décisions">-->
+<!--                    <field name="candidate_name"/>-->
+<!--                    <field name="position"/>-->
+<!--                    <field name="recruitment_decision" widget="radio"/>-->
+<!--                    <field name="availability_date"/>-->
+<!--                    <field name="integration_appointment"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+        <!-- Vue formulaire -->
+        <record id="view_evaluation_form" model="ir.ui.view">
+            <field name="name">candidate.evaluation.form1</field>
+            <field name="model">candidate.evaluation</field>
+            <field name="arch" type="xml">
+                <form string="Annonce">
+                    <sheet>
+                        <notebook>
+                            <page string="Informations du candidat">
+                                <group>
+                                    <field name="candidate_name"/>
+                                    <field name="interview_date"/>
+                                    <field name="position"/>
+                                </group>
+                            </page>
+                            <page string="Critère de recrutement">
+                                <group string="Compétences techniques">
+                                    <field name="tech_competence_points"/>
+                                    <field name="tech_competence_develop"/>
+                                    <field name="tech_competence_note"/>
+                                </group>
+                                <group string="Capacité">
+                                    <field name="teamwork_capacity"/>
+                                    <field name="adaptation_capacity"/>
+                                    <field name="decision_capacity"/>
+                                    <field name="emotion_management"/>
+                                </group>
+                            </page>
+                            <page string="Potentiel du candidat">
+                                <group string="Capacité d'analyse">
+                                    <field name="analysis_capacity_points"/>
+                                    <field name="analysis_capacity_develop"/>
+                                    <field name="analysis_capacity_note"/>
+                                </group>
+                                <group string="Autres capacités">
+                                    <field name="synthesis_capacity"/>
+                                    <field name="vision_recul"/>
+                                    <field name="leadership"/>
+                                </group>
+                            </page>
+                            <!--                        <page string="Décision de recrutement">-->
+                            <!--                            <group>-->
+                            <!--                                <field name="recruitment_decision" widget="radio"/>-->
+                            <!--                                <field name="availability_date"/>-->
+                            <!--                                <field name="integration_appointment"/>-->
+                            <!--                            </group>-->
+                            <!--                        </page>-->
+                        </notebook>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
                 </form>
             </field>
         </record>
 
-        <record id="action_candidate_evaluation" model="ir.actions.act_window">
-            <field name="name">Candidate Evaluation</field>
+        <!-- Vue formulaire -->
+<!--        <record id="view_decision_form" model="ir.ui.view">-->
+<!--            <field name="name">candidate.evaluation.form2</field>-->
+<!--            <field name="model">candidate.evaluation</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Décision">-->
+<!--                    <sheet>-->
+<!--                        <field name="candidate_name"/>-->
+<!--                        <field name="position"/>-->
+<!--                        <group string="Décision de recrutement">-->
+<!--                            <field name="recruitment_decision" widget="radio"/>-->
+<!--                            <field name="availability_date"/>-->
+<!--                            <field name="integration_appointment"/>-->
+<!--                        </group>-->
+<!--                        <div class="oe_chatter">-->
+<!--                            <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                            <field name="message_ids" widget="mail_thread"/>-->
+<!--                        </div>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_evaluation_tree" model="ir.actions.act_window">
+            <field name="name">Liste des évaluations</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="res_model">candidate.evaluation</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
         </record>
 
-        <menuitem id="menu_eval" name="Evaluation candidat" parent="hr_recruitment.menu_hr_recruitment_root"/>
-        <menuitem name="Definir une évaluation" id="menu_definir_eval" action="action_candidate_evaluation" parent="menu_eval" sequence="10"/>
+        <record id="action_evaluation_form" model="ir.actions.act_window">
+            <field name="name">Evaluer un candidat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">candidate.evaluation</field>
+            <field name="view_mode">form</field>
+            <field name="context">{}</field>
+        </record>
+
+<!--        <record id="action_decision_tree" model="ir.actions.act_window">-->
+<!--            <field name="name">Liste des décisions</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">candidate.evaluation</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="context">{}</field>-->
+<!--        </record>-->
+
+<!--        <record id="action_decision_form" model="ir.actions.act_window">-->
+<!--            <field name="name">Prendre une décision</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">candidate.evaluation</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="context">{}</field>-->
+<!--        </record>-->
+
+        <menuitem id="menu_eval"
+                  name="Evaluation"
+                  parent="hr_recruitment.menu_hr_recruitment_root"/>
+
+        <menuitem name="Evaluer un candidat"
+                  id="menu_definir_eval"
+                  action="action_evaluation_form"
+                  parent="menu_eval"
+                  sequence="10"/>
+
+        <menuitem name="Liste des évaluations"
+                  id="menu_evaluer_candidat"
+                  action="action_evaluation_tree"
+                  parent="menu_eval"
+                  sequence="20"/>
+
+<!--        <menuitem id="menu_decision"-->
+<!--                  name="Décision de recrutement"-->
+<!--                  parent="hr_recruitment.menu_hr_recruitment_root"/>-->
+
+<!--        <menuitem name="Décision de recrutement"-->
+<!--                  id="menu_definir_decision"-->
+<!--                  action="action_decision_form"-->
+<!--                  parent="menu_decision"-->
+<!--                  sequence="10"/>-->
+
+<!--        <menuitem name="Liste des décisions de recrutement"-->
+<!--                  id="menu_evaluer_candidat"-->
+<!--                  action="action_decision_tree"-->
+<!--                  parent="menu_decision"-->
+<!--                  sequence="20"/>-->
+
+
     </data>
 </odoo>

@@ -2,19 +2,23 @@
 <odoo>
     <data noupdate="1">
 
-        <!-- TAGS FOR CASH FLOW STATEMENT -->
-
         <record id="candidclass" model="hr.recruitment.stage">
             <field name="sequence"> 0 </field>
             <field name="fold">FALSE</field>
+<<<<<<< HEAD
 
             <field name="name"> non traitées</field>
+=======
+            <field name="name">Candidatures non traitées</field>
+>>>>>>> 74f7487244326a3e1cef9c56d9ab75f945840228
         </record>
+
         <record id="candidclass2" model="hr.recruitment.stage">
             <field name="sequence"> 1</field>
             <field name="fold">FALSE</field>
             <field name="name">Candidatures évaluées</field>
         </record>
+
         <record id="candidclass3" model="hr.recruitment.stage">
             <field name="sequence">2</field>
             <field name="fold">FALSE</field>

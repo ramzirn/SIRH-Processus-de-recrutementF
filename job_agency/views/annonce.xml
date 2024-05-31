@@ -65,6 +65,7 @@
 
         <!-- Menu Annonces -->
         <menuitem id="menu_annonces" name="Annonce" parent="hr_recruitment.menu_hr_recruitment_root"/>
+
         <menuitem id="menu_annonce_list" name="Liste des Annonces" parent="menu_annonces" action="action_annonce_tree"
                   sequence="20"/>
         <menuitem id="menu_annonce_form" name="Créer une Annonce" parent="menu_annonces" action="action_annonce_form"
