@@ -62,7 +62,7 @@ class CandidateEvaluation(models.Model):
         return super(CandidateEvaluation, self).write(vals)
 
 
-class Decison(models.Model):
+class Decision(models.Model):
     _name = 'decision'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
