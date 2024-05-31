@@ -116,7 +116,7 @@ def job_details(request):
 
 
 from django.shortcuts import render
-from .models import Annonce, Besoin, HRJob
+from .models import Annonce, Besoin, HRJob, RecruitmentDegree, ResourceCalendar
 
 def jobs(request):
     annonces = Annonce.objects.all()  # Récupère toutes les annonces depuis la base de données
@@ -135,7 +135,12 @@ from .models import Besoin, HRJob
 def job_details(request, id):
     besoin = get_object_or_404(Besoin, id=id)
     tt = besoin.intitule
+    re=besoin.niveau
+    rf=besoin.horaires
     hrjob = get_object_or_404(HRJob, id=tt)
+    rc = get_object_or_404(RecruitmentDegree, id=re)
+    tg = get_object_or_404(ResourceCalendar, id=rf)
+
 
     if request.method == 'POST':
         form = CandidateEvaluationForm(request.POST)
@@ -152,5 +157,7 @@ def job_details(request, id):
     return render(request, 'job-details.html', { 
         'besoin': besoin, 
         'job': hrjob,
-        'form': form
+        'form': form,
+        'lvl' : rc,
+        'hr' :tg
     })

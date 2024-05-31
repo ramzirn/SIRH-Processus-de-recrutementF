@@ -210,3 +210,36 @@ class HrApplicant(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class RecruitmentDegree(models.Model):
+    name = models.CharField(max_length=255)
+    sequence = models.IntegerField()
+    create_uid = models.IntegerField()
+    create_date = models.DateTimeField()
+    write_uid = models.IntegerField()
+    write_date = models.DateTimeField()
+
+    class Meta:
+        db_table = 'hr_recruitment_degree'
+        ordering = ['sequence']
+
+    def __str__(self):
+        return self.name
+
+
+from django.db import models
+
+class ResourceCalendar(models.Model):
+    name = models.CharField(max_length=255)
+    company_id = models.IntegerField()
+    create_uid = models.IntegerField()
+    create_date = models.DateTimeField()
+    write_uid = models.IntegerField()
+    write_date = models.DateTimeField()
+
+    class Meta:
+        db_table = 'resource_calendar'
+
+    def __str__(self):
+        return self.name

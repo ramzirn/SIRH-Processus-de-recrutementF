@@ -31,7 +31,6 @@ class CandidateEvaluationForm(forms.ModelForm):
             'diplomes': 'Diplômes',
             'specialite': 'Spécialité',
             'exp_prof': 'Experience professionnelle',
-            'salary_expected_extra': 'Salaire demandé'
         }
         widgets = {
             'sexe': forms.Select(attrs={'class': 'form-control'}),
@@ -45,5 +44,4 @@ class CandidateEvaluationForm(forms.ModelForm):
             'diplomes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'specialite': forms.TextInput(attrs={'class': 'form-control'}),
             'exp_prof': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
-            'salary_expected_extra' :forms.TextInput(attrs={'class': 'form-control'})
         }

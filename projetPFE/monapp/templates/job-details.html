@@ -144,56 +144,49 @@
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
-                    <article id='tabs-1'>
+                    <article id="tabs-1">
                         <h4>Job Description</h4>
-                    
-                        <div style="display: flex;">
-                            <div style="flex: 1;">
+                        <div class="row">
+                            <div class="col-md-6">
                                 <ul>
-                                    <li><strong>Intitulé du poste:</strong> {{ job.name }}</li>
-                                    <li><strong>Description du poste:</strong> {{ besoin.descr }}</li>
-                                    <li><strong>Niveau d'étude:</strong> {{ besoin.niveau }}</li>
-                                    <li><strong>Diplôme:</strong> {{ besoin.diplome }}</li>
-                                    <li><strong>Formation:</strong> {{ besoin.formation }}</li>
+                                    <li><strong>Intitulé du poste:</strong> <span>{{ job.name }}</span></li>
+                                    <li><strong>Description du poste:</strong> <span>{{ besoin.descr }}</span></li>
+                                    <li><strong>Niveau d'étude:</strong> <span>{{ lvl.name }}</span></li>
+                                    <li><strong>Diplôme:</strong> <span>{{ besoin.diplome }}</span></li>
+                                    <li><strong>Formation:</strong> <span>{{ besoin.formation }}</span></li>
+                                    <li><strong>Formation liée à l'expérience du poste:</strong> <span>{{ besoin.formation_oblig }}</span></li>
+                                    <li><strong>Savoir-faire:</strong> <span>{{ besoin.savoir_faire }}</span></li>
+                                    <li><strong>Savoir-être:</strong> <span>{{ besoin.savoir_etre }}</span></li>
                                 </ul>
                             </div>
-                            <div style="flex: 1;">
+                            <div class="col-md-6">
                                 <ul>
-                                    <li><strong>Formation liée à l'expérience du poste:</strong> {{ besoin.formation_oblig }}</li>
-                                    <li><strong>Savoir-faire:</strong> {{ besoin.savoir_faire }}</li>
-                                    <li><strong>Savoir-être:</strong> {{ besoin.savoir_etre }}</li>
-                                    <li><strong>Type de contrat:</strong> {{ besoin.type }}</li>
-                                    <li><strong>Horaires de travail:</strong> {{ besoin.horaires }}</li>
-                                    <li><strong>Rémunération:</strong> {{ besoin.remuneration }}DA</li>
+                                    <li><strong>Type de contrat:</strong> <span>{{ besoin.type }}</span></li>
+                                    <li><strong>Horaires de travail:</strong> <span>{{ hr.name }}</span></li>
+                                    <li><strong>Rémunération:</strong> <span>{{ besoin.remuneration }}DA</span></li>
+                                    <li><strong>Années d'expérience:</strong> <span>{{ besoin.xp }}</span></li>
+                                    <li><strong>Lieu de travail:</strong> <span>{{ besoin.lieu }}</span></li>
+                                    <li><strong>Pour l'exercice:</strong> <span>{{ besoin.pourex }}</span></li>
+                                    <li><strong>Échéance du contrat:</strong> <span>{{ besoin.echeanceContrat }}</span></li>
+                                    <li><strong>Déplacement à prévoir:</strong> <span>{{ besoin.deplacement }}</span></li>
+                                    <li><strong>Autres aspects à considérer:</strong> <span>{{ besoin.autre }}</span></li>
+                                    <li><strong>Date d'entrée:</strong> <span>{{ besoin.dateEntree }}</span></li>
                                 </ul>
                             </div>
                         </div>
                     </article>
                     <article id='tabs-2'>
-                        <h4>About Employer</h4>
+                        <h4>A propos de l'employeur</h4>
+    
+                        <p class="lead"> <i class="fa fa-map-marker"></i> London </p>
+                        <p>Notre entreprise est basée à Londres et est un leader mondial dans le domaine des technologies de l'information. Nous sommes spécialisés dans le développement de logiciels innovants pour une gamme variée de clients dans divers secteurs, notamment la finance, la santé, l'éducation et le commerce électronique.</p> 
                     
-                        <p class="lead"> <i class="fa fa-map-marker"></i> Algiers </p>
+    <p>Nous nous engageons à fournir des solutions logicielles de pointe qui répondent aux besoins uniques de nos clients. Notre équipe talentueuse d'ingénieurs logiciels travaille sur des projets passionnants et stimulants, en utilisant les dernières technologies et les meilleures pratiques de développement.</p>
                     
-                        <div style="display: flex;">
-                            <div style="flex: 1;">
-                                <ul>
-                                    <li><strong>Années d'expérience:</strong> {{ besoin.xp }}</li>
-                                    <li><strong>Lieu de travail:</strong> {{ besoin.lieu }}</li>
-                                    <li><strong>Pour l'exercice:</strong> {{ besoin.pourex }}</li>
-                                    <li><strong>Intitulé du poste:</strong> {{ job.name }}</li>
-                                    <li><strong>Échéance du contrat:</strong> {{ besoin.echeanceContrat }}</li>
-                                </ul>
-                            </div>
-                            <div style="flex: 1;">
-                                <ul>
-                                 
-                                    <li><strong>Déplacement à prévoir:</strong> {{ besoin.deplacement }}</li>
-                                    <li><strong>Autres aspects à considérer:</strong> {{ besoin.autre }}</li>
-                                    <li><strong>Date d'entrée:</strong> {{ besoin.date_entree }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
+    <p>Nous valorisons l'excellence technique, la collaboration et l'innovation. Notre culture d'entreprise favorise un environnement de travail dynamique et inclusif, où chacun est encouragé à contribuer et à exceller.</p>
+                        
+                       </article>
+                    
                     
                     <article id='tabs-3'>
                         <h4>Contact Details</h4>
