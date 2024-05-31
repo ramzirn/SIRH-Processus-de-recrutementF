@@ -145,7 +145,7 @@
         <!--                    <field name="pt_qualite"/>-->
         <!--                    <field name="pt_diplomes"/>-->
         <!--                    <field name="obs"/>-->
-        <!--                    <field name="pt_total" sum="True"/>-->
+        <!--                    <field name="totalpt" sum="True"/>-->
         <!--                </tree>-->
         <!--            </field>-->
         <!--        </record>-->
@@ -176,7 +176,7 @@
                     <field name="pt_qualite"/>
                     <field name="pt_diplomes"/>
                     <field name="obs"/>
-                    <field name="pt_total"/>
+                    <field name="totalpt"/>
                 </tree>
             </field>
         </record>

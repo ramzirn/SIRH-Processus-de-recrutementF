@@ -58,7 +58,7 @@ class Candidature(models.Model):
     pt_diplomes = fields.Integer('Formations et Diplômes', default=0, track_visibility='onchange')
     obs = fields.Text('Observations', track_visibility='onchange')
 
-    pt_total = fields.Integer(string='Total', compute='_compute_pt_total')
+    totalpt = fields.Integer(string='Total', compute='_compute_totalpt')
 
     # annonce_id = fields.Many2one('sirh.annonce', string='Annonce', required=True, track_visibility='onchange')
     eval_id = fields.One2many('sirh.evaluation', 'applicant_id', track_visibility='onchange')
@@ -66,9 +66,9 @@ class Candidature(models.Model):
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 
-    def _compute_pt_total(self):
+    def _compute_totalpt(self):
         for record in self:
-            record.pt_total = sum([
+            record.totalpt = sum([
                 record.pt_conaissances,
                 record.pt_experiences,
                 record.pt_qualite,
