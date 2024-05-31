@@ -124,10 +124,33 @@ def jobs(request):
 
 
 
-def job_details(request , id):
-    besoin = Besoin.objects.get(annonce_id=id)
-    tt=besoin.intitule
-    hrjob=HRJob.objects.get(id=tt)
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Besoin, HRJob
+from .forms import CandidateEvaluationForm
 
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import CandidateEvaluationForm
+from .models import Besoin, HRJob
 
-    return render(request, 'job-details.html', { 'besoin': besoin , 'job' : hrjob}) 
+def job_details(request, id):
+    besoin = get_object_or_404(Besoin, id=id)
+    tt = besoin.intitule
+    hrjob = get_object_or_404(HRJob, id=tt)
+
+    if request.method == 'POST':
+        form = CandidateEvaluationForm(request.POST)
+        if form.is_valid():
+            # Ajouter la valeur job_id au formulaire avant de le sauvegarder
+            form.instance.job_id = hrjob.id
+            form.instance.department_id = hrjob.department_id
+            form.save()
+            return redirect('jobs')  # Remplacez par votre vue de succès
+    else:
+        # Créer le formulaire avec la valeur initial de job_id
+        form = CandidateEvaluationForm()
+
+    return render(request, 'job-details.html', { 
+        'besoin': besoin, 
+        'job': hrjob,
+        'form': form
+    })

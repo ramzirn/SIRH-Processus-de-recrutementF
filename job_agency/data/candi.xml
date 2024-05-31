@@ -8,7 +8,7 @@
             <field name="sequence"> 0 </field>
             <field name="fold">FALSE</field>
 
-            <field name="name">Candidatures non traitées</field>
+            <field name="name"> non traitées</field>
         </record>
         <record id="candidclass2" model="hr.recruitment.stage">
             <field name="sequence"> 1</field>
