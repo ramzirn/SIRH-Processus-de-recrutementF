@@ -6,10 +6,13 @@ class Annonce(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     accroche = fields.Selection([
-        ('interne', 'Interne'),
-        ('externe', 'Externe'),
-        ('mixte', 'Mixte')
-    ], string='L\'accroche de l\'annonce', default='interne', required=True, track_visibility='onchange')
+        ('Equipe', 'Rejoignez notre équipe'),
+        ('Disponibles', 'Postes disponibles'),
+        ('Opportunites', 'Opportunités à saisir'),
+        ('Talent', 'Devenez notre prochain talent'),
+        ('Carriere', 'Carrière chez nous'),
+        ('Parcours', 'Enrichissez votre parcours professionnel')
+    ], string="L'accroche de l'annonce", default='Equipe', required=True, track_visibility='onchange')
     # contenu de l'annonce
     desc_societe = fields.Text(string='Descriptif rapide de la société', required=True, track_visibility='onchange')
     # poste_id = fields.Many2one('hr.job', "Poste", required=True, track_visibility='onchange')

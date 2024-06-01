@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title> Home</title>
+    <title> Job Agency  </title>
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -46,17 +46,17 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="{% url 'index' %}" class="active">Home</a></li>
-                            <li><a href="{% url 'jobs' %}">Jobs</a></li>
+                            <li><a href="{% url 'index' %}" class="active">Accueil</a></li>
+                            <li><a href="{% url 'jobs' %}">Annonces</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">A propos</a>
                               
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{% url 'about' %}">About Us</a>
-                                    <a class="dropdown-item" href="{% url 'team' %}">Team</a>
+                                    <a class="dropdown-item" href="{% url 'about' %}">A propos</a>
+                                    <a class="dropdown-item" href="{% url 'team' %}">Equipe</a>
                                     <a class="dropdown-item" href="{% url 'blog' %}">Blog</a>
-                                    <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
-                                    <a class="dropdown-item" href="{% url 'terms' %}">Terms</a>
+<!--                                     <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
+ -->                                    <a class="dropdown-item" href="{% url 'terms' %}">Conditions</a>
                                 </div>
                             </li>
                             <li><a href="{% url 'contact' %}">Contact</a></li> 
@@ -80,10 +80,10 @@
 
         <div class="video-overlay header-text">
             <div class="caption">
-                <h6>Lorem ipsum dolor sit amet</h6>
-                <h2>Find the perfect <em>Job</em></h2>
+                <h6>En quelques clics , </h6>
+                <h2>Trouvez le job <em>Parfait</em></h2>
                 <div class="main-button">
-                    <a href="{% url 'contact' %}">Contact Us</a>
+                    <a href="{% url 'contact' %}">Contactez nous</a>
                 </div>
             </div>
         </div>
@@ -96,10 +96,10 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Featured <em>Jobs</em></h2>
+                        <h2>Emplois <em>en vedette</em></h2>
                         
                         <img src="{% static 'images/line-dec.png' %}" alt="Example Image">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                        <p>Découvrez nos opportunités d'emploi sélectionnées avec soin pour vous offrir les meilleures carrières dans divers secteurs.</p>
                     </div>
                 </div>
             </div>
@@ -113,12 +113,12 @@
                         <div class="down-content">
                             <span> <sup>$</sup>70 000 </span>
 
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                            <h4>Développeur Full Stack</h4>
 
-                            <p>Medical &nbsp;/&nbsp; Health Jobs</p>
+                            <p>Informatique &nbsp;/&nbsp; Technologie</p>
 
                             <ul class="social-icons">
-                                <li><a href="{% url 'job_details' %}">+ View More</a></li>
+                                <li><a href="{% url 'jobs' %}">+ Voir plus</a></li>
                             </ul>
                         </div>
                     </div>
@@ -129,14 +129,14 @@
                             <img src="{% static 'images/product-2-720x480.jpg' %}" alt="Example Image">
                         </div>
                         <div class="down-content">
-                            <span> <sup>$</sup>70 000 </span>
+                            <span> <sup>$</sup>90 000 </span>
 
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                            <h4>Gestionnaire de Projet</h4>
 
-                            <p>Medical &nbsp;/&nbsp; Health Jobs</p>
+                            <p>Entreprise &nbsp;/&nbsp; Gestion</p>
 
                             <ul class="social-icons">
-                                <li><a href="{% url 'job_details' %}">+ View More</a></li>
+                                <li><a href="{% url 'jobs' %}">+ Voir plus</a></li>
                             </ul>
                         </div>
                     </div>
@@ -148,14 +148,14 @@
 
                         </div>
                         <div class="down-content">
-                            <span> <sup>$</sup>70 000 </span>
+                            <span> <sup>$</sup>85 000 </span>
 
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                            <h4>Ingénieur Logiciel</h4>
 
-                            <p>Medical &nbsp;/&nbsp; Health Jobs</p>
+                            <p>Informatique &nbsp;/&nbsp; Développement</p>
 
                             <ul class="social-icons">
-                                <li><a href="{% url 'job_details' %}">+ View More</a></li>
+                                <li><a href="{% url 'jobs' %}">+ Voir plus</a></li>
                             </ul>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
             <br>
 
             <div class="main-button text-center">
-                <a href="{% url 'jobs' %}">View Jobs</a>
+                <a href="{% url 'jobs' %}">Voir les annonces</a>
             </div>
         </div>
     </section>
@@ -176,19 +176,19 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading dark-bg">
-                        <h2>Read <em>About Us</em></h2>
+                        <h2>À propos de  <em>nous</em></h2>
                         <img src="{% static 'images/line-dec.png' %}" alt="Example Image">
 
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                        <p>Notre agence de recrutement est dédiée à vous connecter avec les meilleures opportunités de carrière. Nous nous efforçons de vous offrir un service personnalisé et efficace.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="cta-content text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore deleniti voluptas enim! Provident consectetur id earum ducimus facilis, aspernatur hic, alias, harum rerum velit voluptas, voluptate enim! Eos, sunt, quidem.</p>
+                        <p>Chez Job Agency, nous comprenons que la recherche d'emploi peut être un processus stressant et chronophage. C'est pourquoi notre équipe de professionnels est là pour vous accompagner à chaque étape. Que vous soyez à la recherche d'un poste dans le secteur de la technologie, de la santé, de la gestion ou autre, nous avons les ressources et l'expertise pour vous aider à trouver l'emploi idéal.</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla quo cum officia laboriosam. Amet tempore, aliquid quia eius commodi, doloremque omnis delectus laudantium dolor reiciendis non nulla! Doloremque maxime quo eum in culpa mollitia similique eius doloribus voluptatem facilis! Voluptatibus, eligendi, illum. Distinctio, non!</p>
+                        <p>Nous travaillons avec un large éventail d'entreprises partenaires pour vous offrir des postes variés et de qualité. Notre mission est de faciliter votre recherche d'emploi en vous fournissant des conseils, des formations et des opportunités adaptées à vos compétences et à vos aspirations professionnelles. Faites confiance à Job Agency pour transformer votre recherche d'emploi en une expérience positive et fructueuse.</p>
                     </div>
                 </div>
             </div>
@@ -201,20 +201,20 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Read our <em>Blog</em></h2>
+                        <h2>Lisez notre <em>Blog</em></h2>
                         <img src="{% static 'images/line-dec.png' %}" alt="Example Image">
 
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'>Lorem ipsum dolor sit amet, consectetur adipisicing.</a></li>
-                  <li><a href='#tabs-2'>Aspernatur excepturi magni, placeat rerum nobis magnam libero! Soluta.</a></li>
-                  <li><a href='#tabs-3'>Sunt hic recusandae vitae explicabo quidem laudantium corrupti non adipisci nihil.</a></li>
-                  <div class="main-rounded-button"><a href="{% url 'blog' %}">Read More</a></div>
+                  <li><a href='#tabs-1'>Comment réussir son entretien d'embauche</a></li>
+                  <li><a href='#tabs-2'>Les compétences les plus recherchées en 2024</a></li>
+                  <li><a href='#tabs-3'>Les erreurs à éviter dans votre CV</a></li>
+                  <div class="main-rounded-button"><a href="{% url 'blog' %}">Lire Plus</a></div>
                 </ul>
               </div>
               <div class="col-lg-8">
@@ -222,33 +222,33 @@
                   <article id='tabs-1'>
                     <img src="{% static 'images/blog-image-1-940x460.jpg' %}" alt="Example Image">
 
-                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+                    <h4>Comment réussir son entretien d'embauche</h4>
 
-                    <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
+                    <p><i class="fa fa-user"></i> Marie Dupont &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 15.05.2024 09:00 &nbsp;|&nbsp; <i class="fa fa-comments"></i> 12 commentaires</p>
 
-                    <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.</p>
+                    <p>En tant que chef d'entreprise depuis plus de 20 ans, j'ai vu des centaines de candidats se présenter pour des postes variés. Voici quelques conseils pour vous démarquer lors de votre entretien d'embauche : préparez-vous en recherchant des informations sur l'entreprise, pratiquez vos réponses aux questions courantes et n'oubliez pas de poser des questions pertinentes à votre tour. Montrez votre motivation et votre enthousiasme pour le poste.</p>
                     <div class="main-button">
-                        <a href="{% url 'blog_details' %}">Continue Reading</a>
+                        <a href="{% url 'blog_details' %}">Continuer la lecture</a>
                     </div>
                   </article>
                   <article id='tabs-2'>
                     <img src="{% static 'images/blog-image-2-940x460.jpg' %}" alt="Example Image">
 
-                    <h4>Aspernatur excepturi magni, placeat rerum nobis magnam libero! Soluta.</h4>
-                    <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
-                    <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <h4>Les compétences les plus recherchées en 2024</h4>
+                    <p><i class="fa fa-user"></i> Jean Martin &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 08.05.2024 14:30 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
+                    <p>En tant que recruteur, je suis constamment à la recherche de certaines compétences clés chez les candidats. En 2024, les compétences les plus prisées incluent la maîtrise des outils numériques, la capacité à travailler en équipe, et des compétences en communication. N'oubliez pas de mettre en avant ces compétences dans votre CV et vos lettres de motivation.</p>
                     <div class="main-button">
-                        <a href="{% url 'blog_details' %}">Continue Reading</a>
+                        <a href="{% url 'blog_details' %}">Continuer la lecture</a>
                     </div>
                   </article>
                   <article id='tabs-3'>
                     <img src="{% static 'images/blog-image-3-940x460.jpg' %}" alt="Example Image">
 
-                    <h4>Sunt hic recusandae vitae explicabo quidem laudantium corrupti non adipisci nihil.</h4>
-                    <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
-                    <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
+                    <h4>Les erreurs à éviter dans votre CV</h4>
+                    <p><i class="fa fa-user"></i> Claire Lefevre &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 02.05.2024 11:45 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
+                    <p>En tant qu'expert en ressources humaines, je vois souvent des erreurs communes dans les CV. Pour maximiser vos chances, évitez ces pièges : ne faites pas de fautes d'orthographe, soyez clair et concis, et adaptez votre CV au poste pour lequel vous postulez. Assurez-vous également que vos informations de contact sont à jour et que votre expérience est présentée de manière chronologique.</p>
                     <div class="main-button">
-                        <a href="{% url 'index' %}">Continue Reading</a>
+                        <a href="{% url 'index' %}">Continuer la lecture </a>
                     </div>
                   </article>
                 </section>
@@ -264,10 +264,10 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cta-content">
-                        <h2>Send us a <em>message</em></h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
+                        <h2>Envoyez-nous un <em>message</em></h2>
+                        <p>Si vous avez des questions, des commentaires ou si vous souhaitez simplement en savoir plus sur nos services, n'hésitez pas à nous contacter. Nous sommes là pour vous aider !</p>
                         <div class="main-button">
-                            <a href="{% url 'contact' %}">Contact us</a>
+                            <a href="{% url 'contact' %}">Contactez nous</a>
                         </div>
                     </div>
                 </div>
@@ -277,7 +277,7 @@
     <!-- ***** Call to Action End ***** -->
 
     <!-- ***** Testimonials Item Start ***** -->
-    <section class="section" id="features">
+    <!-- <section class="section" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -345,10 +345,10 @@
                 <a href=" {% url 'testimonials' %}">Read More</a>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ***** Testimonials Item End ***** -->
     
-    <!-- ***** Footer Start ***** -->
+  <!--   
     <footer>
         <div class="container">
             <div class="row">
@@ -361,7 +361,7 @@
             </div>
         </div>
     </footer>
-
+ -->
     <!-- jQuery -->
 <!--     <script src="assets/js/jquery-2.1.0.min.js"></script>
  -->    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>

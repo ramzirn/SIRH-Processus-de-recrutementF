@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Jobs</title>
+    <title>Annonces</title>
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -45,17 +45,17 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="{% url 'index' %}">Home</a></li>
-                            <li><a href="{% url 'jobs' %}" class="active">Jobs</a></li>
+                            <li><a href="{% url 'index' %}">Accueil</a></li>
+                            <li><a href="{% url 'jobs' %}" class="active">Annonces</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">A propos</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{% url 'about' %}">About Us</a>
-                                    <a class="dropdown-item" href="{% url 'team' %}">Team</a>
+                                    <a class="dropdown-item" href="{% url 'about' %}">A propos</a>
+                                    <a class="dropdown-item" href="{% url 'team' %}">Equipe</a>
                                     <a class="dropdown-item" href="{% url 'blog' %}">Blog</a>
-                                    <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
-                                    <a class="dropdown-item" href="{% url 'terms' %}">Terms</a>
+<!--                                     <a class="dropdown-item" href="{% url 'testimonials' %}">Testimonials</a>
+ -->                                    <a class="dropdown-item" href="{% url 'terms' %}">Conditions</a>
                                 </div>
                             </li>
                             <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -79,8 +79,7 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Our <em>Jobs</em></h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula</p>
+                        <h2>Nos <em>Annonces</em></h2>
                     </div>
                 </div>
             </div>
@@ -103,11 +102,11 @@
                                 <div class="down-content">
                                     <span>{{ annonce.desc_societe }}</span>
                                     <h4>Description :</h4>
-                                    <br>
+                                    
                                     <p>{{ annonce.desc_poste }}</p>
                                     <p>Profil recherché : {{ annonce.profil_recherche }}</p>
                                     <ul class="social-icons">
-                                        <li><a href="{% url 'job_details' annonce.besoin_id %}">+ View More</a></li>
+                                        <li><a href="{% url 'job_details' annonce.besoin_id %}">+ Voir plus</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -144,7 +143,7 @@
     <!-- ***** Fleet Ends ***** -->
 
     <!-- ***** Footer Start ***** -->
-    <footer>
+   <!--  <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -155,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <!-- jQuery -->
     <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>

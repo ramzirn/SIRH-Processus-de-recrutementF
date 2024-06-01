@@ -119,7 +119,9 @@ from django.shortcuts import render
 from .models import Annonce, Besoin, HRJob, RecruitmentDegree, ResourceCalendar
 
 def jobs(request):
-    annonces = Annonce.objects.all()  # Récupère toutes les annonces depuis la base de données
+    annonces = Annonce.objects.all()
+    
+      # Récupère toutes les annonces depuis la base de données
     return render(request, 'jobs.html', {'annonces': annonces})
 
 

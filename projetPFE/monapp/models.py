@@ -202,7 +202,6 @@ class HrApplicant(models.Model):
     deplacement = models.CharField(max_length=255, verbose_name='Déplacement', default='')
     conditionphysique = models.CharField(max_length=20, choices=CONDITION_PHYSIQUE_CHOICES, verbose_name='Condition Physique', default='apte')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='applied', verbose_name='État')
-    totalpt = models.IntegerField(default=0, verbose_name='Total des points')
     totalgeneral = models.IntegerField(default=0, verbose_name='Total général')
 
     class Meta:

@@ -16,8 +16,13 @@ class Besoin(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     motif = fields.Selection([
-        ('interne', 'Recrutement interne'),
-        ('temp', 'Remplacement temporaire'),
+        ('croissance', "Croissance de l'entreprise"),
+        ('remplacement', 'Remplacement'),
+        ('saisonalite', 'Saisonalité'),
+        ('projetspec', 'Projets Spécifiques'),
+        ('newcomp', 'Nouvelles Compétences'),
+        ('ameliorproc', 'Amelioration des Processus'),
+        ('changorg', 'Changement Organisationnel'),
         ('retr', 'Retraite'),
     ], string='Motif de recrutement', required=True, default='interne', track_visibility='onchange')
     pourex = fields.Integer(string='Pour l\'exercice', required=True, default=datetime.now().year,

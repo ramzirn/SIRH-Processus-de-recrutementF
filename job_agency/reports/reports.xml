@@ -2,9 +2,9 @@
     <report
             id='dem_porvoi_act'
             string='Demande de Pourvoi de Poste'
-            model='r.formentry'
+            model='sirh.besoin'
             report_type='qweb-html'
-            name='cetic_version.dem_pourvoi_temp'
+            name='job_agency.dem_pourvoi_temp'
             file='Demande de Pourvoi de Poste'/>
 
 
