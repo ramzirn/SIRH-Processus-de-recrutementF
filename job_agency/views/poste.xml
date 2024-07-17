@@ -23,16 +23,5 @@
             </field>
         </record>
 
-<!--        vue kanban-->
-<!--        <record id="hr_recruitment.view_hr_job_kanban_inherit" model="ir.ui.view">-->
-<!--            <field name="name">poste.kanban.inherit</field>-->
-<!--            <field name="model">hr.job</field>-->
-<!--            <field name="inherit_id" ref="hr_recruitment.view_hr_job_kanban"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//div[@class='col-xs-12 o_kanban_primary_bottom bottom_block']" position="attributes">-->
-<!--    <attribute name="invisible" value="True"/>-->
-<!--</xpath>-->
-<!--            </field>-->
-<!--        </record>-->
     </data>
 </odoo>

@@ -32,12 +32,14 @@
                                 <input type="checkbox" id="celibataire" name="situation_familiale"
                                        value="Célibataire"></input>
                                 <label for="celibataire">Célibataire</label>
-                                <input type="checkbox" id="marie" name="situation_familiale" value="Marié(e)"></input>
+                                <input type="checkbox" id="marie" name="situation_familiale"
+                                       value="Marié(e)"></input>
                                 <label for="marie">Marié(e)</label>
                                 <input type="checkbox" id="divorce" name="situation_familiale"
                                        value="Divorcé(e)"></input>
                                 <label for="divorce">Divorcé(e)</label>
-                                <input type="checkbox" id="veuf" name="situation_familiale" value="Veuf(ve)"></input>
+                                <input type="checkbox" id="veuf" name="situation_familiale"
+                                       value="Veuf(ve)"></input>
                                 <label for="veuf">Veuf(ve)</label>
                             </p>
                             <p>4) Parcours scolaire :</p>
@@ -103,6 +105,64 @@
 
                             <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
 
+                            <p>7) Connaissance écrite et parlée des langues vivantes.</p>
+                            <table border="1" style="width:100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th rowspan="2" style="padding: 8px; border: 1px solid #dddddd;">Langue
+                                            Nationale
+                                        </th>
+                                        <th colspan="4" style="padding: 8px; border: 1px solid #dddddd;">ECRIT</th>
+                                        <th colspan="4" style="padding: 8px; border: 1px solid #dddddd;">PARLE</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Néant</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Faible</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Moyen</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Fort</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Néant</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Faible</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Moyen</th>
+                                        <th style="padding: 8px; border: 1px solid #dddddd;">Fort</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;">Français</td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;">Anglais</td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;">Autre</td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                        <td style="padding: 8px; border: 1px solid #dddddd;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                             <p>8) Emplois (Indiquer chaque emploi occupé, même lorsque le changement d’emploi ne
                                 correspond pas à un changement d’employeur).
                             </p>
@@ -112,10 +172,7 @@
                             <p>Poste Occupé :
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
-                            <p>Période : du ..................... au .......................
-
-
-                            </p>
+                            <p>Période : du ..................... au .......................</p>
                             <p>- Employeur :
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
@@ -123,14 +180,9 @@
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-
                             <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
-                            <p>Période : du ..................... au .......................
+                            <p>Période : du ..................... au .......................</p>
 
-
-                            </p>
-
-                            <!-- Question 9 -->
                             <p>9) Quelle était votre rémunération mensuelle moyenne nette ( y compris toutes primes et
                                 indemnités) dans votre dernier emploi : ................................
                             </p>
@@ -138,27 +190,33 @@
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-                            <!-- Question 10 -->
                             <p>10) Où Souhaitez-vous travailler ? (lieu de travail )
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-                            <!-- Question 11 -->
-                            <p>11) Etes vous disponible à faire des déplacements en dehors de la wilaya de votre
+                            <p>
+                                11) Etes vous disponible à faire des déplacements en dehors de la wilaya de votre
                                 recrutement pour les besoins du travail ?
+                            </p>
+                            <p>
                                 OUI – NON
+                            </p>
+                            <p>
                                 Si NON Donnez vos raisons
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-                            <!-- Question 12 -->
                             <p>12) Situation vis à vis du S.N.O ?
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-                            <!-- Question 13 -->
-                            <p>13) Avez un engagement quelconque avec une entreprise ou une administration ?
+                            <p>
+                                13) Avez un engagement quelconque avec une entreprise ou une administration ?
+                            </p>
+                            <p>
                                 OUI - NON
+                            </p>
+                            <p>
                                 Si OUI lequel ?
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
 
@@ -167,21 +225,16 @@
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
 
-                            <!-- Question 14 -->
                             <p>14) A quelle date seriez vous libre pour commencer à travailler à CETIC ?
                                 <hr style="border: none; border-top: 1px dotted black; height: 0; margin: 20px 0;"/>
                             </p>
-
-
                         </div>
 
-                        <!--                    -->
                         <p>Je certifie sur l’honneur que les renseignements fournis dans le présent questionnaire en vue
                             de l’examen de ma candidature sont exacts.
                         </p>
-                        <!-- Div avec le nouveau style -->
-                        <div class="text-right float-right w-50 mt-5">
 
+                        <div style="text-align: right; float: right; width: 50%; margin: 5rem 5rem 5rem 5rem; padding-right: 10px;">
                             <br/>
                             Fait à Alger, le .....................
                             <br/>

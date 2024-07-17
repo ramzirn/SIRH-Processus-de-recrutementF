@@ -37,8 +37,6 @@ class Besoin(models.Model):
     dateEntree = fields.Date(string="Date d'entrée souhaitée", track_visibility='onchange')
     domaine_ex = fields.Char(string="Domaine d'experience attendu", track_visibility='onchange')
 
-    # annonce_id = fields.Many2one('sirh.annonce', required=True, string="Rédiger une annonce", track_visibility='onchange')
-
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
 
@@ -57,4 +55,3 @@ class Besoin(models.Model):
     def write(self, vals):
         vals['write_uid'] = self.env.user.id
         return super(Besoin, self).write(vals)
-

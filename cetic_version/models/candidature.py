@@ -22,10 +22,7 @@ class Candidature(models.Model):
     diplomes = fields.Text(string="Diplômes", track_visibility='onchange')
     specialite = fields.Char(string='Spécialité', size=50, track_visibility='onchange')
     exp_prof = fields.Text(string='Experience professionnelle')
-    # date depot automatiquement rempli
     datedepot = fields.Date(default=datetime.datetime.today(), string="Date depot", track_visibility='onchange')
-    # disponibilite
-    # salaire_dem = fields.Float(string="Salaire demandé", track_visibility='onchange')
     deplacement = fields.Char(string='Déplacement', track_visibility='onchange')
     conditionphysique = fields.Selection([
         ('excellente', 'Excellente'),
@@ -37,7 +34,6 @@ class Candidature(models.Model):
         ('apte', 'Apte'),
         ('inapte', 'Inapte')],
         string='Condition Physique', track_visibility='onchange')
-    # docs = fields.One2many('sirh.document', 'candidature_id', string='Documents', track_visibility='onchange')
 
     status = fields.Selection([
         ('applied', 'Candidature déposée'),
@@ -49,9 +45,6 @@ class Candidature(models.Model):
 
     totalpt = fields.Integer(string='Total des points', default=0, track_visibility='onchange')
     totalgeneral = fields.Integer(string='Total géneral', default=0, track_visibility='onchange')
-
-    # annonce_id = fields.Many2one('sirh.annonce', string='Annonce', required=True, track_visibility='onchange')
-    # eval = fields.One2many('sirh.evaluation', 'applicant_id', track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')
@@ -65,7 +58,7 @@ class Candidature(models.Model):
                     raise ValidationError("Format email invalide.")
 
             if record.mobile:
-                phone_regex = re.compile(r'^[0](5|6|7)[0-9]{8}$')  # Validate Algerian phone numbers
+                phone_regex = re.compile(r'^[0](5|6|7)[0-9]{8}$')
                 if not phone_regex.match(record.mobile):
                     raise ValidationError(
                         "Format numero de telephone invalide.")

@@ -56,7 +56,6 @@ class Besoin(models.Model):
     horaires = fields.Many2one('resource.calendar', string='Horaires de travail', required=True,
                                track_visibility='onchange')
     remuneration = fields.Float(string='Rémunération', required=True, default=0, track_visibility='onchange')
-    #annonce_id = fields.Many2one('sirh.annonce', required=True, string="Rédiger une annonce", track_visibility='onchange')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')

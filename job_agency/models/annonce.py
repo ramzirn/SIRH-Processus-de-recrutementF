@@ -15,7 +15,6 @@ class Annonce(models.Model):
     ], string="L'accroche de l'annonce", default='Equipe', required=True, track_visibility='onchange')
     # contenu de l'annonce
     desc_societe = fields.Text(string='Descriptif rapide de la société', required=True, track_visibility='onchange')
-    # poste_id = fields.Many2one('hr.job', "Poste", required=True, track_visibility='onchange')
     desc_poste = fields.Text(string='Description du poste', required=True, track_visibility='onchange')
     profil_recherche = fields.Text(string='Description du profil recherché', required=True, track_visibility='onchange')
     modalite_reponse = fields.Selection([
@@ -26,7 +25,6 @@ class Annonce(models.Model):
     obligations = fields.Text(string='Obligations', track_visibility='onchange')
 
     besoin_id = fields.Many2one("sirh.besoin", string="Besoin", required=True)
-    # candidature_ids = fields.One2many('sirh.candidature', 'annonce_id')
 
     create_uid = fields.Many2one('res.users', string='Created by', readonly=True, track_visibility='onchange')
     write_uid = fields.Many2one('res.users', string='Last Updated by', readonly=True, track_visibility='onchange')

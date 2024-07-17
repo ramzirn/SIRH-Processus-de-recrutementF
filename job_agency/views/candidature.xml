@@ -5,7 +5,6 @@
             <field name="model">hr.applicant</field>
             <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
             <field name="arch" type="xml">
-                <!--                making fields invisible-->
                 <field name="partner_name" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </field>
@@ -78,24 +77,10 @@
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
-
-                <!--                changing labels/string-->
                 <xpath expr="//group[3]" position="attributes">
                     <attribute name="string">Poste</attribute>
                 </xpath>
-                <!--                <xpath expr="//label[@for='name']" position="attributes">-->
-                <!--                    <attribute name="string">Candidat</attribute>-->
-                <!--                </xpath>-->
 
-                <!--                <xpath expr="//group[@string='Contract']" position="attributes">-->
-                <!--                    <attribute name="string">Contrat</attribute>-->
-                <!--                </xpath>-->
-
-                <!--                <xpath expr="//separator" position="attributes">-->
-                <!--                    <attribute name="string">Evaluation</attribute>-->
-                <!--                </xpath>-->
-
-                <!--                adding fields-->
                 <field name="partner_id" position="after">
                     <field name="sexe" widget="radio"/>
                     <field name="date_naissance"/>
@@ -139,37 +124,6 @@
                 </field>
             </field>
         </record>
-
-        <!--        <record id="evaluation_list_view" model="ir.ui.view">-->
-        <!--            <field name="name">hr.applicant.tree</field>-->
-        <!--            <field name="model">hr.applicant</field>-->
-        <!--            <field name="type">tree</field>-->
-        <!--            <field name="arch" type="xml">-->
-        <!--                <tree string="Liste des pré-évaluations">-->
-        <!--                    <field name="name"/>-->
-        <!--                    <field name="pt_conaissances"/>-->
-        <!--                    <field name="pt_experiences"/>-->
-        <!--                    <field name="pt_qualite"/>-->
-        <!--                    <field name="pt_diplomes"/>-->
-        <!--                    <field name="obs"/>-->
-        <!--                    <field name="totalpt" sum="True"/>-->
-        <!--                </tree>-->
-        <!--            </field>-->
-        <!--        </record>-->
-
-        <!--        <record id="act_list_pre_evaluation" model="ir.actions.act_window">-->
-        <!--            <field name="name">Liste des pré-évaluations</field>-->
-        <!--            <field name="type">ir.actions.act_window</field>-->
-        <!--            <field name="res_model">hr.applicant</field>-->
-        <!--            <field name="view_mode">tree</field>-->
-        <!--            <field name="context">{}</field>-->
-        <!--        </record>-->
-
-        <!--        <menuitem name="Liste des pré-évaluations"-->
-        <!--                  id="menu_liste_pre_evaluations"-->
-        <!--                  action="act_list_pre_evaluation"-->
-        <!--                  parent="hr_recruitment.menu_crm_case_categ0_act_job"/>-->
-
 
         <record id="view_candidature_pre_evaluation_list" model="ir.ui.view">
             <field name="name">Candidature - Pre-evaluation List</field>

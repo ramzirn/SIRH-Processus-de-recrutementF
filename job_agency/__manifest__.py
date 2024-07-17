@@ -4,25 +4,20 @@
     'version': '1.0',
     'category': 'Human Ressources',
     'description': """
-This module helps to configure the system at the installation of a new database.
-Shows you a list of applications features to install from.
-    """,
+This module streamlines the recruitment process by managing job postings, candidate applications, and interview scheduling. It offers tools for tracking and evaluating candidates, facilitating a seamless hiring workflow.
+""",
     'depends': [
         'base',
         'hr',
         'hr_recruitment',
     ],
     'data': [
-        'views/besoin.xml',
         'views/annonce.xml',
+        'views/besoin.xml',
         'views/candidature.xml',
-        'views/evalcandidat.xml',
         'views/entretien.xml',
+        'views/evalcandidat.xml',
         'views/poste.xml',
-        'reports/reports.xml',
-        'reports/fiche_pre_selection.xml',
-        'reports/questionnaire.xml',
-        'reports/demande_de_pourvoi_de_poste.xml',
         'data/candi.xml',
     ],
     'demo': [],
